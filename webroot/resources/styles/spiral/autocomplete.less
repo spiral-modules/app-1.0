@@ -1,0 +1,82 @@
+//@import "../keeper/bootstrap/variables";
+.tags-container {
+  .glyphicon {
+    padding: 0;
+    top: 2px;
+  }
+  .btn-group {
+    margin-right: 2px;
+    margin-bottom: 2px;
+  }
+  .tag-extended {
+    width: 100%;
+    >button.tag-extended-info {
+      width: 100%;
+      text-align: left;
+      &.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+      }
+    }
+    >[data-tag] {
+      position: absolute;
+      right: 0;
+      z-index: 3;
+    }
+  }
+  margin-bottom: 10px;
+}
+
+.inputs-invisible{
+  visibility: hidden;
+}
+
+.autocomplete-group {
+  .input-group-addon {
+    cursor: pointer;
+    .glyphicon {
+      padding: 0;
+      margin: 0 1px 0 1px;
+      &.gif-loading {
+        background: url(data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==);
+        width: 16px;
+        height: 16px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.autocomplete-suggestions {
+  display: table;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  z-index: 100;
+  border: 1px solid;
+  border-color: @input-border;
+  background: @input-bg;
+  overflow: hidden;
+  visibility: hidden;
+  border-radius: 4px;
+}
+
+.autocomplete-suggestion {
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    background: @input-group-addon-bg;
+  }
+}
+
+.autocomplete-selected {
+  background: @input-group-addon-bg;
+}
+
+.autocomplete-suggestions strong {
+  font-weight: normal;
+  color: @brand-info;
+}

@@ -1,0 +1,16 @@
+.clearfix,
+.cf {
+  *zoom: 1;
+}
+.clearfix:before,
+.cf:before,
+.clearfix:after,
+.cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after,
+.cf:after {
+  clear: both;
+}

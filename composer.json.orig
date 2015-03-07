@@ -1,0 +1,24 @@
+{
+    "name": "spiralScout/Empty",
+    "config": {
+        "vendor-dir": "composer"
+    },
+    "description": "Empty Project",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "wolfy-j",
+            "email": "wolfy-j@spiralscout.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "hg",
+            "url": "http://mercurial.spiralscout.com/spiral-core"
+        }
+    ],
+    "require": {
+        "spiralScout/spiral": "dev-composer"
+    }
+}

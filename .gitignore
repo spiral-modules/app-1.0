@@ -1,0 +1,12 @@
+*.log
+*.log.old
+application/config/modules.php
+application/data/*.php
+application/data/cache/*.php
+application/data/cache/views/*.php
+application/data/logging/snapshots/*.html
+.idea/
+libraries
+composer.lock
+composer.phar
+data/*

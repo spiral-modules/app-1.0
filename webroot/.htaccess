@@ -1,0 +1,37 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    #Main application routing
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+
+    AddEncoding gzip .gz
+
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -s
+    RewriteRule ^(.*)\.css $1\.css\.gz [QSA]
+
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -s
+    RewriteRule ^(.*)\.js $1\.js\.gz [QSA]
+
+    RewriteRule \.css\.gz$ - [T=text/css]
+    RewriteRule \.js\.gz$ - [T=text/javascript]
+</IfModule>
+
+#Spiral will add ?timeUpdated to all files, so we can set expiration time to far future
+<IfModule mod_headers.c>
+    <Files "\.(js|css|css.gz|js.gz)$">
+        Header add "Cache-Control" "max-age=31536000"
+    </Files>
+</IfModule>
+
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/application/x-font-woff "access plus 1 year"
+</ifModule>

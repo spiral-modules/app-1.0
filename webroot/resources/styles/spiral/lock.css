@@ -1,0 +1,241 @@
+.spiral-lock {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.spiral-lock.spiral-lock-default #circularG {
+  width: 128px;
+  height: 128px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.spiral-lock.spiral-lock-default .circularG {
+  position: absolute;
+  background-color: #2E9EE8;
+  width: 29px;
+  height: 29px;
+  -moz-border-radius: 19px;
+  -moz-animation-name: bounce_circularG;
+  -moz-animation-duration: 1.04s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: linear;
+  -webkit-border-radius: 19px;
+  -webkit-animation-name: bounce_circularG;
+  -webkit-animation-duration: 1.04s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: linear;
+  -ms-border-radius: 19px;
+  -ms-animation-name: bounce_circularG;
+  -ms-animation-duration: 1.04s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-direction: linear;
+  -o-border-radius: 19px;
+  -o-animation-name: bounce_circularG;
+  -o-animation-duration: 1.04s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-direction: linear;
+  border-radius: 19px;
+  animation-name: bounce_circularG;
+  animation-duration: 1.04s;
+  animation-iteration-count: infinite;
+  animation-direction: linear;
+}
+.spiral-lock.spiral-lock-default #circularG_1 {
+  left: 0;
+  top: 50px;
+  -moz-animation-delay: 0.39s;
+  -webkit-animation-delay: 0.39s;
+  -ms-animation-delay: 0.39s;
+  -o-animation-delay: 0.39s;
+  animation-delay: 0.39s;
+}
+.spiral-lock.spiral-lock-default #circularG_2 {
+  left: 14px;
+  top: 14px;
+  -moz-animation-delay: 0.52s;
+  -webkit-animation-delay: 0.52s;
+  -ms-animation-delay: 0.52s;
+  -o-animation-delay: 0.52s;
+  animation-delay: 0.52s;
+}
+.spiral-lock.spiral-lock-default #circularG_3 {
+  top: 0;
+  left: 50px;
+  -moz-animation-delay: 0.65s;
+  -webkit-animation-delay: 0.65s;
+  -ms-animation-delay: 0.65s;
+  -o-animation-delay: 0.65s;
+  animation-delay: 0.65s;
+}
+.spiral-lock.spiral-lock-default #circularG_4 {
+  right: 14px;
+  top: 14px;
+  -moz-animation-delay: 0.78s;
+  -webkit-animation-delay: 0.78s;
+  -ms-animation-delay: 0.78s;
+  -o-animation-delay: 0.78s;
+  animation-delay: 0.78s;
+}
+.spiral-lock.spiral-lock-default #circularG_5 {
+  right: 0;
+  top: 50px;
+  -moz-animation-delay: 0.91s;
+  -webkit-animation-delay: 0.91s;
+  -ms-animation-delay: 0.91s;
+  -o-animation-delay: 0.91s;
+  animation-delay: 0.91s;
+}
+.spiral-lock.spiral-lock-default #circularG_6 {
+  right: 14px;
+  bottom: 14px;
+  -moz-animation-delay: 1.04s;
+  -webkit-animation-delay: 1.04s;
+  -ms-animation-delay: 1.04s;
+  -o-animation-delay: 1.04s;
+  animation-delay: 1.04s;
+}
+.spiral-lock.spiral-lock-default #circularG_7 {
+  left: 50px;
+  bottom: 0;
+  -moz-animation-delay: 1.17s;
+  -webkit-animation-delay: 1.17s;
+  -ms-animation-delay: 1.17s;
+  -o-animation-delay: 1.17s;
+  animation-delay: 1.17s;
+}
+.spiral-lock.spiral-lock-default #circularG_8 {
+  left: 14px;
+  bottom: 14px;
+  -moz-animation-delay: 1.3s;
+  -webkit-animation-delay: 1.3s;
+  -ms-animation-delay: 1.3s;
+  -o-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+@-moz-keyframes bounce_circularG {
+  0% {
+    -moz-transform: scale(1);
+  }
+  100% {
+    -moz-transform: scale(0.3);
+  }
+}
+@-webkit-keyframes bounce_circularG {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.3);
+  }
+}
+@-ms-keyframes bounce_circularG {
+  0% {
+    -ms-transform: scale(1);
+  }
+  100% {
+    -ms-transform: scale(0.3);
+  }
+}
+@-o-keyframes bounce_circularG {
+  0% {
+    -o-transform: scale(1);
+  }
+  100% {
+    -o-transform: scale(0.3);
+  }
+}
+@keyframes bounce_circularG {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.3);
+  }
+}
+.spiral-lock.spiral-lock-progress .progress {
+  margin: auto 25%;
+  min-height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.spiral-lock.spiral-lock-moment {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.spiral-lock.spiral-lock-moment .spiral-lock-moment-inner {
+  position: absolute;
+  margin-top: -28px;
+  text-align: center;
+  height: 80px;
+  top: 50%;
+  width: 100%;
+}
+.spiral-lock.spiral-lock-moment .spiral-lock-moment-inner svg {
+  width: 80px;
+  height: 80px;
+}
+.spiral-lock.spiral-lock-moment .spiral-lock-moment-inner svg circle {
+  fill: none;
+  stroke-width: 8;
+  stroke: #01c2c9;
+  stroke-dasharray: 0px 200px;
+  stroke-linecap: round;
+  -moz-animation: moment 2s linear infinite;
+  -webkit-animation: moment 2s linear infinite;
+  animation: moment 2s linear infinite;
+  -webkit-transform-origin: 40px 40px 0;
+  -moz-transform-origin: 40px 40px 0;
+  transform-origin: 40px 40px 0;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.spiral-lock.spiral-lock-moment .spiral-lock-moment-inner:after {
+  content: "Loading";
+  color: #ffffff;
+  line-height: 80px;
+  position: absolute;
+  font-weight: bold;
+  left: 50%;
+  margin-left: -25px;
+}
+@-webkit-keyframes moment {
+  50% {
+    stroke-dasharray: 200px 200px;
+    -webkit-transform: rotate(-90deg);
+  }
+  100% {
+    stroke-dasharray: 0px 200px;
+    -webkit-transform: rotate(270deg);
+  }
+}
+@-moz-keyframes moment {
+  50% {
+    stroke-dasharray: 200px 200px;
+    -moz-transform: rotate(-90deg);
+  }
+  100% {
+    stroke-dasharray: 0px 200px;
+    -moz-transform: rotate(270deg);
+  }
+}
+@keyframes moment {
+  50% {
+    stroke-dasharray: 200px 200px;
+    transform: rotate(-90deg);
+  }
+  100% {
+    stroke-dasharray: 0px 200px;
+    transform: rotate(270deg);
+  }
+}

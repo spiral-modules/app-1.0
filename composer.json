@@ -1,0 +1,31 @@
+{
+  "name": "spiral-scout/Spiral-Application",
+  "config": {
+    "vendor-dir": "libraries"
+  },
+  "description": "Spiral Application",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Wolfy-J",
+      "email": "wolfy-j@spiralscout.com"
+    }
+  ],
+  "require": {
+    "spiral/framework": "dev-master"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "php webroot/index.php core:configure --key"
+    ],
+    "post-update-cmd": [
+      "php webroot/index.php core:configure"
+    ]
+  },
+  "autoload": {
+    "psr-4": {
+      "": "application/classes/"
+    }
+  }
+}

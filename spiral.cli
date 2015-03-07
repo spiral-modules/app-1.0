@@ -1,0 +1,2 @@
+SELF=$0; test -L "$0" && SELF=$(readlink -n $0)
+php -f "$(dirname "$SELF")"/webroot/index.php -- "$@"
