@@ -250,7 +250,7 @@
   ),
   'D:/Projects/domains/spiral-application.dev/libraries/autoload.php' => 
   array (
-    'md5' => '9c32aeb9c25b513d619e8315d022b8ff',
+    'md5' => 'dbd6f95122f1dd23306de1524efc6a2f',
     'plainIncludes' => true,
     'declarations' => 
     array (
@@ -675,7 +675,7 @@
   ),
   'D:/Projects/domains/spiral-application.dev/libraries/spiral/framework/framework/Commands/DBAL/DatabasesCommand.php' => 
   array (
-    'md5' => '94eb1d187f1d348e404336ec3a6e87ba',
+    'md5' => '6c9a8d0cb10291478a2efcf12887d64f',
     'plainIncludes' => false,
     'declarations' => 
     array (
@@ -684,7 +684,7 @@
         'Spiral\\Commands\\DBAL\\DatabasesCommand' => 
         array (
           'firstTID' => 60,
-          'lastTID' => 538,
+          'lastTID' => 571,
         ),
       ),
     ),
@@ -7714,7 +7714,7 @@
   ),
   'D:/Projects/domains/spiral-application.dev/application/runtime/cache/loadmap-console--40603127.php' => 
   array (
-    'md5' => 'f9384fa40d897bd40a6170568228b9df',
+    'md5' => '07256aef58af0945c852356750f2df48',
     'plainIncludes' => false,
     'declarations' => 
     array (
@@ -7725,7 +7725,7 @@
   ),
   'D:/Projects/domains/spiral-application.dev/application/runtime/cache/tokenizer-reflections--40603127.php' => 
   array (
-    'md5' => '4cf5c9acdf5d989507f5f7075f43f33b',
+    'md5' => '8c060cbf03324157bfeb66f4dd346215',
     'plainIncludes' => false,
     'declarations' => 
     array (
@@ -7737,6 +7737,204 @@
   'D:/Projects/domains/spiral-application.dev/application/views/home.php' => 
   array (
     'md5' => 'cad82b3fc81fcbe28a8427d8f4e86d3c',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/cache/config-modules--40603127.php' => 
+  array (
+    'md5' => '92d87e57d9f29a6ac5124a12648a1075',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/cache/config-views--40603127.php' => 
+  array (
+    'md5' => '5b1aa6537f07a6021daf02134e60d801',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/i18n/english/Spiral-Support-Validation-Checkers-AddressChecker.php' => 
+  array (
+    'md5' => '3b18ba5d9200002a40997e9eb55039d2',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/i18n/english/Spiral-Support-Validation-Checkers-FileChecker.php' => 
+  array (
+    'md5' => 'e1ec49d40a574f094ab427a699f45dc1',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/i18n/english/Spiral-Support-Validation-Checkers-ImageChecker.php' => 
+  array (
+    'md5' => '07e41b16347a5d3f22d0892bc027c617',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/i18n/english/Spiral-Support-Validation-Checkers-MixedChecker.php' => 
+  array (
+    'md5' => '08789e6866f6395f546a191f1d53a2c9',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/i18n/english/Spiral-Support-Validation-Checkers-NumberChecker.php' => 
+  array (
+    'md5' => 'e95ba7405bc01e2286e60a9e8895bc53',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/i18n/english/Spiral-Support-Validation-Checkers-RequiredChecker.php' => 
+  array (
+    'md5' => '98b0ff01248e46642a366c32c5747559',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/i18n/english/Spiral-Support-Validation-Checkers-StringChecker.php' => 
+  array (
+    'md5' => '6cb6b2ce1d5aa91315edb689c8c6b774',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/i18n/english/Spiral-Support-Validation-Checkers-TypeChecker.php' => 
+  array (
+    'md5' => '1d4e95967c6517df2b3316198b6d6862',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/config/development/encrypter.php' => 
+  array (
+    'md5' => '8b885516b9b7dfcc49fc9c85e2aa7053',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/cache/config-encrypter--40603127.php' => 
+  array (
+    'md5' => 'cf2d2635ccabb012468e953acbe81293',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/cache/config-odm--40603127.php' => 
+  array (
+    'md5' => '9e81ab942fbfee091b5ee21e66316285',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/cache/odmSchema--40603127.php' => 
+  array (
+    'md5' => '9ab5af02cc19f043e6ab4c12f826be86',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/cache/views/default-home-f359c142.php' => 
+  array (
+    'md5' => '8fae544a3db664697aa400ae2a5efd14',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/cache/views/spiral-exception-f359c142.php' => 
+  array (
+    'md5' => '8b42f82ff6725a445f0e516b89f8bd3c',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/cache/views/spiral-exception.dark-f359c142.php' => 
+  array (
+    'md5' => '8e5783728e179fd0b81beedf463a2d01',
+    'plainIncludes' => false,
+    'declarations' => 
+    array (
+    ),
+    'functions' => 
+    array (
+    ),
+  ),
+  'D:/Projects/domains/spiral-application.dev/application/runtime/odmClasses.php' => 
+  array (
+    'md5' => '69ddf746e90e3d39f1447f759c9b6b08',
     'plainIncludes' => false,
     'declarations' => 
     array (
