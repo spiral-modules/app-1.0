@@ -32,10 +32,10 @@ return array(
         )
     ),
     'drivers'    => array(
-        'mysql'  => 'Spiral\Components\Dbal\Drivers\MySql\MySqlDriver',
-        'pgsql'  => 'Spiral\Components\Dbal\Drivers\Postgres\PostgresDriver',
-        'sqlite' => 'Spiral\Components\Dbal\Drivers\Sqlite\SqliteDriver',
-        'sqlsrv' => 'Spiral\Components\Dbal\Drivers\SqlServer\SqlServerDriver'
+        'mysql'  => 'Spiral\Components\DBAL\Drivers\MySql\MySqlDriver',
+        'pgsql'  => 'Spiral\Components\DBAL\Drivers\Postgres\PostgresDriver',
+        'sqlite' => 'Spiral\Components\DBAL\Drivers\Sqlite\SqliteDriver',
+        'sqlsrv' => 'Spiral\Components\DBAL\Drivers\SqlServer\SqlServerDriver'
     ),
     'aliases'    => array(
         'default'  => 'default',
@@ -43,7 +43,7 @@ return array(
         'db'       => 'default'
     ),
     'migrations' => array(
-        'migrator'         => 'Spiral\Components\Dbal\Migrations\Migrator',
+        'migrator'         => 'Spiral\Components\DBAL\Migrations\Migrator',
         'directory'        => directory('application') . '/migrations',
         'table'            => 'migrations',
         'safeEnvironments' => array(
