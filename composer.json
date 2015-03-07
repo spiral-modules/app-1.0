@@ -1,5 +1,5 @@
 {
-  "name": "spiral/Application",
+  "name": "spiral/application",
   "config": {
     "vendor-dir": "libraries"
   },
