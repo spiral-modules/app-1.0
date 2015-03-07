@@ -1,10 +1,10 @@
 *.log
 *.log.old
 application/config/modules.php
-application/data/*.php
-application/data/cache/*.php
-application/data/cache/views/*.php
-application/data/logging/snapshots/*.html
+application/runtime/*.php
+application/runtime/cache/*.php
+application/runtime/cache/views/*.php
+application/runtime/logging/snapshots/*.html
 .idea/
 libraries
 composer.lock

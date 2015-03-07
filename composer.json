@@ -13,7 +13,8 @@
     }
   ],
   "require": {
-    "spiral/framework": "dev-master"
+    "spiral/framework": "dev-master",
+    "spiral/markdown": "dev-master"
   },
   "scripts": {
     "post-install-cmd": [
