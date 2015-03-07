@@ -5,3 +5,6 @@ Use `./spiral.cli` or `spiral.cli.bat` to get list of console commands. No http 
 all requests will be routed to HomeController->index().
 
 Use -v and -vv to get more details.
+
+To create new spiral application use:
+`composer create-project spiral/application directory dev-master`
