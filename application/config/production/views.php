@@ -5,6 +5,6 @@
 return array(
     'caching' => array(
         'enabled' => true,
-        'folder'  => directory("cache") . '/views/'
+        'directory'  => directory("cache") . '/views/'
     )
 );
