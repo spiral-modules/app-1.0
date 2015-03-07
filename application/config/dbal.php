@@ -17,7 +17,7 @@ return array(
             'options'     => array()
         ),
         'sqlite'    => array(
-            'connection'  => 'sqlite:' . directory('runtime') . '/my.db',
+            'connection'  => 'sqlite::memory:',
             'tablePrefix' => '',
             'username'    => 'postgres',
             'password'    => '',
