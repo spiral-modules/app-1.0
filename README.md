@@ -1,4 +1,6 @@
 # Spiral Application
+[![Build Status](https://travis-ci.org/wolfy-j/application.svg?branch=master)](https://travis-ci.org/wolfy-j/application)
+
 Sample Spiral Framework application.
 
 Use `./spiral.cli` or `spiral.cli.bat` to get list of console commands. No http dispatcher presented,
