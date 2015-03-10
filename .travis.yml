@@ -8,4 +8,4 @@ php:
   - hhvm
 
 install: composer install --no-interaction --prefer-source
-script: php webroot/index.php core:configure
+script: php webroot/index.php core:configure -v
