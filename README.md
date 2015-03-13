@@ -1,5 +1,5 @@
 # Spiral Application
-[![Build Status](https://travis-ci.org/wolfy-j/application.svg?branch=master)](https://travis-ci.org/wolfy-j/application)
+[![Build Status](https://travis-ci.org/spiral-php/application.svg?branch=master)](https://travis-ci.org/spiral-php/application)
 
 Sample Spiral Framework application.
 
