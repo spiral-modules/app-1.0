@@ -4,13 +4,16 @@
  */
 return array(    
 'namespaces'        => array(
-        'default' => array(
+        'default'  => array(
             directory("application") . '/views/'
         ),
-        'spiral'  => array(
+        'spiral'   => array(
             directory("application") . '/views/spiral/',
             directory("framework") . '/views/',
             directory("libraries") . '/spiral/markdown/views/'
+        ),
+        'profiler' => array(
+            directory("libraries") . '/spiral/profiler/views/'
         )
     ),
     'caching'           => array(

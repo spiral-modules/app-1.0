@@ -14,8 +14,8 @@ return array(
     ),
     'filters'       => array(
         'Spiral\Components\Http\CsrfChecker',
-        'Spiral\Components\Session\Http\SessionMiddleware',
-        'Spiral\Components\Http\Cookies\CookieManager'
+        'Spiral\Components\Http\Cookies\CookieManager',
+        'Spiral\Profiler\Profiler'
     ),
     'endpoints'     => array(),
     'routes'        => array(
