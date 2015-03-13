@@ -2,8 +2,8 @@
 /**
  * View component configuration.
  */
-return array(
-	'namespaces'        => array(
+return array(    
+'namespaces'        => array(
         'default' => array(
             directory("application") . '/views/'
         ),
