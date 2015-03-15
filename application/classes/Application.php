@@ -16,6 +16,6 @@ class Application extends Core
      */
     public function bootstrap()
     {
-        //Custom bootstrap code
+
     }
 }
