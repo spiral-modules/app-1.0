@@ -19,19 +19,20 @@ return array(
     'cookies'      => array(
         'subDomains' => false
     ),
-    'middlewares'  => array(
+    'middleware'   => array(
         'Spiral\Profiler\Profiler',
         'Spiral\Components\Http\CsrfProtector',
+        'Spiral\Components\Session\Http\SessionStarter',
         'Spiral\Components\Http\Cookies\CookieManager',
     ),
     'endpoints'    => array(),
     'router'       => array(
-        'class'       => 'Spiral\Components\Http\Router',
-        'default'     => array(
+        'class'      => 'Spiral\Components\Http\Router',
+        'default'    => array(
             'pattern' => '(<controller>(/<action>(/<id>)))',
             'target'  => 'Controllers\<controller>::<action>'
         ),
-        'middlewares' => array(
+        'middleware' => array(
             'crsf' => 'Spiral\Components\Http\CsrfChecker'
         )
     ),
