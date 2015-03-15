@@ -8,7 +8,7 @@
  */
 return array(
     'lifetime' => 86400,
-    'handler'  => 'cache',
+    'handler'  => 'file',
     'handlers' => array(
         'null'  => array(
             'class' => 'Spiral\Components\Session\Handlers\NullHandler'
