@@ -21,7 +21,7 @@ return array(
     ),
     'middlewares'  => array(
         'Spiral\Profiler\Profiler',
-        'Spiral\Components\Http\CsrfToken',
+        'Spiral\Components\Http\CsrfProtector',
         'Spiral\Components\Http\Cookies\CookieManager',
     ),
     'endpoints'    => array(),
