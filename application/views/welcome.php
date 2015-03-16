@@ -15,7 +15,9 @@
     <br/><br/>
 
     <span style="font-size: 12px;">
-        This view file located in /application/views/welcome.php and called by Controllers\HomeController.
+        This view file located in
+        <a href="https://github.com/spiral-php/application/blob/master/application/views/welcome.php">application/views/welcome.php</a>
+        and called by Controllers\HomeController.
     </span>
 
 </block:content>
