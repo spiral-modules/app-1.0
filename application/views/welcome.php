@@ -14,7 +14,7 @@
     <br/><br/>
 
     <span style="font-size: 12px;">
-        This view file located in
+        This view file is located in
         <a href="${git}/blob/master/application/views/welcome.php">application/views/welcome.php</a>
         and rendered by Controllers\HomeController.
     </span>
