@@ -5,7 +5,7 @@
     <img src="@{basePath}resources/images/spiral.svg" width="120px"/>
 
     <spiral:markdown>
-        Welcome
+        Welcome To Spiral Application
         =======
     </spiral:markdown>
 
