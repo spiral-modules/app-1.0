@@ -5,7 +5,7 @@
     <img src="@{basePath}resources/images/spiral.svg" width="120px"/>
 
     <spiral:markdown>
-        #Welcome To Spiral Application
+        #Welcome To Spiral
     </spiral:markdown>
 
     <a href="${git|https://github.com/spiral-php/application}">GitHub</a>
@@ -16,7 +16,7 @@
     <span style="font-size: 12px;">
         This view file located in
         <a href="${git}/blob/master/application/views/welcome.php">application/views/welcome.php</a>
-        and called by Controllers\HomeController.
+        and rendered by Controllers\HomeController.
     </span>
 
 </block:content>
