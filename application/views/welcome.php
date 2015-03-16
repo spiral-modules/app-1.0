@@ -5,8 +5,7 @@
     <img src="@{basePath}resources/images/spiral.svg" width="120px"/>
 
     <spiral:markdown>
-        Welcome To Spiral Application
-        =======
+        #Welcome To Spiral Application
     </spiral:markdown>
 
     <a href="${git|https://github.com/spiral-php/application}">GitHub</a>
