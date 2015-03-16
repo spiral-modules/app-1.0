@@ -4,7 +4,7 @@
 <block:content>
     <img src="@{basePath}resources/images/spiral.svg" width="120px"/>
     <spiral:markdown>
-        Welcome to Spiral
-        =======================
+        Welcome
+        =======
     </spiral:markdown>
 </block:content>
