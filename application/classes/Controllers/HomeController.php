@@ -24,7 +24,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Method available by /home/json
+     * Method available by /home/json or /short-url
      *
      * @return array
      */
