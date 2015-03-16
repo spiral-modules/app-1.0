@@ -19,7 +19,7 @@ return array(
     'cookies'      => array(
         'subDomains' => false
     ),
-    'middleware'   => array(
+    'middlewares'  => array(
         'Spiral\Profiler\Profiler',
         'Spiral\Components\Http\CsrfProtector',
         'Spiral\Components\Session\Http\SessionStarter',
@@ -27,12 +27,12 @@ return array(
     ),
     'endpoints'    => array(),
     'router'       => array(
-        'class'      => 'Spiral\Components\Http\Router\Router',
-        'default'    => array(
+        'class'             => 'Spiral\Components\Http\Router\Router',
+        'default'           => array(
             'pattern' => '(<controller>(/<action>(/<id>)))',
             'target'  => 'Controllers\<controller>::<action>'
         ),
-        'middleware' => array(
+        'middlewareAliases' => array(
             'crsf' => 'Spiral\Components\Http\CsrfProtector'
         )
     ),
