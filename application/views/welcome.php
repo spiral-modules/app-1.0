@@ -6,7 +6,5 @@
     <spiral:markdown>
         Welcome to Spiral
         =======================
-        The Spiral framework provides a Rapid Application Development (RAD) platform to develop
-        software applications using an MVC architecture.
     </spiral:markdown>
 </block:content>
