@@ -9,14 +9,14 @@
         =======
     </spiral:markdown>
 
-    <a href="https://github.com/spiral-php/application">GitHub</a>
+    <a href="${git|https://github.com/spiral-php/application}">GitHub</a>
     | <a href="https://github.com/spiral-php/documentation">Documentation (unfinished)</a>
 
     <br/><br/>
 
     <span style="font-size: 12px;">
         This view file located in
-        <a href="https://github.com/spiral-php/application/blob/master/application/views/welcome.php">application/views/welcome.php</a>
+        <a href="${git}/blob/master/application/views/welcome.php">application/views/welcome.php</a>
         and called by Controllers\HomeController.
     </span>
 
