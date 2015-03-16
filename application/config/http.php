@@ -27,13 +27,13 @@ return array(
     ),
     'endpoints'    => array(),
     'router'       => array(
-        'class'      => 'Spiral\Components\Http\Router',
+        'class'      => 'Spiral\Components\Http\Router\Router',
         'default'    => array(
             'pattern' => '(<controller>(/<action>(/<id>)))',
             'target'  => 'Controllers\<controller>::<action>'
         ),
         'middleware' => array(
-            'crsf' => 'Spiral\Components\Http\CsrfChecker'
+            'crsf' => 'Spiral\Components\Http\CsrfProtector'
         )
     ),
     'headers'      => array(
