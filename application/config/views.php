@@ -2,8 +2,8 @@
 /**
  * View component configuration.
  */
-return array(    
-'namespaces'        => array(
+return array(
+    'namespaces'        => array(
         'default'  => array(
             directory("application") . '/views/'
         ),
@@ -21,7 +21,7 @@ return array(
         'directory' => directory("cache") . '/views/'
     ),
     'variableProviders' => array(
-        'i18n'
+        'i18n', 'http'
     ),
     'processors'        => array(
         'staticVariables' => array(
