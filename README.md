@@ -1,7 +1,7 @@
-# Spiral Application
+# Spiral Application 
 [![Build Status](https://travis-ci.org/spiral-php/application.svg?branch=master)](https://travis-ci.org/spiral-php/application)
 
-Sample Spiral Framework application.
+Sample Spiral Framework application. https://twitter.com/spiralphp
 
 Use `./spiral.cli` or `spiral.cli.bat` to get list of console commands. No http dispatcher presented,
 all requests will be routed to HomeController->index().

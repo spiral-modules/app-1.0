@@ -19,7 +19,7 @@
 
         .wrapper {
             position: relative;
-            top: 20%;
+            top: 10%;
             transform: translate(50%,-50%);
             -webkit-transform: translate(50%,50%);
             text-align: center;
