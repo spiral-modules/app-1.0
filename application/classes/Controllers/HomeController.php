@@ -8,7 +8,7 @@
  */
 namespace Controllers;
 
-use Spiral\Components\Http\Response\RedirectResponse;
+use Spiral\Components\Http\Response\Response;
 use Spiral\Core\Controller;
 
 class HomeController extends Controller
@@ -41,17 +41,17 @@ class HomeController extends Controller
     /**
      * Method available by /home/redirect
      *
-     * @return RedirectResponse
+     * @return Response
      */
     public function redirect()
     {
-        return new RedirectResponse('http://google.com/');
+        return new Response('http://google.com/');
     }
 
     /**
      * Method available by /home/internalRedirect
      *
-     * @return RedirectResponse
+     * @return Response
      */
     public function internalRedirect()
     {
