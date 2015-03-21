@@ -2,8 +2,8 @@
 /**
  * View component configuration.
  */
-return array(    
-'namespaces'        => array(
+return array(
+    'namespaces'        => array(
         'default'  => array(
             directory("application") . '/views/'
         ),
@@ -26,22 +26,22 @@ return array(
         'http'
     ),
     'processors'        => array(
-        'staticVariables' => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\StaticProcessor'
+        'variables'    => array(
+            'class' => 'Spiral\\Components\\View\\Processors\\VariablesProcessor'
         ),
-        'localization'    => array(
+        'localization' => array(
             'class' => 'Spiral\\Components\\View\\Processors\\LocalizationProcessor'
         ),
-        'templater'       => array(
+        'templater'    => array(
             'class' => 'Spiral\\Components\\View\\Processors\\TemplateProcessor'
         ),
-        'evaluator'       => array(
+        'evaluator'    => array(
             'class' => 'Spiral\\Components\\View\\Processors\\EvaluateProcessor'
         ),
-        'shortTags'       => array(
+        'shortTags'    => array(
             'class' => 'Spiral\\Components\\View\\Processors\\ShortTagsProcessor'
         ),
-        'prettyPrint'     => array(
+        'prettyPrint'  => array(
             'class' => 'Spiral\\Components\\View\\Processors\\PrettyPrintProcessor'
         )
     )
