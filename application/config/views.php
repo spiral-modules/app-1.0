@@ -2,8 +2,8 @@
 /**
  * View component configuration.
  */
-return array(
-    'namespaces'        => array(
+return array(    
+'namespaces'        => array(
         'default'  => array(
             directory("application") . '/views/'
         ),
@@ -29,8 +29,8 @@ return array(
         'staticVariables' => array(
             'class' => 'Spiral\\Components\\View\\Processors\\StaticProcessor'
         ),
-        'i18n'            => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\I18nProcessor'
+        'localization'    => array(
+            'class' => 'Spiral\\Components\\View\\Processors\\LocalizationProcessor'
         ),
         'templater'       => array(
             'class' => 'Spiral\\Components\\View\\Processors\\TemplateProcessor'
