@@ -1,3 +1,4 @@
+<use namespace="spiral"/>
 <!DOCTYPE html>
 <html>
 <head>

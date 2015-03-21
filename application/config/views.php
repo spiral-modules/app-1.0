@@ -10,7 +10,8 @@ return array(
         'spiral'   => array(
             directory("application") . '/views/spiral/',
             directory("framework") . '/views/',
-            directory("libraries") . '/spiral/markdown/views/'
+            directory("libraries") . '/spiral/markdown/views/',
+            directory("libraries") . '/spiral/toolkit/views/'
         ),
         'profiler' => array(
             directory("libraries") . '/spiral/profiler/views/'
@@ -21,7 +22,8 @@ return array(
         'directory' => directory("cache") . '/views/'
     ),
     'variableProviders' => array(
-        'i18n', 'http'
+        'i18n',
+        'http'
     ),
     'processors'        => array(
         'staticVariables' => array(

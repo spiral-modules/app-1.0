@@ -1,5 +1,4 @@
 <extends:layouts.simple title="Welcome to Spiral Framework!"/>
-<use namespace="spiral"/>
 
 <block:content>
     <img src="@{basePath}resources/images/spiral.svg" width="120px"/>
@@ -18,5 +17,4 @@
         <a href="${git}/blob/master/application/views/welcome.php">application/views/welcome.php</a>
         and rendered by Controllers\HomeController.
     </span>
-
 </block:content>
