@@ -35,7 +35,6 @@
 <namespace path="spiral" name="spiral"/>
 <div class="wrapper">
     <div class="placeholder">
-
         <block:content/>
     </div>
 </div>
