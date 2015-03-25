@@ -26,22 +26,22 @@ return array(
         'http'
     ),
     'processors'        => array(
-        'variables'    => array(
+        'variables'   => array(
             'class' => 'Spiral\\Components\\View\\Processors\\VariablesProcessor'
         ),
-        'localization' => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\LocalizationProcessor'
+        'i18n'        => array(
+            'class' => 'Spiral\\Components\\View\\Processors\\I18nProcessor'
         ),
-        'templater'    => array(
+        'templater'   => array(
             'class' => 'Spiral\\Components\\View\\Processors\\TemplateProcessor'
         ),
-        'evaluator'    => array(
+        'evaluator'   => array(
             'class' => 'Spiral\\Components\\View\\Processors\\EvaluateProcessor'
         ),
-        'shortTags'    => array(
+        'shortTags'   => array(
             'class' => 'Spiral\\Components\\View\\Processors\\ShortTagsProcessor'
         ),
-        'prettyPrint'  => array(
+        'prettyPrint' => array(
             'class' => 'Spiral\\Components\\View\\Processors\\PrettyPrintProcessor'
         )
     )
