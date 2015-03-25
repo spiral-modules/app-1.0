@@ -21,9 +21,9 @@ return array(
         'enabled'   => true,
         'directory' => directory("cache") . '/views/'
     ),
-    'variableProviders' => array(
-        'i18n',
-        'http'
+    'staticVariables' => array(
+        'language' => ['i18n', 'getLanguage'],
+        'basePath' => ['http', 'getBasePath']
     ),
     'processors'        => array(
         'variables'   => array(
