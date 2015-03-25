@@ -9,7 +9,7 @@ return array(
             'options' => array()
         ),
         'amazon'    => array(
-            'class'   => 'Spiral\Components\Storage\Servers\AmazonS3\AmazonS3Server',
+            'class'   => 'Spiral\Components\Storage\Servers\Amazon\AmazonS3Server',
             'options' => array(
                 'accessKey' => '',
                 'secretKey' => '',

@@ -2,8 +2,8 @@
 /**
  * View component configuration.
  */
-return array(
-    'namespaces'        => array(
+return array(    
+'namespaces'      => array(
         'default'  => array(
             directory("application") . '/views/'
         ),
@@ -17,15 +17,21 @@ return array(
             directory("libraries") . '/spiral/profiler/views/'
         )
     ),
-    'caching'           => array(
+    'caching'         => array(
         'enabled'   => true,
         'directory' => directory("cache") . '/views/'
     ),
     'staticVariables' => array(
-        'language' => ['i18n', 'getLanguage'],
-        'basePath' => ['http', 'getBasePath']
+        'language' => array(
+            'i18n',
+            'getLanguage'
+        ),
+        'basePath' => array(
+            'http',
+            'getBasePath'
+        )
     ),
-    'processors'        => array(
+    'processors'      => array(
         'variables'   => array(
             'class' => 'Spiral\\Components\\View\\Processors\\VariablesProcessor'
         ),
