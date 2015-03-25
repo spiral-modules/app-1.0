@@ -1,4 +1,4 @@
-<use namespace="spiral"/>
+<namespace path="spiral" name="spiral"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +21,8 @@
         .wrapper {
             position: relative;
             top: 10%;
-            transform: translate(50%,-50%);
-            -webkit-transform: translate(50%,50%);
+            transform: translate(50%, -50%);
+            -webkit-transform: translate(50%, 50%);
             text-align: center;
             width: 50%;
         }
@@ -35,7 +35,7 @@
 <body>
 <div class="wrapper">
     <div class="placeholder">
-       <block:content/>
+        <block:content/>
     </div>
 </div>
 </body>
