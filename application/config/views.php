@@ -2,8 +2,8 @@
 /**
  * View component configuration.
  */
-return array(    
-'namespaces'      => array(
+return array(
+    'namespaces'      => array(
         'default'  => array(
             directory("application") . '/views/'
         ),
@@ -31,24 +31,36 @@ return array(
             'getBasePath'
         )
     ),
-    'processors'      => array(
-        'variables'   => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\VariablesProcessor'
+    'engines'         => array(
+        'default' => array(
+            'extensions' => array('php'),
+            'compiler'   => 'Spiral\Components\View\LayeredCompiler',
+            'view'       => 'Spiral\Components\View\View',
+            'processors' => array(
+                'variables'   => array(
+                    'class' => 'Spiral\\Components\\View\\Processors\\VariablesProcessor'
+                ),
+                'i18n'        => array(
+                    'class' => 'Spiral\\Components\\View\\Processors\\I18nProcessor'
+                ),
+                'templater'   => array(
+                    'class' => 'Spiral\\Components\\View\\Processors\\TemplateProcessor'
+                ),
+                'evaluator'   => array(
+                    'class' => 'Spiral\\Components\\View\\Processors\\EvaluateProcessor'
+                ),
+                'shortTags'   => array(
+                    'class' => 'Spiral\\Components\\View\\Processors\\ShortTagsProcessor'
+                ),
+                'prettyPrint' => array(
+                    'class' => 'Spiral\\Components\\View\\Processors\\PrettyPrintProcessor'
+                )
+            )
         ),
-        'i18n'        => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\I18nProcessor'
-        ),
-        'templater'   => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\TemplateProcessor'
-        ),
-        'evaluator'   => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\EvaluateProcessor'
-        ),
-        'shortTags'   => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\ShortTagsProcessor'
-        ),
-        'prettyPrint' => array(
-            'class' => 'Spiral\\Components\\View\\Processors\\PrettyPrintProcessor'
+        'plain'   => array(
+            'extensions' => array('html', 'template'),
+            'compiler'   => false,
+            'view'       => 'Spiral\Components\View\View'
         )
     )
 );
