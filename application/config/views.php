@@ -34,7 +34,7 @@ return array(
     'engines'         => array(
         'default' => array(
             'extensions' => array('php'),
-            'compiler'   => 'Spiral\Components\View\DefaultCompiler',
+            'compiler'   => 'Spiral\Components\View\LayeredCompiler',
             'view'       => 'Spiral\Components\View\View',
             'processors' => array(
                 'variables'   => array(
