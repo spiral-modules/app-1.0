@@ -7,7 +7,7 @@
  * @copyright ©2009-2015
  */
 return array(
-    'databases' => array(
+    'databases'     => array(
         'default' => array(
             'server'   => 'mongodb://localhost:27017',
             'database' => 'spiral',
@@ -16,22 +16,21 @@ return array(
             )
         )
     ),
-    'aliases'   => array(
+    'aliases'       => array(
         'database' => 'default',
         'db'       => 'default',
         'mongo'    => 'default'
     ),
-    'schema'    => array(
-        'documentation' => directory('runtime') . '/odmClasses.php',
-        'mutators'      => array(
-            'int'       => array('setter' => 'intval'),
-            'float'     => array('setter' => 'floatval'),
-            'string'    => array('setter' => 'string'),
-            'bool'      => array('setter' => 'boolean'),
-            'MongoId'   => array('setter' => 'mongoID'),
-            'array'     => array('accessor' => 'Spiral\Components\ODM\Accessors\ScalarArray'),
-            'MongoDate' => array('accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'),
-            'timestamp' => array('accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'),
-        )
+
+    'documentation' => directory('runtime') . '/odmClasses.php',
+    'mutators'      => array(
+        'int'       => array('setter' => 'intval'),
+        'float'     => array('setter' => 'floatval'),
+        'string'    => array('setter' => 'string'),
+        'bool'      => array('setter' => 'boolean'),
+        'MongoId'   => array('setter' => 'mongoID'),
+        'array'     => array('accessor' => 'Spiral\Components\ODM\Accessors\ScalarArray'),
+        'MongoDate' => array('accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'),
+        'timestamp' => array('accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'),
     ),
 );
