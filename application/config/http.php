@@ -17,6 +17,7 @@ return array(
     'basePath'         => '/',
     'exposeErrors'     => true,
     'cookies'          => array(
+        'path'       => '/',
         'subDomains' => false
     ),
     'headers'          => array(
