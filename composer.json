@@ -19,10 +19,10 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "php webroot/index.php core:configure --key"
+      "php webroot/index.php configure -v --key"
     ],
     "post-update-cmd": [
-      "php webroot/index.php core:configure"
+      "php webroot/index.php configure"
     ]
   },
   "autoload": {
