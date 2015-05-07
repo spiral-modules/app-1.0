@@ -2,7 +2,7 @@
 
 return array(
     'databases'  => array(
-        'default'   => array(
+        'mysql'     => array(
             'connection'  => 'mysql:host=localhost;dbname=spiral',
             'tablePrefix' => '',
             'username'    => 'root',
@@ -38,9 +38,9 @@ return array(
         'sqlsrv' => 'Spiral\Components\DBAL\Drivers\SqlServer\SqlServerDriver'
     ),
     'aliases'    => array(
-        'default'  => 'default',
-        'database' => 'default',
-        'db'       => 'default'
+        'default'  => 'mysql',
+        'database' => 'mysql',
+        'db'       => 'mysql'
     ),
     'migrations' => array(
         'migrator'         => 'Spiral\Components\DBAL\Migrations\Migrator',

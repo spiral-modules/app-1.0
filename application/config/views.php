@@ -10,7 +10,6 @@ return array(
         'spiral'   => array(
             directory("application") . '/views/spiral/',
             directory("framework") . '/views/',
-            directory("libraries") . '/spiral/markdown/views/',
             directory("libraries") . '/spiral/toolkit/views/'
         ),
         'profiler' => array(

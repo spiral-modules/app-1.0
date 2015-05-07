@@ -21,7 +21,6 @@ return array(
         'db'       => 'default',
         'mongo'    => 'default'
     ),
-
     'documentation' => directory('runtime') . '/odmClasses.php',
     'mutators'      => array(
         'int'       => array('setter' => 'intval'),
