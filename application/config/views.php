@@ -2,8 +2,8 @@
 /**
  * View component configuration.
  */
-return array(
-    'namespaces'      => array(
+return array(    
+'namespaces'      => array(
         'default'  => array(
             directory("application") . '/views/'
         ),
@@ -32,9 +32,11 @@ return array(
     ),
     'engines'         => array(
         'default' => array(
-            'extensions' => array('php'),
-            'compiler'   => 'Spiral\Components\View\LayeredCompiler',
-            'view'       => 'Spiral\Components\View\View',
+            'extensions' => array(
+                'php'
+            ),
+            'compiler'   => 'Spiral\\Components\\View\\LayeredCompiler',
+            'view'       => 'Spiral\\Components\\View\\View',
             'processors' => array(
                 'variables'   => array(
                     'class' => 'Spiral\\Components\\View\\Processors\\VariablesProcessor'
@@ -57,9 +59,12 @@ return array(
             )
         ),
         'plain'   => array(
-            'extensions' => array('html', 'template'),
+            'extensions' => array(
+                'html',
+                'template'
+            ),
             'compiler'   => false,
-            'view'       => 'Spiral\Components\View\View'
+            'view'       => 'Spiral\\Components\\View\\View'
         )
     )
 );

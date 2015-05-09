@@ -25,7 +25,7 @@ return array(
     ),
     'middlewares'      => array(
         'Spiral\Components\Http\Middlewares\CsrfToken',
-        'Spiral\Components\Http\Middlewares\JsonRequest',
+        'Spiral\Components\Http\Middlewares\JsonParser',
         'Spiral\Components\Session\Http\SessionStarter',
         'Spiral\Components\Http\Cookies\CookieManager',
         'Spiral\Profiler\Profiler'
