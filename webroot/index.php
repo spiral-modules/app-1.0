@@ -17,7 +17,7 @@ ini_set('display_errors', true);
 /**
  * Location of composer files all required extensions and libraries.
  */
-$libraries = dirname(__DIR__) . '/libraries';
+$libraries = dirname(__DIR__) . '/vendor';
 
 /**
  * Application directory.

@@ -1,8 +1,5 @@
 {
   "name": "spiral/application",
-  "config": {
-    "vendor-dir": "libraries"
-  },
   "description": "Spiral Application",
   "minimum-stability": "dev",
   "license": "MIT",
