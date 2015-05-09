@@ -18,7 +18,9 @@ return array(
     'exposeErrors'     => true,
     'cookies'          => array(
         'path'       => '/',
-        'subDomains' => false
+        'subDomains' => false,
+        'protection' => false,
+        'salt'       => null
     ),
     'headers'          => array(
         'Content-Type' => 'text/html; charset=UTF-8'
