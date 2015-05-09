@@ -1,5 +1,5 @@
 # Spiral Application 
-[![Build Status](https://travis-ci.org/spiral-php/application.svg?branch=master)](https://travis-ci.org/spiral-php/application)
+[![Build Status](https://travis-ci.org/spiral/application.svg?branch=master)](https://travis-ci.org/spiral/application)
 
 Sample Spiral Framework application. https://twitter.com/spiralphp
 
