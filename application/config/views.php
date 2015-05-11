@@ -2,8 +2,8 @@
 /**
  * View component configuration.
  */
-return array(    
-'namespaces'      => array(
+return array(
+    'namespaces'      => array(
         'default'  => array(
             directory("application") . '/views/'
         ),
@@ -22,12 +22,10 @@ return array(
     ),
     'staticVariables' => array(
         'language' => array(
-            'i18n',
-            'getLanguage'
+            \Spiral\Components\I18n\Translator::getAlias(), 'getLanguage'
         ),
         'basePath' => array(
-            'http',
-            'getBasePath'
+            \Spiral\Components\Http\HttpDispatcher::getAlias(), 'getBasePath'
         )
     ),
     'engines'         => array(
