@@ -16,11 +16,6 @@ class Application extends Core
      */
     public function bootstrap()
     {
-        $this->http->route('short-url', 'Controllers\HomeController::json');
-
-        $this->http->route('closure', function ($request)
-        {
-            dump($request);
-        });
+        $this->http->route('short-url(/<test>)', 'Controllers\HomeController::json');
     }
 }

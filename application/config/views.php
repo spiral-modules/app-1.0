@@ -22,10 +22,12 @@ return array(
     ),
     'staticVariables' => array(
         'language' => array(
-            \Spiral\Components\I18n\Translator::getAlias(), 'getLanguage'
+            'Spiral\\Components\\I18n\\Translator',
+            'getLanguage'
         ),
         'basePath' => array(
-            \Spiral\Components\Http\HttpDispatcher::getAlias(), 'getBasePath'
+            'Spiral\\Components\\Http\\HttpDispatcher',
+            'getBasePath'
         )
     ),
     'engines'         => array(
@@ -47,9 +49,6 @@ return array(
                 ),
                 'evaluator'   => array(
                     'class' => 'Spiral\\Components\\View\\Processors\\EvaluateProcessor'
-                ),
-                'shortTags'   => array(
-                    'class' => 'Spiral\\Components\\View\\Processors\\ShortTagsProcessor'
                 ),
                 'prettyPrint' => array(
                     'class' => 'Spiral\\Components\\View\\Processors\\PrettyPrintProcessor'

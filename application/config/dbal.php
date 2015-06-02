@@ -6,7 +6,7 @@ return array(
             'connection'  => 'mysql:host=localhost;dbname=spiral',
             'tablePrefix' => '',
             'username'    => 'root',
-            'password'    => '',
+            'password'    => 'root',
             'options'     => array()
         ),
         'postgres'  => array(

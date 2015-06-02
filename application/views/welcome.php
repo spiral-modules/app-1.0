@@ -8,7 +8,7 @@
     </spiral:markdown>
 
     <a href="${git|https://github.com/spiral-php/application}">GitHub</a>
-    | <a href="https://github.com/spiral-php/documentation">Documentation (unfinished)</a>
+    | <a href="https://github.com/spiral-php/documentation">[[Documentation (unfinished)]]</a>
 
     <br/><br/>
 
