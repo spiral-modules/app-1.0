@@ -55,9 +55,6 @@ class HomeController extends Controller
      */
     public function internalRedirect()
     {
-        return $this->router->redirect('default', [
-            'controller' => 'home',
-            'action'     => 'json'
-        ]);
+        return $this->router->redirect('jsonRoute');
     }
 }
