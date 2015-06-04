@@ -10,7 +10,7 @@ return array(
         'spiral'   => array(
             directory("application") . '/views/spiral/',
             directory("framework") . '/views/',
-            directory("libraries") . '/spiral/toolkit/views/'
+            'D:/Projects/github/toolkit/views/'
         ),
         'profiler' => array(
             directory("libraries") . '/spiral/profiler/views/'
@@ -38,8 +38,17 @@ return array(
             'compiler'   => 'Spiral\\Components\\View\\LayeredCompiler',
             'view'       => 'Spiral\\Components\\View\\View',
             'processors' => array(
-                'variables'   => array(
-                    'class' => 'Spiral\\Components\\View\\Processors\\VariablesProcessor'
+                'expressions' => array(
+                    'class'       => 'Spiral\\Components\\View\\Processors\\ExpressionProcessor',
+                    'expressions' => array(
+                        'static' => array(
+                            'pattern'  => '/@\{(?P<name>[a-z0-9_\.\-]+)(?: *\| *(?P<default>[^}]+))?}/i',
+                            'callback' => array(
+                                'self',
+                                'staticVariable'
+                            )
+                        )
+                    )
                 ),
                 'i18n'        => array(
                     'class' => 'Spiral\\Components\\View\\Processors\\I18nProcessor'

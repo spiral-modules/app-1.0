@@ -14,37 +14,37 @@
  * @copyright ©2009-2015
  */
 return array(
-    'basePath'         => '/',
-    'exposeErrors'     => true,
-    'cookies'          => array(
-        'path'       => '/',
-        'subDomains' => false,
-        'protection' => false,
-        'salt'       => null
+    'basePath'     => '/',
+    'exposeErrors' => true,
+    'cookies'      => array(
+        'path'   => '/',
+        'domain' => '.%s',
+        'method' => 'mac'
     ),
-    'headers'          => array(
+    'headers'      => array(
         'Content-Type' => 'text/html; charset=UTF-8'
     ),
-    'middlewares'      => array(
-        'Spiral\Components\Http\Middlewares\CsrfToken',
+    'middlewares'  => array(
+        'Spiral\Components\Http\Cookies\CookieManager',
+        'Spiral\Components\Http\Middlewares\CsrfFilter',
         'Spiral\Components\Http\Middlewares\JsonParser',
         'Spiral\Components\Session\Http\SessionStarter',
-        'Spiral\Components\Http\Cookies\CookieManager',
         'Spiral\Profiler\Profiler'
     ),
-    'endpoints'        => array(),
-    'router'           => array(
+    'endpoints'    => array(),
+    'router'       => array(
         'class'        => 'Spiral\Components\Http\Router\Router',
-        'defaultRoute' => array(
-            'pattern'  => '(<controller>(/<action>(/<id>)))',
-            'target'   => 'Controllers\<controller>Controller::<action>',
-            'defaults' => array(
+        'primaryRoute' => array(
+            'pattern'     => '(<controller>(/<action>(/<id>)))',
+            'namespace'   => 'Controllers',
+            'postfix'     => 'Controller',
+            'defaults'    => array(
                 'controller' => 'home'
-            )
+            ),
+            'controllers' => array()
         )
     ),
-    'routeMiddlewares' => array(),
-    'httpErrors'       => array(
+    'httpErrors'   => array(
         400 => 'spiral:http/badRequest',
         403 => 'spiral:http/forbidden',
         404 => 'spiral:http/notFound',
