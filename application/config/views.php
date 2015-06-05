@@ -10,7 +10,7 @@ return array(
         'spiral'   => array(
             directory("application") . '/views/spiral/',
             directory("framework") . '/views/',
-            'D:/Projects/github/toolkit/views/'
+            directory("libraries") . '/spiral/toolkit/views/'
         ),
         'profiler' => array(
             directory("libraries") . '/spiral/profiler/views/'
@@ -38,11 +38,11 @@ return array(
             'compiler'   => 'Spiral\\Components\\View\\LayeredCompiler',
             'view'       => 'Spiral\\Components\\View\\View',
             'processors' => array(
-                'expressions' => array(
+                'expressions'     => array(
                     'class'       => 'Spiral\\Components\\View\\Processors\\ExpressionProcessor',
                     'expressions' => array(
                         'static' => array(
-                            'pattern'  => '/@\{(?P<name>[a-z0-9_\.\-]+)(?: *\| *(?P<default>[^}]+))?}/i',
+                            'pattern'  => '/@\\{(?P<name>[a-z0-9_\\.\\-]+)(?: *\\| *(?P<default>[^}]+))?}/i',
                             'callback' => array(
                                 'self',
                                 'staticVariable'
@@ -50,16 +50,19 @@ return array(
                         )
                     )
                 ),
-                'i18n'        => array(
+                'i18n'            => array(
                     'class' => 'Spiral\\Components\\View\\Processors\\I18nProcessor'
                 ),
-                'templater'   => array(
+                'templater'       => array(
                     'class' => 'Spiral\\Components\\View\\Processors\\TemplateProcessor'
                 ),
-                'evaluator'   => array(
+                'evaluator'       => array(
                     'class' => 'Spiral\\Components\\View\\Processors\\EvaluateProcessor'
                 ),
-                'prettyPrint' => array(
+                'resourceManager' => array(
+                    'class' => 'Spiral\\Toolkit\\ResourceManager'
+                ),
+                'prettyPrint'     => array(
                     'class' => 'Spiral\\Components\\View\\Processors\\PrettyPrintProcessor'
                 )
             )

@@ -1,42 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>${title}</title>
-    <style>
-        html {
-            height: 90%;
-        }
+<extends:layouts.basic/>
 
-        body {
-            height: 100%;
-            min-height: 100%;
-            margin: 0;
-            color: #595a59;
-            font-family: "Helvetica", sans-serif;
-            font-weight: lighter;
-            font-size: 14px;
-        }
+<block:resources>
+    <import:style path="resources/styles/simple.css"/>
+</block:resources>
 
-        .wrapper {
-            position: relative;
-            top: 10%;
-            transform: translate(50%, -50%);
-            -webkit-transform: translate(50%, 50%);
-            text-align: center;
-            width: 50%;
-        }
-
-        a {
-            color: #5fa4ea;
-        }
-    </style>
-</head>
-<body>
-<namespace path="spiral" name="spiral"/>
-<div class="wrapper">
-    <div class="placeholder">
-        <block:content/>
+<block:body>
+    <div class="wrapper">
+        <div class="placeholder">
+            <block:content/>
+        </div>
     </div>
-</div>
-</body>
-</html>
+</block:body>
