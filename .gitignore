@@ -1,6 +1,5 @@
 *.log
 *.log.old
-application/config/modules.php
 application/runtime/*.php
 application/runtime/cache/*.php
 application/runtime/cache/views/*.php
