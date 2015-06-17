@@ -6,7 +6,7 @@
  * @author    Anton Titov (Wolfy-J)
  * @copyright ©2009-2015
  */
-use Spiral\Components\ORM\Entity;
+use Spiral\Components\ORM\ActiveRecord;
 
 return array(
     'documentation' => directory('runtime') . '/ormClasses.php',
@@ -19,37 +19,37 @@ return array(
         'php:bool'   => array('setter' => 'boolean')
     ),
     'relations'     => array(
-        Entity::BELONGS_TO         => array(
+        ActiveRecord::BELONGS_TO         => array(
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
         ),
-        Entity::BELONGS_TO_MORPHED => array(
+        ActiveRecord::BELONGS_TO_MORPHED => array(
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToMorphedSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
         ),
-        Entity::HAS_ONE            => array(
+        ActiveRecord::HAS_ONE            => array(
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\HasOneSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
         ),
-        Entity::HAS_MANY           => array(
+        ActiveRecord::HAS_MANY           => array(
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\HasManySchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
         ),
-        Entity::MANY_TO_MANY       => array(
+        ActiveRecord::MANY_TO_MANY       => array(
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToManySchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
         ),
-        Entity::MANY_TO_MORPHED    => array(
+        ActiveRecord::MANY_TO_MORPHED    => array(
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToMorphedSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
         ),
-        Entity::MANY_THOUGHT       => array(
+        ActiveRecord::MANY_THOUGHT       => array(
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyThoughtSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'

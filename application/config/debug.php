@@ -7,7 +7,7 @@
 return array(
     'loggers'   => array(
         'containers' => array(
-            \Spiral\Components\Debug\Debugger::getAlias()      => array(
+            \Spiral\Components\Debug\Debugger::class      => array(
                 'error' => array(
                     directory('runtime') . '/logging/errors.log', 20971520
                 ),
@@ -15,7 +15,7 @@ return array(
                     directory('runtime') . '/logging/debug.log', 20971520
                 )
             ),
-            \Spiral\Components\Http\HttpDispatcher::getAlias() => array(
+            \Spiral\Components\Http\HttpDispatcher::class => array(
                 'warning' => array(
                     directory('runtime') . '/logging/httpErrors.log', 2097152
                 )
