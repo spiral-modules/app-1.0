@@ -5,30 +5,52 @@
 return array(
     'servers'    => array(
         'local'     => array(
-            'class'   => 'Spiral\Components\Storage\Servers\Local\LocalServer',
+            'class'   => 'Spiral\Components\Storage\Servers\LocalServer',
             'options' => array()
         ),
         'amazon'    => array(
-            'class'   => 'Spiral\Components\Storage\Servers\Amazon\AmazonS3Server',
+            'class'   => 'Spiral\Components\Storage\Servers\AmazonServer',
             'options' => array(
+                'verify'    => false,
                 'accessKey' => '',
-                'secretKey' => '',
+                'secretKey' => ''
             )
         ),
         'rackspace' => array(
-            'class'   => 'Spiral\Components\Storage\Servers\Rackspace\RackspaceCloudServer',
+            'class'   => 'Spiral\Components\Storage\Servers\RackspaceServer',
             'options' => array(
-                'username'  => '',
-                'accessKey' => '',
+                'verify'   => false,
+                'username' => '',
+                'apiKey'   => ''
             )
         ),
         'ftp'       => array(
-            'class'   => 'Spiral\Components\Storage\Servers\Ftp\FtpServer',
+            'class'   => 'Spiral\Components\Storage\Servers\FtpServer',
             'options' => array(
-                'server'   => '127.0.0.1',
+                'host'     => '127.0.0.1',
                 'login'    => '',
                 'password' => '',
-                'home'     => '',
+                'home'     => '/home'
+            )
+        ),
+        'sftp'      => array(
+            'class'   => 'Spiral\Components\Storage\Servers\SftpServer',
+            'options' => array(
+                'host'       => '127.0.0.1',
+                'home'       => '/home',
+
+                //pubkey, password, none
+                'authMethod' => 'pubkey',
+                'username'   => 'lachezis',
+                'password'   => '',
+                'publicKey'  => 'PUB KEY LOCATION',
+                'privateKey' => 'PRIV KEY LOCATION'
+            )
+        ),
+        'gridFs'    => array(
+            'class'   => 'Spiral\Components\Storage\Servers\GridfsServer',
+            'options' => array(
+                'database' => 'default'
             )
         )
     ),
@@ -42,17 +64,17 @@ return array(
         ),
         'amazon'    => array(
             'server'  => 'amazon',
-            'prefix'  => 'https://s3.amazonaws.com/bucket-name/',
+            'prefix'  => 'https://s3.amazonaws.com/spiral/',
             'options' => array(
                 'public' => true,
-                'bucket' => 'bucket-name'
+                'bucket' => 'spiral'
             )
         ),
         'rackspace' => array(
             'server'  => 'rackspace',
             'prefix'  => 'rackspace:',
             'options' => array(
-                'container' => 'spiral',
+                'container' => 'container-name',
                 'region'    => 'ORD'
             )
         ),
@@ -60,8 +82,23 @@ return array(
             'server'  => 'ftp',
             'prefix'  => 'ftp:',
             'options' => array(
-                'folder' => '/',
+                'folder' => 'remote-folder',
                 'mode'   => \Spiral\Components\Files\FileManager::RUNTIME
+            )
+        ),
+        'sftp'      => array(
+            'server'  => 'sftp',
+            'prefix'  => 'sftp:',
+            'options' => array(
+                'folder' => 'remote-folder',
+                'mode'   => \Spiral\Components\Files\FileManager::RUNTIME
+            )
+        ),
+        'gridfs'    => array(
+            'server'  => 'gridfs',
+            'prefix'  => 'gridfs:',
+            'options' => array(
+                'collection' => 'files'
             )
         )
     )
