@@ -10,10 +10,10 @@ return array(
         'spiral'   => array(
             directory("application") . '/views/spiral/',
             directory("framework") . '/views/',
-            directory("libraries") . '/spiral/toolkit/views/'
+            directory("libraries") . '/spiral/toolkit/source/views/'
         ),
         'profiler' => array(
-            directory("libraries") . '/spiral/profiler/views/'
+            directory("libraries") . '/spiral/profiler/source/views/'
         )
     ),
     'caching'         => array(
