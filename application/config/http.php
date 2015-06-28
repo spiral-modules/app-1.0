@@ -6,18 +6,10 @@
  * @author    Anton Titov (Wolfy-J)
  * @copyright ©2009-2015
  */
-/**
- * Spiral Framework.
- *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
- */
 return array(
     'basePath'     => '/',
     'exposeErrors' => true,
     'cookies'      => array(
-        'path'   => '/',
         'domain' => '.%s',
         'method' => 'mac'
     ),
@@ -41,7 +33,9 @@ return array(
             'defaults'    => array(
                 'controller' => 'home'
             ),
-            'controllers' => array()
+            'controllers' => array(
+                'index' => 'Controllers\HomeController'
+            )
         )
     ),
     'httpErrors'   => array(
