@@ -3,12 +3,7 @@
 
 Sample Spiral Framework application. https://twitter.com/spiralphp
 
-Use `./spiral.cli` or `spiral.cli.bat` to get list of console commands. No http dispatcher presented,
-all requests will be routed to HomeController->index().
+Use `./spiral` or `spiral` (Windows) to get list of console commands. Options `-v` and `-vv` used to get more details.
 
-Use `-v` and `-vv` to get more details.
-
-To create new spiral application use:
-`composer create-project spiral/application directory dev-master`
-
-Update `spiral.cli` permissions to use short cli enterpoint.
+To create new spiral application execute: `composer create-project spiral/application directory dev-master`
+> Your might to update `spiral` permissions to use short cli enterpoint.
