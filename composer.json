@@ -12,7 +12,8 @@
   "require": {
     "spiral/framework": "dev-master",
     "spiral/profiler": "dev-master",
-    "spiral/toolkit": "dev-master"
+    "spiral/toolkit": "dev-master",
+    "spiral/intervention-image": "dev-master"
   },
   "scripts": {
     "post-install-cmd": [
