@@ -2,35 +2,35 @@
 /**
  * Cache configuration.
  */
-return array(
+return [
     'store'  => 'memcache',
-    'stores' => array(
-        'file'     => array(
+    'stores' => [
+        'file'     => [
             'class'     => 'Spiral\Components\Cache\Stores\FileStore',
             'directory' => directory('cache'),
             'extension' => 'cache'
-        ),
-        'xcache'   => array(
+        ],
+        'xcache'   => [
             'class'  => 'Spiral\Components\Cache\Stores\XcacheStore',
             'prefix' => 'spiral'
-        ),
-        'memcache' => array(
+        ],
+        'memcache' => [
             'class'   => 'Spiral\Components\Cache\Stores\MemcacheStore',
             'prefix'  => 'spiral',
-            'options' => array(),
-            'servers' => array(
-                array(
+            'options' => [],
+            'servers' => [
+                [
                     'host'       => 'localhost',
                     'port'       => 11211,
                     'persistent' => true
-                )
-            )
-        ),
-        'redis'    => array(
+                ]
+            ]
+        ],
+        'redis'    => [
             'class'   => 'Spiral\Components\Cache\Stores\RedisStore',
             'enabled' => true,
             'client'  => 'default',
             'prefix'  => 'spiral'
-        )
-    )
-);
+        ]
+    ]
+];

@@ -6,21 +6,21 @@
  * @author    Anton Titov (Wolfy-J)
  * @copyright ©2009-2015
  */
-return array(
+return [
     'lifetime' => 86400,
     'handler'  => 'file',
-    'handlers' => array(
-        'null'  => array(
+    'handlers' => [
+        'null'  => [
             'class' => 'Spiral\Components\Session\Handlers\NullHandler'
-        ),
-        'file'  => array(
+        ],
+        'file'  => [
             'class'     => 'Spiral\Components\Session\Handlers\FileHandler',
             'directory' => directory('runtime') . '/session'
-        ),
-        'cache' => array(
+        ],
+        'cache' => [
             'class'  => 'Spiral\Components\Session\Handlers\CacheHandler',
             'store'  => 'memcache',
             'prefix' => 'session'
-        )
-    )
-);
+        ]
+    ]
+];

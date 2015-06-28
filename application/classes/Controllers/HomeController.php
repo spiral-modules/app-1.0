@@ -30,12 +30,12 @@ class HomeController extends Controller
      */
     public function json()
     {
-        return array(
+        return [
             'status' => 200,
             'data'   => [
                 1, 2, 3, 4, 5, 6, 7,
             ]
-        );
+        ];
     }
 
     /**

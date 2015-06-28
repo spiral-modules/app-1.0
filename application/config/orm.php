@@ -8,51 +8,51 @@
  */
 use Spiral\Components\ORM\ActiveRecord;
 
-return array(
+return [
     'documentation' => directory('runtime') . '/ormClasses.php',
-    'mutators'      => array(
-        'timestamp'  => array('accessor' => 'Spiral\Components\ORM\Accessors\Timestamp'),
-        'datetime'   => array('accessor' => 'Spiral\Components\ORM\Accessors\Timestamp'),
-        'php:int'    => array('setter' => 'intval'),
-        'php:float'  => array('setter' => 'floatval'),
-        'php:string' => array('setter' => 'string'),
-        'php:bool'   => array('setter' => 'boolean')
-    ),
-    'relations'     => array(
-        ActiveRecord::BELONGS_TO         => array(
+    'mutators'      => [
+        'timestamp'  => ['accessor' => 'Spiral\Components\ORM\Accessors\Timestamp'],
+        'datetime'   => ['accessor' => 'Spiral\Components\ORM\Accessors\Timestamp'],
+        'php:int'    => ['setter' => 'intval'],
+        'php:float'  => ['setter' => 'floatval'],
+        'php:string' => ['setter' => 'string'],
+        'php:bool'   => ['setter' => 'boolean']
+    ],
+    'relations'     => [
+        ActiveRecord::BELONGS_TO         => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ),
-        ActiveRecord::BELONGS_TO_MORPHED => array(
+        ],
+        ActiveRecord::BELONGS_TO_MORPHED => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToMorphedSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ),
-        ActiveRecord::HAS_ONE            => array(
+        ],
+        ActiveRecord::HAS_ONE            => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\HasOneSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ),
-        ActiveRecord::HAS_MANY           => array(
+        ],
+        ActiveRecord::HAS_MANY           => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\HasManySchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ),
-        ActiveRecord::MANY_TO_MANY       => array(
+        ],
+        ActiveRecord::MANY_TO_MANY       => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToManySchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ),
-        ActiveRecord::MANY_TO_MORPHED    => array(
+        ],
+        ActiveRecord::MANY_TO_MORPHED    => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToMorphedSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ),
-        ActiveRecord::MANY_THOUGHT       => array(
+        ],
+        ActiveRecord::MANY_THOUGHT       => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyThoughtSchema',
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ),
-    )
-);
+        ],
+    ]
+];

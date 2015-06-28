@@ -1,18 +1,18 @@
 <?php
-return array(
-    'spiral/profiler'           => array(
+return [
+    'spiral/profiler'           => [
         'class'     => 'Spiral\\Profiler\\Profiler',
         'bootstrap' => false,
-        'bindings'  => array()
-    ),
-    'spiral/toolkit'            => array(
+        'bindings'  => []
+    ],
+    'spiral/toolkit'            => [
         'class'     => 'Spiral\\Toolkit\\Toolkit',
         'bootstrap' => false,
-        'bindings'  => array()
-    ),
-    'spiral/intervention-image' => array(
+        'bindings'  => []
+    ],
+    'spiral/intervention-image' => [
         'class'     => 'Spiral\\Components\\Image\\ImageManager',
         'bootstrap' => false,
-        'bindings'  => array()
-    )
-);
+        'bindings'  => []
+    ]
+];

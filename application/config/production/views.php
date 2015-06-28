@@ -2,9 +2,9 @@
 /**
  * View component configuration.
  */
-return array(
-    'caching' => array(
-        'enabled' => true,
-        'directory'  => directory("cache") . '/views/'
-    )
-);
+return [
+    'caching' => [
+        'enabled'   => true,
+        'directory' => directory("cache") . '/views/'
+    ]
+];

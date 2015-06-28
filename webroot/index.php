@@ -30,4 +30,4 @@ $application = dirname(__DIR__) . '/application';
 require $libraries . '/autoload.php';
 
 //Starting
-Application::init(array('root' => __DIR__, 'libraries' => $libraries, 'application' => $application))->start();
+Application::init(['root' => __DIR__, 'libraries' => $libraries, 'application' => $application])->start();

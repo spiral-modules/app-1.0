@@ -6,31 +6,31 @@
  * @author    Anton Titov (Wolfy-J)
  * @copyright ©2009-2015
  */
-return array(
-    'databases'     => array(
-        'default' => array(
+return [
+    'databases'     => [
+        'default' => [
             'server'   => 'mongodb://localhost:27017',
             'database' => 'spiral',
-            'options'  => array(
+            'options'  => [
                 'connect' => true
-            )
-        )
-    ),
-    'aliases'       => array(
+            ]
+        ]
+    ],
+    'aliases'       => [
         'database' => 'default',
         'db'       => 'default',
         'mongo'    => 'default'
-    ),
+    ],
     'documentation' => directory('runtime') . '/odmClasses.php',
-    'mutators'      => array(
-        'int'           => array('setter' => 'intval'),
-        'float'         => array('setter' => 'floatval'),
-        'string'        => array('setter' => 'string'),
-        'bool'          => array('setter' => 'boolean'),
-        'MongoId'       => array('setter' => 'mongoID'),
-        'array'         => array('accessor' => 'Spiral\Components\ODM\Accessors\ScalarArray'),
-        'MongoDate'     => array('accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'),
-        'timestamp'     => array('accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'),
-        'storageObject' => array('accessor' => 'Spiral\Components\ODM\Accessors\StorageAccessor')
-    ),
-);
+    'mutators'      => [
+        'int'           => ['setter' => 'intval'],
+        'float'         => ['setter' => 'floatval'],
+        'string'        => ['setter' => 'string'],
+        'bool'          => ['setter' => 'boolean'],
+        'MongoId'       => ['setter' => 'mongoID'],
+        'array'         => ['accessor' => 'Spiral\Components\ODM\Accessors\ScalarArray'],
+        'MongoDate'     => ['accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'],
+        'timestamp'     => ['accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'],
+        'storageObject' => ['accessor' => 'Spiral\Components\ODM\Accessors\StorageAccessor']
+    ],
+];

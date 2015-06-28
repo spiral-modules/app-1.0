@@ -2,40 +2,40 @@
 /**
  * Storages and containers.
  */
-return array(
-    'servers'    => array(
-        'local'     => array(
+return [
+    'servers'    => [
+        'local'     => [
             'class'   => 'Spiral\Components\Storage\Servers\LocalServer',
-            'options' => array()
-        ),
-        'amazon'    => array(
+            'options' => []
+        ],
+        'amazon'    => [
             'class'   => 'Spiral\Components\Storage\Servers\AmazonServer',
-            'options' => array(
+            'options' => [
                 'verify'    => false,
                 'accessKey' => '',
                 'secretKey' => ''
-            )
-        ),
-        'rackspace' => array(
+            ]
+        ],
+        'rackspace' => [
             'class'   => 'Spiral\Components\Storage\Servers\RackspaceServer',
-            'options' => array(
+            'options' => [
                 'verify'   => false,
                 'username' => '',
                 'apiKey'   => ''
-            )
-        ),
-        'ftp'       => array(
+            ]
+        ],
+        'ftp'       => [
             'class'   => 'Spiral\Components\Storage\Servers\FtpServer',
-            'options' => array(
+            'options' => [
                 'host'     => '127.0.0.1',
                 'login'    => '',
                 'password' => '',
                 'home'     => '/home'
-            )
-        ),
-        'sftp'      => array(
+            ]
+        ],
+        'sftp'      => [
             'class'   => 'Spiral\Components\Storage\Servers\SftpServer',
-            'options' => array(
+            'options' => [
                 'host'       => '127.0.0.1',
                 'home'       => '/home',
 
@@ -45,61 +45,61 @@ return array(
                 'password'   => '',
                 'publicKey'  => 'PUB KEY LOCATION',
                 'privateKey' => 'PRIV KEY LOCATION'
-            )
-        ),
-        'gridFs'    => array(
+            ]
+        ],
+        'gridFs'    => [
             'class'   => 'Spiral\Components\Storage\Servers\GridfsServer',
-            'options' => array(
+            'options' => [
                 'database' => 'default'
-            )
-        )
-    ),
-    'containers' => array(
-        'local'     => array(
+            ]
+        ]
+    ],
+    'containers' => [
+        'local'     => [
             'server'  => 'local',
             'prefix'  => 'local:',
-            'options' => array(
+            'options' => [
                 'folder' => directory('runtime') . '/storage/'
-            )
-        ),
-        'amazon'    => array(
+            ]
+        ],
+        'amazon'    => [
             'server'  => 'amazon',
             'prefix'  => 'https://s3.amazonaws.com/spiral/',
-            'options' => array(
+            'options' => [
                 'public' => true,
                 'bucket' => 'spiral'
-            )
-        ),
-        'rackspace' => array(
+            ]
+        ],
+        'rackspace' => [
             'server'  => 'rackspace',
             'prefix'  => 'rackspace:',
-            'options' => array(
+            'options' => [
                 'container' => 'container-name',
                 'region'    => 'ORD'
-            )
-        ),
-        'ftp'       => array(
+            ]
+        ],
+        'ftp'       => [
             'server'  => 'ftp',
             'prefix'  => 'ftp:',
-            'options' => array(
+            'options' => [
                 'folder' => 'remote-folder',
                 'mode'   => \Spiral\Components\Files\FileManager::RUNTIME
-            )
-        ),
-        'sftp'      => array(
+            ]
+        ],
+        'sftp'      => [
             'server'  => 'sftp',
             'prefix'  => 'sftp:',
-            'options' => array(
+            'options' => [
                 'folder' => 'remote-folder',
                 'mode'   => \Spiral\Components\Files\FileManager::RUNTIME
-            )
-        ),
-        'gridfs'    => array(
+            ]
+        ],
+        'gridfs'    => [
             'server'  => 'gridfs',
             'prefix'  => 'gridfs:',
-            'options' => array(
+            'options' => [
                 'collection' => 'files'
-            )
-        )
-    )
-);
+            ]
+        ]
+    ]
+];

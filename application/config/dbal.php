@@ -1,53 +1,53 @@
 <?php
 
-return array(
-    'databases'  => array(
-        'mysql'     => array(
+return [
+    'databases'  => [
+        'mysql'     => [
             'connection'  => 'mysql:host=localhost;dbname=spiral',
             'tablePrefix' => '',
             'username'    => 'root',
             'password'    => 'root',
-            'options'     => array()
-        ),
-        'postgres'  => array(
+            'options'     => []
+        ],
+        'postgres'  => [
             'connection'  => 'pgsql:host=localhost;dbname=spiral',
             'tablePrefix' => '',
             'username'    => 'postgres',
             'password'    => '',
-            'options'     => array()
-        ),
-        'sqlite'    => array(
+            'options'     => []
+        ],
+        'sqlite'    => [
             'connection'  => 'sqlite::memory:',
             'tablePrefix' => '',
             'username'    => 'postgres',
             'password'    => '',
-            'options'     => array()
-        ),
-        'sqlServer' => array(
+            'options'     => []
+        ],
+        'sqlServer' => [
             'connection'  => 'sqlsrv:Server=SPIRAL\SQLEXPRESS;Database=spiral',
             'tablePrefix' => '',
             'username'    => null,
             'password'    => null,
-            'options'     => array()
-        )
-    ),
-    'drivers'    => array(
+            'options'     => []
+        ]
+    ],
+    'drivers'    => [
         'mysql'  => 'Spiral\Components\DBAL\Drivers\MySql\MySqlDriver',
         'pgsql'  => 'Spiral\Components\DBAL\Drivers\Postgres\PostgresDriver',
         'sqlite' => 'Spiral\Components\DBAL\Drivers\Sqlite\SqliteDriver',
         'sqlsrv' => 'Spiral\Components\DBAL\Drivers\SqlServer\SqlServerDriver'
-    ),
-    'aliases'    => array(
+    ],
+    'aliases'    => [
         'default'  => 'mysql',
         'database' => 'mysql',
         'db'       => 'mysql'
-    ),
-    'migrations' => array(
+    ],
+    'migrations' => [
         'migrator'         => 'Spiral\Components\DBAL\Migrations\Migrator',
         'directory'        => directory('application') . '/migrations',
         'table'            => 'migrations',
-        'safeEnvironments' => array(
+        'safeEnvironments' => [
             'development', 'staging', 'local'
-        )
-    )
-);
+        ]
+    ]
+];

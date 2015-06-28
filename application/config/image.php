@@ -2,6 +2,6 @@
 /**
  * Image configuration defines what driver to be used for image processing.
  */
-return array(
+return [
     'driver' => 'imagick'
-);
+];

@@ -2,78 +2,78 @@
 /**
  * View component configuration.
  */
-return array(
-    'namespaces'      => array(
-        'default'  => array(
+return [
+    'namespaces'      => [
+        'default'  => [
             directory("application") . '/views/'
-        ),
-        'spiral'   => array(
+        ],
+        'spiral'   => [
             directory("application") . '/views/spiral/',
             directory("framework") . '/views/',
             directory("libraries") . '/spiral/toolkit/source/views/'
-        ),
-        'profiler' => array(
+        ],
+        'profiler' => [
             directory("libraries") . '/spiral/profiler/source/views/'
-        )
-    ),
-    'caching'         => array(
+        ]
+    ],
+    'caching'         => [
         'enabled'   => true,
         'directory' => directory("cache") . '/views/'
-    ),
-    'staticVariables' => array(
-        'language' => array(
+    ],
+    'staticVariables' => [
+        'language' => [
             'Spiral\\Components\\I18n\\Translator',
             'getLanguage'
-        ),
-        'basePath' => array(
+        ],
+        'basePath' => [
             'Spiral\\Components\\Http\\HttpDispatcher',
             'getBasePath'
-        )
-    ),
-    'engines'         => array(
-        'default' => array(
-            'extensions' => array(
+        ]
+    ],
+    'engines'         => [
+        'default' => [
+            'extensions' => [
                 'php'
-            ),
+            ],
             'compiler'   => 'Spiral\\Components\\View\\LayeredCompiler',
             'view'       => 'Spiral\\Components\\View\\View',
-            'processors' => array(
-                'expressions'     => array(
+            'processors' => [
+                'expressions'     => [
                     'class'       => 'Spiral\\Components\\View\\Processors\\ExpressionProcessor',
-                    'expressions' => array(
-                        'static' => array(
+                    'expressions' => [
+                        'static' => [
                             'pattern'  => '/@\\{(?P<name>[a-z0-9_\\.\\-]+)(?: *\\| *(?P<default>[^}]+))?}/i',
-                            'callback' => array(
+                            'callback' => [
                                 'self',
                                 'staticVariable'
-                            )
-                        )
-                    )
-                ),
-                'i18n'            => array(
+                            ]
+                        ]
+                    ]
+                ],
+                'i18n'            => [
                     'class' => 'Spiral\\Components\\View\\Processors\\I18nProcessor'
-                ),
-                'templater'       => array(
+                ],
+                'templater'       => [
                     'class' => 'Spiral\\Components\\View\\Processors\\TemplateProcessor'
-                ),
-                'evaluator'       => array(
+                ],
+                'evaluator'       => [
                     'class' => 'Spiral\\Components\\View\\Processors\\EvaluateProcessor'
-                ),
-                'resourceManager' => array(
+                ],
+                'resourceManager' => [
                     'class' => 'Spiral\\Toolkit\\ResourceManager'
-                ),
-                'prettyPrint'     => array(
+                ],
+                'prettyPrint'     => [
                     'class' => 'Spiral\\Components\\View\\Processors\\PrettyPrintProcessor'
-                )
-            )
-        ),
-        'plain'   => array(
-            'extensions' => array(
+                ]
+            ]
+        ],
+        'plain'   => [
+            'extensions' => [
                 'html',
                 'template'
-            ),
+            ],
             'compiler'   => false,
             'view'       => 'Spiral\\Components\\View\\View'
-        )
-    )
-);
+        ]
+    ]
+];
