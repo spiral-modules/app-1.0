@@ -27,7 +27,7 @@ return [
     'router'       => [
         'class'        => 'Spiral\Components\Http\Router\Router',
         'primaryRoute' => [
-            'pattern'     => '(<controller>(/<action>(/<id>)))',
+            'pattern'     => '[<controller>[/<action>[/<id>]]]',
             'namespace'   => 'Controllers',
             'postfix'     => 'Controller',
             'defaults'    => [
