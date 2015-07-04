@@ -20,14 +20,14 @@ return [
     ],
     'relations'     => [
         ActiveRecord::BELONGS_TO         => [
-            'class'  => 'Spiral\Components\ORM\Relations\HasOne',
+            'class'  => 'Spiral\Components\ORM\Relations\BelongsTo',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToSchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
+            'loader' => 'Spiral\Components\ORM\Selector\Loaders\BelongsToLoader'
         ],
         ActiveRecord::BELONGS_TO_MORPHED => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToMorphedSchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
+            'loader' => null
         ],
         ActiveRecord::HAS_ONE            => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
@@ -35,24 +35,19 @@ return [
             'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
         ],
         ActiveRecord::HAS_MANY           => [
-            'class'  => 'Spiral\Components\ORM\Relations\HasOne',
+            'class'  => 'Spiral\Components\ORM\Relations\HasMany',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\HasManySchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
+            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasManyLoader'
         ],
         ActiveRecord::MANY_TO_MANY       => [
-            'class'  => 'Spiral\Components\ORM\Relations\HasOne',
+            'class'  => 'Spiral\Components\ORM\Relations\ManyToMany',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToManySchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
+            'loader' => 'Spiral\Components\ORM\Selector\Loaders\ManyToManyLoader'
         ],
         ActiveRecord::MANY_TO_MORPHED    => [
-            'class'  => 'Spiral\Components\ORM\Relations\HasOne',
+            'class'  => 'Spiral\Components\ORM\Relations\ManyToMorphed',
             'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToMorphedSchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ],
-        ActiveRecord::MANY_THOUGHT       => [
-            'class'  => 'Spiral\Components\ORM\Relations\HasOne',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyThoughtSchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
-        ],
+            'loader' => null
+        ]
     ]
 ];
