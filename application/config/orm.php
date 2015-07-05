@@ -11,8 +11,8 @@ use Spiral\Components\ORM\ActiveRecord;
 return [
     'documentation' => directory('runtime') . '/ormClasses.php',
     'mutators'      => [
-        'timestamp'  => ['accessor' => 'Spiral\Components\ORM\Accessors\Timestamp'],
-        'datetime'   => ['accessor' => 'Spiral\Components\ORM\Accessors\Timestamp'],
+        'timestamp'  => ['accessor' => 'Spiral\Components\ORM\Accessors\ORMTimestamp'],
+        'datetime'   => ['accessor' => 'Spiral\Components\ORM\Accessors\ORMTimestamp'],
         'php:int'    => ['setter' => 'intval'],
         'php:float'  => ['setter' => 'floatval'],
         'php:string' => ['setter' => 'string'],
@@ -26,8 +26,7 @@ return [
         ],
         ActiveRecord::BELONGS_TO_MORPHED => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToMorphedSchema',
-            'loader' => null
+            'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToMorphedSchema'
         ],
         ActiveRecord::HAS_ONE            => [
             'class'  => 'Spiral\Components\ORM\Relations\HasOne',
@@ -46,8 +45,7 @@ return [
         ],
         ActiveRecord::MANY_TO_MORPHED    => [
             'class'  => 'Spiral\Components\ORM\Relations\ManyToMorphed',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToMorphedSchema',
-            'loader' => null
+            'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToMorphedSchema'
         ]
     ]
 ];

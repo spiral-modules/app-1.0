@@ -23,14 +23,14 @@ return [
     ],
     'documentation' => directory('runtime') . '/odmClasses.php',
     'mutators'      => [
-        'int'           => ['setter' => 'intval'],
-        'float'         => ['setter' => 'floatval'],
-        'string'        => ['setter' => 'string'],
-        'bool'          => ['setter' => 'boolean'],
-        'MongoId'       => ['setter' => 'mongoID'],
-        'array'         => ['accessor' => 'Spiral\Components\ODM\Accessors\ScalarArray'],
-        'MongoDate'     => ['accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'],
-        'timestamp'     => ['accessor' => 'Spiral\Components\ODM\Accessors\Timestamp'],
-        'storageObject' => ['accessor' => 'Spiral\Components\ODM\Accessors\StorageAccessor']
+        'int'       => ['setter' => 'intval'],
+        'float'     => ['setter' => 'floatval'],
+        'string'    => ['setter' => 'string'],
+        'bool'      => ['setter' => 'boolean'],
+        'MongoId'   => ['setter' => 'mongoID'],
+        'array'     => ['accessor' => 'Spiral\Components\ODM\Accessors\ScalarArray'],
+        'MongoDate' => ['accessor' => 'Spiral\Components\ODM\Accessors\ODMTimestamp'],
+        'timestamp' => ['accessor' => 'Spiral\Components\ODM\Accessors\ODMTimestamp'],
+        'storage'   => ['accessor' => 'Spiral\Components\ODM\Accessors\ODMStorageAccessor']
     ],
 ];
