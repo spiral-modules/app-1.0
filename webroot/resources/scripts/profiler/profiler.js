@@ -95,6 +95,7 @@ function init() {
     arguments.callee.done = true;
     profilerPanels();
     otherActions();
+    initTabs();
 }
 
 function otherActions() {
@@ -167,3 +168,68 @@ if (/WebKit/i.test(navigator.userAgent)) {
 
 // others
 window.onload = init;
+
+// tabs
+var tabLinks = new Array();
+var contentDivs = new Array();
+
+function initTabs() {
+    var tabListItems = document.getElementById('profiler-tabs').childNodes;
+
+    for (var i = 0; i < tabListItems.length; i++) {
+        if (tabListItems[i].nodeName == "LI") {
+            var tabLink = getFirstChildWithTagName(tabListItems[i], 'A');
+
+            if (typeof(tabLink) !== 'undefined') {
+                var id = getHash(tabLink.getAttribute('href'));
+                tabLinks[id] = tabLink;
+                contentDivs[id] = document.getElementById(id);
+            }
+        }
+    }
+
+    var i = 0;
+
+    for (var id in tabLinks) {
+        tabLinks[id].onclick = showTab;
+        tabLinks[id].onfocus = function () {
+            this.blur()
+        };
+        if (i == 0) tabLinks[id].className = 'selected';
+        i++;
+    }
+
+    var i = 0;
+
+    for (var id in contentDivs) {
+        if (i != 0) contentDivs[id].className = 'tab-block hide';
+        i++;
+    }
+}
+
+function showTab() {
+    var selectedId = getHash(this.getAttribute('href'));
+
+    for (var id in contentDivs) {
+        if (id == selectedId) {
+            tabLinks[id].className = 'selected';
+            contentDivs[id].className = 'tab-block';
+        } else {
+            tabLinks[id].className = '';
+            contentDivs[id].className = 'tab-block hide';
+        }
+    }
+
+    return false;
+}
+
+function getFirstChildWithTagName(element, tagName) {
+    for (var i = 0; i < element.childNodes.length; i++) {
+        if (element.childNodes[i].nodeName == tagName) return element.childNodes[i];
+    }
+}
+
+function getHash(url) {
+    var hashPos = url.lastIndexOf('#');
+    return url.substring(hashPos + 1);
+}

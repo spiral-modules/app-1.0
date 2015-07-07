@@ -12,6 +12,9 @@
 @spiral-red: #d33535;
 @spiral-yellow: #ffd964;
 
+// Values
+@narrowScreen : ~"screen and (max-width: 1200px)";
+
 .profiler {
   font-family: 'Helvetica', sans-serif;
   color: @spiral-dark;
@@ -41,6 +44,39 @@
   table {
     border-collapse: collapse;
     border-spacing: 0;
+    margin-bottom: 20px;
+
+    td {
+      word-break: break-all;
+      vertical-align: top;
+
+      &.nowrap {
+        white-space: nowrap;
+        word-break: normal;
+      }
+    }
+  }
+
+  .narrow-col {
+    width: 40%;
+    float: left;
+
+    @media @narrowScreen {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  .wide-col {
+    width: 60%;
+    float: left;
+    padding-left: 10px;
+
+    @media @narrowScreen {
+      width: 100%;
+      float: none;
+      padding-left: 0;
+    }
   }
 
   .spiral-link {
@@ -563,6 +599,57 @@
 
   .text-small {
     font-size: 10px;
+  }
+
+  .tabs-block {
+    .clearfix();
+
+    .tab-navigation {
+      float: left;
+      width: 20%;
+
+      ul {
+        margin: 0 0 20px;
+        padding: 0;
+      }
+
+      li {
+        display: block;
+        margin-bottom: 10px;
+
+        a {
+          text-decoration: none;
+          display: block;
+          padding: 7px 10px 8px;
+          color: @spiral-dark;
+          border-bottom: 1px solid #efefef;
+
+          &.selected {
+            font-weight: bold;
+            color: @spiral-blue;
+            pointer-events: none;
+          }
+
+          &:hover {
+            background: @spiral-light-grey;
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      width: 80%;
+      float: left;
+      padding-left: 20px;
+    }
+
+    .tab-block {
+      overflow: auto;
+
+      &.hide {
+        display: none;
+      }
+    }
   }
 }
 
