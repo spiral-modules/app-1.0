@@ -20,7 +20,7 @@ return [
         'enabled'   => true,
         'directory' => directory("cache") . '/views/'
     ],
-    'staticVariables' => [
+    'dependencies' => [
         'language' => [
             'Spiral\\Components\\I18n\\Translator',
             'getLanguage'
@@ -30,41 +30,20 @@ return [
             'getBasePath'
         ]
     ],
-    'engines'         => [
+    'engines'      => [
         'default' => [
             'extensions' => [
                 'php'
             ],
-            'compiler'   => 'Spiral\\Components\\View\\LayeredCompiler',
+            'compiler'   => 'Spiral\\Components\\View\\Compiler\\Compiler',
             'view'       => 'Spiral\\Components\\View\\View',
             'processors' => [
-                'expressions'     => [
-                    'class'       => 'Spiral\\Components\\View\\Processors\\ExpressionProcessor',
-                    'expressions' => [
-                        'static' => [
-                            'pattern'  => '/@\\{(?P<name>[a-z0-9_\\.\\-]+)(?: *\\| *(?P<default>[^}]+))?}/i',
-                            'callback' => [
-                                'self',
-                                'staticVariable'
-                            ]
-                        ]
-                    ]
-                ],
-                'i18n'            => [
-                    'class' => 'Spiral\\Components\\View\\Processors\\I18nProcessor'
-                ],
-                'templater'       => [
-                    'class' => 'Spiral\\Components\\View\\Processors\\TemplateProcessor'
-                ],
-                'evaluator'       => [
-                    'class' => 'Spiral\\Components\\View\\Processors\\EvaluateProcessor'
-                ],
-                'resourceManager' => [
-                    'class' => 'Spiral\\Toolkit\\ResourceManager'
-                ],
-                'prettyPrint'     => [
-                    'class' => 'Spiral\\Components\\View\\Processors\\PrettyPrintProcessor'
-                ]
+                'Spiral\\Components\\View\\Compiler\\Processors\\ExpressionsProcessor' => [],
+                'Spiral\\Components\\View\\Compiler\\Processors\\I18nProcessor'        => [],
+                'Spiral\\Components\\View\\Compiler\\Processors\\TemplateProcessor'    => [],
+                'Spiral\\Components\\View\\Compiler\\Processors\\EvaluateProcessor'    => [],
+                'Spiral\\Toolkit\\ResourceManager'                                     => [],
+                'Spiral\\Components\\View\\Compiler\\Processors\\PrettyProcessor'      => []
             ]
         ],
         'plain'   => [

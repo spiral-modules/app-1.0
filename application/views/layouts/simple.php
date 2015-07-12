@@ -1,13 +1,13 @@
 <extends:layouts.basic/>
 
 <block:resources>
-    <import:style path="resources/styles/simple.css"/>
+    <asset:style path="resources/styles/simple.css"/>
 </block:resources>
 
 <block:body>
     <div class="wrapper">
         <div class="placeholder">
-            <block:content/>
+            ${content}
         </div>
     </div>
 </block:body>

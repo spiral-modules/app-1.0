@@ -1,26 +1,18 @@
+<use bundle="spiral:bundle"/>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <namespace path="spiral" name="spiral"/>
-    <namespace path="spiral:import" name="import"/>
     <title>
-        <block:basic.title>
-            ${title}
-        </block:basic.title>
+        ${title}
     </title>
-    <block:basic.head>
-        ${head}
+    <block:head>
         ${resources}
         <!--[STYLES]-->
-    </block:basic.head>
+    </block:head>
 </head>
 <body>
-<block:basic.body>
-    ${body}
-    <!--[SCRIPTS]-->
-    <block:basic.footer>
-        ${footer}
-    </block:basic.footer>
-</block:basic.body>
+${body}
+<!--[SCRIPTS]-->
 </body>
 </html>
