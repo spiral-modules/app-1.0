@@ -3,7 +3,7 @@
  * View component configuration.
  */
 return [
-    'namespaces'      => [
+    'namespaces'   => [
         'default'  => [
             directory("application") . '/views/'
         ],
@@ -16,7 +16,7 @@ return [
             directory("libraries") . '/spiral/profiler/source/views/'
         ]
     ],
-    'caching'         => [
+    'caching'      => [
         'enabled'   => true,
         'directory' => directory("cache") . '/views/'
     ],
@@ -43,7 +43,7 @@ return [
                 'Spiral\\Components\\View\\Compiler\\Processors\\TemplateProcessor'    => [],
                 'Spiral\\Components\\View\\Compiler\\Processors\\EvaluateProcessor'    => [],
                 'Spiral\\Toolkit\\ResourceManager'                                     => [],
-                'Spiral\\Components\\View\\Compiler\\Processors\\PrettyProcessor'      => []
+                'Spiral\\Components\\View\\Compiler\\Processors\\PrettifyProcessor'    => []
             ]
         ],
         'plain'   => [
