@@ -3,7 +3,7 @@
 <block:content>
     <img src="@{basePath}resources/images/spiral.svg" width="120px"/>
 
-    <spiral:markdown>#Welcome To Spiral</spiral:markdown>
+    <h2>Welcome To Spiral</h2>
 
     <a href="${git}/application">GitHub</a> |
     <a href="${git}/documentation">Documentation (unfinished)</a>

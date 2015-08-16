@@ -1,5 +1,3 @@
-<templater:use bundle="spiral:bundle"/>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +10,7 @@
     </block:head>
 </head>
 <body>
-${body}
+<yield:body/>
 <!--[SCRIPTS]-->
 </body>
 </html>

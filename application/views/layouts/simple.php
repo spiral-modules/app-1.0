@@ -1,7 +1,7 @@
 <extends:layouts.basic/>
 
 <block:resources>
-    <asset:style path="resources/styles/simple.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/styles/simple.css"/>
 </block:resources>
 
 <block:body>
