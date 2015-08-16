@@ -13,7 +13,7 @@ return [
     'default'   => 'default',
     'databases' => [
         'mysql'     => [
-            'connection'  => 'mysql:host=localhost;dbname=demo',
+            'connection'  => 'mysql:host=localhost;dbname=spiral',
             'profiling'   => true,
             'tablePrefix' => '',
             'username'    => 'root',
@@ -23,7 +23,7 @@ return [
         'postgres'  => [
             'connection'  => 'pgsql:host=localhost;dbname=spiral',
             'profiling'   => true,
-            'tablePrefix' => 'pgprefix_',
+            'tablePrefix' => '',
             'username'    => 'postgres',
             'password'    => '',
             'options'     => []
@@ -31,7 +31,7 @@ return [
         'sqlite'    => [
             'connection'  => 'sqlite:spiral.db',
             'profiling'   => true,
-            'tablePrefix' => 'db_',
+            'tablePrefix' => '',
             'username'    => 'sqlite',
             'password'    => '',
             'options'     => []
@@ -39,7 +39,7 @@ return [
         'sqlServer' => [
             'connection'  => 'sqlsrv:Server=SPIRAL\SQLEXPRESS;Database=spiral',
             'profiling'   => true,
-            'tablePrefix' => 'sqlServer_',
+            'tablePrefix' => '',
             'username'    => null,
             'password'    => null,
             'options'     => []
