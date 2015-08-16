@@ -8,8 +8,9 @@
  */
 namespace Controllers;
 
-use Spiral\Components\Http\Response\Redirect;
 use Spiral\Core\Controller;
+use Spiral\Http\Responses\RedirectResponse;
+use Spiral\Http\Routing\Router;
 
 class HomeController extends Controller
 {
@@ -41,20 +42,20 @@ class HomeController extends Controller
     /**
      * Method available by /home/redirect
      *
-     * @return Redirect
+     * @return RedirectResponse
      */
     public function redirect()
     {
-        return new Redirect('http://google.com/');
+        return new RedirectResponse('http://google.com/');
     }
 
     /**
      * Method available by /home/internalRedirect
      *
-     * @return Redirect
+     * @return RedirectResponse
      */
-    public function internalRedirect()
+    public function internalRedirect(Router $router)
     {
-        return $this->router->redirect('jsonRoute');
+        return new RedirectResponse($router->createUri('jsonRoute'));
     }
 }
