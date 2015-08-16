@@ -1,36 +1,14 @@
 <?php
 /**
- * Spiral Framework.
- *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
+ * Spiral tokenizer component configuration, includes only black and white listed directories to
+ * be indexed.
  */
-
-//Runtime directory path
-$runtime = \Spiral\Proxies\File::normalizePath(directory('runtime'));
-
 return [
     'directories' => [
-        directory('application'),
-        directory('libraries')
+        directory('application'), directory('libraries')
     ],
-    'exclude'     => [
-        $runtime,
-        'tests',
-        'example',
-        'predis',
-        'phpunit',
-        '/_',
-        'symfony',
-        'doctrine',
-        'Test',
-        'migrations',
-        'views',
-        'examples',
-        'test',
-        'Tests',
-        'composer',
-        'guzzle'
+    'exclude' => [
+        'runtime', 'tests', 'example', 'predis', 'phpunit', 'intervention', '/_', 'symfony', 'psr', 'doctrine',
+        'migrations', 'views', 'tests', 'zendframework', 'guzzle', 'slugify', 'carbon'
     ]
 ];

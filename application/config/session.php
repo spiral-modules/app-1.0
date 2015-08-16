@@ -1,24 +1,25 @@
 <?php
 /**
- * Spiral Framework.
- *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
+ * SessionStore configuration.
+ * - default session lifetime
+ * - default session handler to be used, use "native" to use php sessions
+ * - list of handlers associated with their class and custom options
  */
+use Spiral\Session\Handlers;
+
 return [
     'lifetime' => 86400,
     'handler'  => 'file',
     'handlers' => [
         'null'  => [
-            'class' => 'Spiral\Components\Session\Handlers\NullHandler'
+            'class' => Handlers\NullHandler::class
         ],
         'file'  => [
-            'class'     => 'Spiral\Components\Session\Handlers\FileHandler',
-            'directory' => directory('runtime') . '/session'
+            'class'     => Handlers\FileHandler::class,
+            'directory' => directory('runtime') . '/sessions'
         ],
         'cache' => [
-            'class'  => 'Spiral\Components\Session\Handlers\CacheHandler',
+            'class'  => Handlers\CacheHandler::class,
             'store'  => 'memcache',
             'prefix' => 'session'
         ]

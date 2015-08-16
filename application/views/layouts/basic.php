@@ -1,4 +1,4 @@
-<use bundle="spiral:bundle"/>
+<templater:use bundle="spiral:bundle"/>
 
 <!DOCTYPE html>
 <html>

@@ -1,36 +1,34 @@
 <?php
 /**
- * Cache configuration.
+ * CacheManager configuration:
+ * - default cache store
+ * - list of cache stored associated with their name, store class and set of custom options
  */
+use Spiral\Cache\Stores;
+
 return [
     'store'  => 'memcache',
     'stores' => [
         'file'     => [
-            'class'     => 'Spiral\Components\Cache\Stores\FileStore',
+            'class'     => Stores\FileStore::class,
             'directory' => directory('cache'),
             'extension' => 'cache'
         ],
         'xcache'   => [
-            'class'  => 'Spiral\Components\Cache\Stores\XcacheStore',
-            'prefix' => 'spiral'
+            'class'  => Stores\XCacheStore::class,
+            'prefix' => 'spiral:'
+        ],
+        'apc'      => [
+            'class'  => Stores\APCStore::class,
+            'prefix' => 'spiral:'
         ],
         'memcache' => [
-            'class'   => 'Spiral\Components\Cache\Stores\MemcacheStore',
-            'prefix'  => 'spiral',
+            'class'   => Stores\MemcacheStore::class,
+            'prefix'  => 'spiral:',
             'options' => [],
             'servers' => [
-                [
-                    'host'       => 'localhost',
-                    'port'       => 11211,
-                    'persistent' => true
-                ]
+                ['host' => 'localhost', 'port' => 11211, 'persistent' => true]
             ]
-        ],
-        'redis'    => [
-            'class'   => 'Spiral\Components\Cache\Stores\RedisStore',
-            'enabled' => true,
-            'client'  => 'default',
-            'prefix'  => 'spiral'
         ]
     ]
 ];

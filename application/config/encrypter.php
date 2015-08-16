@@ -1,10 +1,7 @@
 <?php
 /**
- * Spiral Framework.
- *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
+ * Encrypter configuration includes only environment specific encryption key. Spiral encrypter
+ * can in addition read encryption method if such option were specified.
  */
 return [
     'key' => ''

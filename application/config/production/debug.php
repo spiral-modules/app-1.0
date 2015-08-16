@@ -1,16 +1,20 @@
 <?php
 /**
- * @package   spiralFramework
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2011
+ * Configuration of debug component and related classes:
+ * - list of logger channels associated with their message handlers
+ * - configuration for default debug snapshot implementation, including reporting directory and view
+ *   to be used for exceptions
  */
 return [
-    'backtrace' => [
-        'view'      => 'spiral:exception.dark',
-        'snapshots' => [
-            'enabled'    => true,
-            'timeFormat' => 'd.m.Y-Hi.s',
-            'directory'  => directory('runtime') . '/logging/snapshots/'
+    'snapshots' => [
+        'view'      => 'spiral:exception',
+        'dumps'     => true,
+        'reporting' => [
+            'enabled'      => true,
+            'maxSnapshots' => 200,
+            'directory'    => directory('runtime') . '/logging/snapshots',
+            'filename'     => '{date}-{exception}.html',
+            'dateFormat'   => 'd.m.Y-Hi.s',
         ]
     ]
 ];

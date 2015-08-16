@@ -11,8 +11,7 @@
   ],
   "require": {
     "spiral/framework": "dev-master",
-    "spiral/profiler": "1.*",
-    "spiral/toolkit": "dev-master"
+    "spiral/profiler": "*"
   },
   "scripts": {
     "post-install-cmd": [

@@ -1,51 +1,59 @@
 <?php
 /**
- * Spiral Framework.
- *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
+ * ORM configuration and mapping.
+ * - default state of entity cache and it's maxium size
+ * - mutators to be automatically applied to record fields based on it's type
+ * - mutator aliases to be used in model definitions
+ * - relation classes including schema generators, loaders and relation representers
  */
-use Spiral\Components\ORM\ActiveRecord;
+use Spiral\Models\Accessors;
+use Spiral\ORM\Entities;
+use Spiral\ORM\Record;
 
 return [
-    'documentation' => directory('runtime') . '/ormClasses.php',
-    'mutators'      => [
-        'timestamp'  => ['accessor' => 'Spiral\Components\ORM\Accessors\ORMTimestamp'],
-        'datetime'   => ['accessor' => 'Spiral\Components\ORM\Accessors\ORMTimestamp'],
-        'php:int'    => ['setter' => 'intval'],
-        'php:float'  => ['setter' => 'floatval'],
-        'php:string' => ['setter' => 'string'],
-        'php:bool'   => ['setter' => 'boolean']
+    'entityCache'    => [
+        'enabled' => true,
+        'maxSize' => 1000
     ],
-    'relations'     => [
-        ActiveRecord::BELONGS_TO         => [
-            'class'  => 'Spiral\Components\ORM\Relations\BelongsTo',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToSchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\BelongsToLoader'
+    'mutators'       => [
+        'timestamp'  => ['accessor' => Accessors\ORMTimestamp::class],
+        'datetime'   => ['accessor' => Accessors\ORMTimestamp::class],
+        'php:int'    => ['setter' => 'intval', 'getter' => 'intval'],
+        'php:float'  => ['setter' => 'floatval', 'getter' => 'floatval'],
+        'php:string' => ['setter' => 'strval'],
+        'php:bool'   => ['setter' => 'boolval', 'getter' => 'boolval']
+    ],
+    'mutatorAliases' => [
+        'storage' => Accessors\StorageAccessor::class
+    ],
+    'relations'      => [
+        Record::BELONGS_TO         => [
+            'class'  => Entities\Relations\BelongsTo::class,
+            'schema' => Entities\Schemas\Relations\BelongsToSchema::class,
+            'loader' => Entities\Loaders\BelongsToLoader::class
         ],
-        ActiveRecord::BELONGS_TO_MORPHED => [
-            'class'  => 'Spiral\Components\ORM\Relations\HasOne',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\BelongsToMorphedSchema'
+        Record::BELONGS_TO_MORPHED => [
+            'class'  => Entities\Relations\BelongsToMorphed::class,
+            'schema' => Entities\Schemas\Relations\BelongsToMorphedSchema::class
         ],
-        ActiveRecord::HAS_ONE            => [
-            'class'  => 'Spiral\Components\ORM\Relations\HasOne',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\HasOneSchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasOneLoader'
+        Record::HAS_ONE            => [
+            'class'  => Entities\Relations\HasOne::class,
+            'schema' => Entities\Schemas\Relations\HasOneSchema::class,
+            'loader' => Entities\Loaders\HasOneLoader::class
         ],
-        ActiveRecord::HAS_MANY           => [
-            'class'  => 'Spiral\Components\ORM\Relations\HasMany',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\HasManySchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\HasManyLoader'
+        Record::HAS_MANY           => [
+            'class'  => Entities\Relations\HasMany::class,
+            'schema' => Entities\Schemas\Relations\HasManySchema::class,
+            'loader' => Entities\Loaders\HasManyLoader::class
         ],
-        ActiveRecord::MANY_TO_MANY       => [
-            'class'  => 'Spiral\Components\ORM\Relations\ManyToMany',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToManySchema',
-            'loader' => 'Spiral\Components\ORM\Selector\Loaders\ManyToManyLoader'
+        Record::MANY_TO_MANY       => [
+            'class'  => Entities\Relations\ManyToMany::class,
+            'schema' => Entities\Schemas\Relations\ManyToManySchema::class,
+            'loader' => Entities\Loaders\ManyToManyLoader::class
         ],
-        ActiveRecord::MANY_TO_MORPHED    => [
-            'class'  => 'Spiral\Components\ORM\Relations\ManyToMorphed',
-            'schema' => 'Spiral\Components\ORM\Schemas\Relations\ManyToMorphedSchema'
+        Record::MANY_TO_MORPHED    => [
+            'class'  => Entities\Relations\ManyToMorphed::class,
+            'schema' => Entities\Schemas\Relations\ManyToMorphedSchema::class
         ]
     ]
 ];

@@ -1,33 +1,49 @@
 <?php
 /**
- * @package   spiralFramework
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2011
+ * Configuration of debug component and related classes:
+ * - global log populated by every instance of spiral Logger and used in exception snapshots or
+ *   profiler
+ * - list of logger channels associated with their message handlers
+ * - configuration for default debug snapshot implementation, including reporting directory and view
+ *   to be used for exceptions
  */
+use Spiral\Debug\Debugger;
+use Spiral\Debug\Logger;
+use Spiral\Debug\Logger\Handlers\FileHandler;
+use Spiral\Http\HttpDispatcher;
+
 return [
-    'loggers'   => [
-        'containers' => [
-            \Spiral\Components\Debug\Debugger::class      => [
-                'error' => [
-                    directory('runtime') . '/logging/errors.log', 20971520
-                ],
-                'all'   => [
-                    directory('runtime') . '/logging/debug.log', 20971520
-                ]
+    'globalLogging' => [
+        'enabled' => true,
+        'maxSize' => 1000
+    ],
+    'loggers'       => [
+        Debugger::class       => [
+            Logger::ERROR => [
+                'class'    => FileHandler::class,
+                'filename' => directory('runtime') . '/logging/errors.log'
             ],
-            \Spiral\Components\Http\HttpDispatcher::class => [
-                'warning' => [
-                    directory('runtime') . '/logging/httpErrors.log', 2097152
-                ]
+            Logger::ALL   => [
+                'class'    => FileHandler::class,
+                'filename' => directory('runtime') . '/logging/debug.log'
+            ]
+        ],
+        HttpDispatcher::class => [
+            Logger::WARNING => [
+                'class'    => FileHandler::class,
+                'filename' => directory('runtime') . '/logging/httpErrors.log'
             ]
         ]
     ],
-    'backtrace' => [
-        'view'      => 'spiral:exception.dark',
-        'snapshots' => [
-            'enabled'    => false,
-            'timeFormat' => 'd.m.Y-Hi.s',
-            'directory'  => directory('runtime') . '/logging/snapshots/'
+    'snapshots'     => [
+        'view'      => 'spiral:exception',
+        'dumps'     => false,
+        'reporting' => [
+            'enabled'      => false,
+            'maxSnapshots' => 20,
+            'directory'    => directory('runtime') . '/logging/snapshots',
+            'filename'     => '{date}-{exception}.html',
+            'dateFormat'   => 'd.m.Y-Hi.s',
         ]
     ]
 ];

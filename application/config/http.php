@@ -1,32 +1,42 @@
 <?php
 /**
- * Spiral Framework.
- *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
+ * Http dispatcher configuration. Includes:
+ * - base application path
+ * - exposeErrors flag, if true snapshots will be rendered to client
+ * - keepOutput allows MiddlewarePipeline to include echoed content at the end of response
+ * - CookieManager middleware settings, default domain and protection method
+ * - headers to be used by DispatcherHeaders middleware to clarify request
+ * - set of default endpoints
+ * - set of default middlewares to to applied to every request and response
+ * - default router class and settings
+ * - association between http errors and view name to be used to render them to client
  */
+use Spiral\Http;
+use Spiral\Http\Middlewares;
+
 return [
     'basePath'     => '/',
     'exposeErrors' => true,
+    'keepOutput'   => true,
     'cookies'      => [
         'domain' => '.%s',
-        'method' => 'mac'
+        'method' => 'encrypt'
     ],
     'headers'      => [
         'Content-Type' => 'text/html; charset=UTF-8'
     ],
-    'middlewares'  => [
-        'Spiral\Components\Http\Cookies\CookieManager',
-        'Spiral\Components\Http\Middlewares\CsrfFilter',
-        'Spiral\Components\Http\Middlewares\JsonParser',
-        'Spiral\Components\Session\Http\SessionStarter',
-        'Spiral\Profiler\Profiler'
-    ],
     'endpoints'    => [],
+    'middlewares'  => [
+        \Spiral\Profiler\Profiler::class,
+        Middlewares\DispatcherHeaders::class,
+        Http\Cookies\CookieManager::class,
+        Middlewares\CsrfFilter::class,
+        Middlewares\JsonParser::class,
+        \Spiral\Session\Http\SessionStarter::class
+    ],
     'router'       => [
-        'class'        => 'Spiral\Components\Http\Router\Router',
-        'primaryRoute' => [
+        'class'   => Http\Routing\Router::class,
+        'default' => [
             'pattern'     => '[<controller>[/<action>[/<id>]]]',
             'namespace'   => 'Controllers',
             'postfix'     => 'Controller',
@@ -34,7 +44,7 @@ return [
                 'controller' => 'home'
             ],
             'controllers' => [
-                'index' => 'Controllers\HomeController'
+                'index' => Controllers\HomeController::class
             ]
         ]
     ],

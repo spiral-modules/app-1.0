@@ -1,23 +1,29 @@
 <?php
 /**
- * Storages and containers.
+ * Configuration of StorageManager components with it's servers and containers.
+ * - list of servers with their adapter class and options to associated with buckets
+ * - list of buckets with their server id, prefix value and adapter specific options
  */
+use Spiral\Storage\Servers;
+
 return [
-    'servers'    => [
+    'servers' => [
         'local'     => [
-            'class'   => 'Spiral\Components\Storage\Servers\LocalServer',
-            'options' => []
+            'class'   => Servers\LocalServer::class,
+            'options' => [
+                'home' => directory('root')
+            ]
         ],
         'amazon'    => [
-            'class'   => 'Spiral\Components\Storage\Servers\AmazonServer',
+            'class'   => Servers\AmazonServer::class,
             'options' => [
                 'verify'    => false,
                 'accessKey' => '',
-                'secretKey' => ''
+                'secretKey' => '',
             ]
         ],
         'rackspace' => [
-            'class'   => 'Spiral\Components\Storage\Servers\RackspaceServer',
+            'class'   => Servers\RackspaceServer::class,
             'options' => [
                 'verify'   => false,
                 'username' => '',
@@ -25,49 +31,48 @@ return [
             ]
         ],
         'ftp'       => [
-            'class'   => 'Spiral\Components\Storage\Servers\FtpServer',
+            'class'   => Servers\FtpServer::class,
             'options' => [
                 'host'     => '127.0.0.1',
-                'login'    => '',
+                'login'    => 'Wolfy-J',
                 'password' => '',
-                'home'     => '/home'
+                'home'     => '/'
             ]
         ],
         'sftp'      => [
-            'class'   => 'Spiral\Components\Storage\Servers\SftpServer',
+            'class'   => Servers\SftpServer::class,
             'options' => [
-                'host'       => '127.0.0.1',
-                'home'       => '/home',
-
-                //pubkey, password, none
+                'host'       => 'hostname.com',
+                'home'       => '/home/',
                 'authMethod' => 'pubkey',
-                'username'   => 'lachezis',
+                'username'   => '',
                 'password'   => '',
-                'publicKey'  => 'PUB KEY LOCATION',
-                'privateKey' => 'PRIV KEY LOCATION'
+                'publicKey'  => '',
+                'privateKey' => ''
             ]
         ],
-        'gridFs'    => [
-            'class'   => 'Spiral\Components\Storage\Servers\GridfsServer',
+        'gridfs'    => [
+            'class'   => Servers\GridfsServer::class,
             'options' => [
                 'database' => 'default'
             ]
         ]
     ],
-    'containers' => [
+    'buckets' => [
         'local'     => [
             'server'  => 'local',
             'prefix'  => 'local:',
             'options' => [
-                'folder' => directory('runtime') . '/storage/'
+                //Temporary location
+                'directory' => '/application/runtime/storage/'
             ]
         ],
         'amazon'    => [
             'server'  => 'amazon',
-            'prefix'  => 'https://s3.amazonaws.com/spiral/',
+            'prefix'  => 'https://s3.amazonaws.com/my-bucket/',
             'options' => [
                 'public' => true,
-                'bucket' => 'spiral'
+                'bucket' => 'my-bucket'
             ]
         ],
         'rackspace' => [
@@ -75,23 +80,23 @@ return [
             'prefix'  => 'rackspace:',
             'options' => [
                 'container' => 'container-name',
-                'region'    => 'ORD'
+                'region'    => 'DFW'
             ]
         ],
         'ftp'       => [
             'server'  => 'ftp',
             'prefix'  => 'ftp:',
             'options' => [
-                'folder' => 'remote-folder',
-                'mode'   => \Spiral\Components\Files\FileManager::RUNTIME
+                'directory' => '/',
+                'mode'      => \Spiral\Files\FilesInterface::RUNTIME
             ]
         ],
         'sftp'      => [
             'server'  => 'sftp',
             'prefix'  => 'sftp:',
             'options' => [
-                'folder' => 'remote-folder',
-                'mode'   => \Spiral\Components\Files\FileManager::RUNTIME
+                'directory' => 'uploads',
+                'mode'      => \Spiral\Files\FilesInterface::RUNTIME
             ]
         ],
         'gridfs'    => [

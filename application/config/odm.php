@@ -1,36 +1,48 @@
 <?php
 /**
- * Spiral Framework.
- *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
+ * ODM component configuration and mapping.
+ * - default database alias/name
+ * - list of mongo databases associated with their server, name, profiling mode and options
+ * - list of database name aliases used for injections and other operations
+ * - ODM SchemaBuilder configuration
+ *      - set of default mutators associated with field type
+ *      - mutator aliases to be used in model definitions
  */
+use Spiral\Models\Accessors;
+use Spiral\ODM\Accessors\ScalarArray;
+use Spiral\ODM\Entities\MongoDatabase;
+use Spiral\ODM\ODM;
+
 return [
-    'databases'     => [
+    'default'   => 'default',
+    'databases' => [
         'default' => [
-            'server'   => 'mongodb://localhost:27017',
-            'database' => 'spiral',
-            'options'  => [
+            'server'    => 'mongodb://localhost:27017',
+            'profiling' => MongoDatabase::PROFILE_SIMPLE,
+            'database'  => 'spiral',
+            'options'   => [
                 'connect' => true
             ]
         ]
     ],
-    'aliases'       => [
+    'aliases'   => [
         'database' => 'default',
         'db'       => 'default',
         'mongo'    => 'default'
     ],
-    'documentation' => directory('runtime') . '/odmClasses.php',
-    'mutators'      => [
-        'int'       => ['setter' => 'intval'],
-        'float'     => ['setter' => 'floatval'],
-        'string'    => ['setter' => 'string'],
-        'bool'      => ['setter' => 'boolean'],
-        'MongoId'   => ['setter' => 'mongoID'],
-        'array'     => ['accessor' => 'Spiral\Components\ODM\Accessors\ScalarArray'],
-        'MongoDate' => ['accessor' => 'Spiral\Components\ODM\Accessors\ODMTimestamp'],
-        'timestamp' => ['accessor' => 'Spiral\Components\ODM\Accessors\ODMTimestamp'],
-        'storage'   => ['accessor' => 'Spiral\Components\ODM\Accessors\ODMStorageAccessor']
-    ],
+    'schemas'   => [
+        'mutators'       => [
+            'int'       => ['setter' => 'intval'],
+            'float'     => ['setter' => 'floatval'],
+            'string'    => ['setter' => 'strval'],
+            'bool'      => ['setter' => 'boolval'],
+            'MongoId'   => ['setter' => [ODM::class, 'mongoID']],
+            'array'     => ['accessor' => ScalarArray::class],
+            'MongoDate' => ['accessor' => Accessors\ODMTimestamp::class],
+            'timestamp' => ['accessor' => Accessors\ODMTimestamp::class],
+            'storage'   => ['accessor' => Accessors\StorageAccessor::class]
+        ],
+        'mutatorAliases' => [
+        ]
+    ]
 ];

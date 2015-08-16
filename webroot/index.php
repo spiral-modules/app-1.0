@@ -8,30 +8,25 @@
  */
 define('SPIRAL_INITIAL_TIME', microtime(true));
 
-/**
- * Error reporting.
- */
+//No comments
+mb_internal_encoding('UTF-8');
+
+//Error reporting
 error_reporting(E_ALL | E_STRICT);
-ini_set('display_errors', true);
+ini_set('display_errors', false);
 
-/**
- * Location of composer files all required extensions and libraries.
- */
-$libraries = dirname(__DIR__) . '/vendor';
+//Root directory
+$root = dirname(__DIR__);
 
-/**
- * Application directory.
- */
-$application = dirname(__DIR__) . '/application';
+//Composer
+require $root . '/vendor/autoload.php';
 
-/**
- * Composer.
- */
-require $libraries . '/autoload.php';
+//Forcing work directory
+chdir($root);
 
-//Starting
+//Let's start!
 Application::init([
-    'root'        => __DIR__,
-    'libraries'   => $libraries,
-    'application' => $application
-])->start();
+    'root'        => $root,
+    'libraries'   => $root . '/vendor',
+    'application' => $root . '/application'
+], true)->start();

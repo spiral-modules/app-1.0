@@ -20,7 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return $this->view->render('welcome');
+        return $this->views->render('welcome');
     }
 
     /**
@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         return [
             'status' => 200,
-            'data'   => [
+            'data' => [
                 1, 2, 3, 4, 5, 6, 7,
             ]
         ];
