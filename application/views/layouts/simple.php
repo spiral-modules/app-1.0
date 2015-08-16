@@ -7,7 +7,7 @@
 <block:body>
     <div class="wrapper">
         <div class="placeholder">
-            ${content}
+            <yield:content/>
         </div>
     </div>
 </block:body>
