@@ -1,23 +1,30 @@
 <?php
 /**
  * Configuration only used to declare sequence of commands and their options to be used in
- * update command.
+ * update and configure command.
  */
 return [
-    'updateSequence' => [
-        'migrate'    => [
+    'updateSequence'    => [
+        'migrate'           => [
             'options' => ['--quiet' => true],
             'footer'  => ' '
         ],
-        'orm:schema' => [
+        'orm:schema'        => [
             'options' => []
         ],
-        'odm:schema' => [
+        'odm:schema'        => [
             'options' => []
         ],
-        'inspect'    => [
+        'document:phpstorm' => [
+            'header'  => "\n<info>Generating tooltips and hints for PHPStorm...</info>",
+            'options' => []
+        ],
+        'inspect'           => [
             'header'  => "\n<info>Inspecting available DataEntities...</info>",
             'options' => []
         ]
+    ],
+    'configureSequence' => [
+
     ]
 ];
