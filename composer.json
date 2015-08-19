@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "spiral/framework": "dev-master",
+    "spiral/framework": "*",
     "spiral/profiler": "*"
   },
   "scripts": {
