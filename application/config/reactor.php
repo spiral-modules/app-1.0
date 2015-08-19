@@ -30,10 +30,15 @@ return [
             'postfix'   => 'Command',
             'directory' => directory('application') . '/classes/Commands/'
         ],
+        'middleware' => [
+            'namespace' => 'Middlewares',
+            'postfix'   => 'Middleware',
+            'directory' => directory('application') . '/classes/Middlewares/'
+        ],
         'migration'  => [
             'namespace' => 'Migrations',
             'postfix'   => 'Migration',
-            //We only need to write somewhere temporary, migrator will move it to correct location
+            //We only need to write class somewhere temporary, migrator will move it to correct location
             'directory' => directory('runtime')
         ],
         'request'    => [

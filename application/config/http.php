@@ -2,6 +2,10 @@
 /**
  * Http dispatcher configuration. Includes:
  * - base application path
+ * - isolation mode, when isolation is enable http component will handle all inner exceptions using
+ *   snapshots, in opposite case exceptions will be passed on higher level and can be handled
+ *   using default exception handler, when isolation is turned off some middlewares may not
+ *   finish their work
  * - exposeErrors flag, if true snapshots will be rendered to client
  * - keepOutput allows MiddlewarePipeline to include echoed content at the end of response
  * - CookieManager middleware settings, default domain and protection method
@@ -16,6 +20,7 @@ use Spiral\Http\Middlewares;
 
 return [
     'basePath'     => '/',
+    'isolate'      => true,
     'exposeErrors' => true,
     'keepOutput'   => true,
     'cookies'      => [
@@ -32,7 +37,7 @@ return [
         Http\Cookies\CookieManager::class,
         Middlewares\CsrfFilter::class,
         Middlewares\JsonParser::class,
-        \Spiral\Session\Http\SessionStarter::class
+        \Spiral\Session\Http\SessionStarter::class,
     ],
     'router'       => [
         'class'   => Http\Routing\Router::class,
