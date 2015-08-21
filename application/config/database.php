@@ -2,58 +2,62 @@
 /**
  * Configuration of spiral DatabaseProvider.
  * - default database alias/name
- * - list of databases associated with their PDO connection string, profiling mode, credentials and
- *   table prefix
+ * - list of databases associated with their source connection
+ * - list of connections associated with their driver and connection options
  * - list of database name aliases used for injections and other operations
  * - list of drivers associated with PDO connection string scheme
  */
 use Spiral\Database\Drivers;
 
 return [
-    'default'   => 'default',
-    'databases' => [
+    'default'     => 'default',
+    'databases'   => [
+        'primary'     => [
+            'connection'  => 'mysql',
+            'tablePrefix' => 'primary_'
+        ],
+        'secondary' => [
+            'connection'  => 'postgres',
+            'tablePrefix' => 'secondary_',
+        ],
+    ],
+    'connections' => [
         'mysql'     => [
-            'connection'  => 'mysql:host=localhost;dbname=spiral',
-            'profiling'   => true,
-            'tablePrefix' => '',
-            'username'    => 'root',
-            'password'    => 'root',
-            'options'     => []
+            'driver'     => Drivers\MySQL\MySQLDriver::class,
+            'connection' => 'mysql:host=127.0.0.1;dbname=demo',
+            'profiling'  => true,
+            'username'   => 'root',
+            'password'   => 'root',
+            'options'    => []
         ],
         'postgres'  => [
-            'connection'  => 'pgsql:host=localhost;dbname=spiral',
-            'profiling'   => true,
-            'tablePrefix' => '',
-            'username'    => 'postgres',
-            'password'    => '',
-            'options'     => []
+            'driver'     => Drivers\Postgres\PostgresDriver::class,
+            'connection' => 'pgsql:host=127.0.0.1;dbname=spiral',
+            'profiling'  => true,
+            'username'   => 'postgres',
+            'password'   => '',
+            'options'    => []
         ],
         'sqlite'    => [
-            'connection'  => 'sqlite:spiral.db',
-            'profiling'   => true,
-            'tablePrefix' => '',
-            'username'    => 'sqlite',
-            'password'    => '',
-            'options'     => []
+            'driver'     => Drivers\Sqlite\SqliteDriver::class,
+            'connection' => 'sqlite:spiral.db',
+            'profiling'  => true,
+            'username'   => 'sqlite',
+            'password'   => '',
+            'options'    => []
         ],
         'sqlServer' => [
-            'connection'  => 'sqlsrv:Server=SPIRAL\SQLEXPRESS;Database=spiral',
-            'profiling'   => true,
-            'tablePrefix' => '',
-            'username'    => null,
-            'password'    => null,
-            'options'     => []
+            'driver'     => Drivers\SqlServer\SqlServerDriver::class,
+            'connection' => 'sqlsrv:Server=SPIRAL\SQLEXPRESS;Database=spiral',
+            'profiling'  => true,
+            'username'   => null,
+            'password'   => null,
+            'options'    => []
         ]
     ],
-    'aliases'   => [
-        'default'  => 'mysql',
-        'database' => 'mysql',
-        'db'       => 'mysql'
-    ],
-    'drivers'   => [
-        'mysql'  => Drivers\MySQL\MySQLDriver::class,
-        'pgsql'  => Drivers\Postgres\PostgresDriver::class,
-        'sqlite' => Drivers\Sqlite\SqliteDriver::class,
-        'sqlsrv' => Drivers\SqlServer\SqlServerDriver::class
+    'aliases'     => [
+        'default'  => 'primary',
+        'database' => 'primary',
+        'db'       => 'primary'
     ]
 ];
