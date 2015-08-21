@@ -15,7 +15,9 @@ return [
     ],
     'namespaces'   => [
         'default' => [
-            directory("application") . '/views'
+            directory("application") . '/views',
+            directory("libraries") . '/spiral/framework/source/views'
+
         ],
         'spiral'  => [
             directory("application") . '/views/spiral'
