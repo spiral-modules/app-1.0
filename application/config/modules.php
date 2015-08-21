@@ -5,9 +5,5 @@
  * carefully).
  */
 return [
-    'spiral/profiler' => [
-        'class' => 'Spiral\Profiler\Profiler',
-        'bootstrap' => false,
-        'bindings' => []
-    ]
+
 ];

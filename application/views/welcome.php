@@ -1,12 +1,15 @@
-<extends:layouts.simple title="[[Welcome to Spiral Framework!]]" git="https://github.com/spiral-php"
-                        xmlns:block="http://www.w3.org/1999/html"/>
+<extends:spiral:layouts.html5 title="Welcome To Spiral" git="https://github.com/spiral-php"/>
+
+<block:resources>
+    <resource:style href="resources/styles/welcome.css"/>
+</block:resources>
 
 <block:body>
     <div class="wrapper">
         <div class="placeholder">
             <img src="@{basePath}resources/images/spiral.svg" width="120px"/>
 
-            <h2>Welcome To Spiral</h2>
+            <spiral:markdown>#Welcome To Spiral</spiral:markdown>
 
             <a href="${git}/application">GitHub</a> |
             <a href="${git}/documentation">Documentation (unfinished)</a>

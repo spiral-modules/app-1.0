@@ -15,8 +15,8 @@ return [
             'directory'  => directory('runtime') . '/i18n/english/',
             'pluralizer' => Pluralizers\EnglishPluralizer::class
         ],
-        'ru' => [
-            'directory'  => directory('runtime') . '/i18n/russian/',
+        'by' => [
+            'directory'  => directory('runtime') . '/i18n/belarus/',
             'pluralizer' => Pluralizers\RussianPluralizer::class
         ]
     ]

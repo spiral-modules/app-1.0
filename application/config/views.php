@@ -14,16 +14,11 @@ return [
         'directory' => directory("cache") . '/views'
     ],
     'namespaces'   => [
-        'default'  => [
+        'default' => [
             directory("application") . '/views'
         ],
-        'spiral'   => [
-            directory("application") . '/views/spiral',
-            directory("libraries") . '/spiral/framework/source/views'
-        ],
-        'profiler' => [
-            directory("libraries") . '/spiral/profiler/source/views',
-            'D:/Projects/github/profiler/source/views'
+        'spiral'  => [
+            directory("application") . '/views/spiral'
         ]
     ],
     'dependencies' => [
