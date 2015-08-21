@@ -5,6 +5,10 @@
  *   to ensure that field value will be set
  * - validation checker classes
  * - validation rule aliases for convenience
+ *
+ * Every validation method declared as array will be called using container to resolve it's first
+ * class. In addition classes implementing CheckProviderInterface will receive first method argument
+ * as instance of active Validator with access to it's fields.
  */
 use Spiral\Validation\Checkers;
 
