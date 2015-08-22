@@ -24,7 +24,7 @@ return [
     'exposeErrors' => true,
     'keepOutput'   => true,
     'cookies'      => [
-        'domain' => '.%s',
+        'domain' => '%s',
         'method' => 'encrypt'
     ],
     'headers'      => [
