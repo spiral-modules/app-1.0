@@ -9,7 +9,7 @@
         <div class="placeholder">
             <img src="@{basePath}resources/images/spiral.svg" width="120px"/>
 
-            <spiral:markdown>#Welcome To Spiral</spiral:markdown>
+            <spiral:helpers.markdown>#Welcome To Spiral</spiral:helpers.markdown>
 
             <a href="${git}/application">GitHub</a> |
             <a href="${git}/documentation">Documentation (unfinished)</a>
