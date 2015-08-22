@@ -16,11 +16,10 @@ return [
     'namespaces'   => [
         'default' => [
             directory("application") . '/views',
-            directory("libraries") . '/spiral/framework/source/views'
-
         ],
         'spiral'  => [
-            directory("application") . '/views/spiral'
+            directory("application") . '/views/spiral',
+            directory("libraries") . '/spiral/framework/source/views'
         ]
     ],
     'dependencies' => [
