@@ -9,3 +9,4 @@ libraries
 composer.lock
 composer.phar
 data/*
+vendor/
