@@ -18,7 +18,13 @@ return [
         'maxSize' => 1000
     ],
     'loggers'       => [
-        Debugger::class       => [
+        Logger::GLOBAL_CHANNEL => [
+            Logger::ALL => [
+                'class'    => FileHandler::class,
+                'filename' => directory('runtime') . '/logging/global.log'
+            ]
+        ],
+        Debugger::class        => [
             Logger::ERROR => [
                 'class'    => FileHandler::class,
                 'filename' => directory('runtime') . '/logging/errors.log'
@@ -28,7 +34,7 @@ return [
                 'filename' => directory('runtime') . '/logging/debug.log'
             ]
         ],
-        HttpDispatcher::class => [
+        HttpDispatcher::class  => [
             Logger::WARNING => [
                 'class'    => FileHandler::class,
                 'filename' => directory('runtime') . '/logging/httpErrors.log'

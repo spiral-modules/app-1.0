@@ -6,7 +6,6 @@
  * - list of view dependencies, used by default compiler to create unique cache name
  * - list of view engines associated with their extension, compiler and default view class
  * - configuration of default spiral compiler it's processors and other options
- * - list of view classes associations (path = class, path must always include namespace)
  */
 return [
     'cache'        => [
@@ -49,6 +48,5 @@ return [
             'Spiral\Views\Processors\EvaluateProcessor'    => [],
             'Spiral\Views\Processors\PrettifyProcessor'    => []
         ]
-    ],
-    'classes'      => []
+    ]
 ];
