@@ -16,10 +16,10 @@ error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', false);
 
 //Root directory
-$root = dirname(__DIR__);
+$root = dirname(__DIR__) . '/';
 
 //Composer
-require $root . '/vendor/autoload.php';
+require $root . 'vendor/autoload.php';
 
 //Forcing work directory
 chdir($root);
@@ -27,6 +27,6 @@ chdir($root);
 //Let's start!
 Application::init([
     'root'        => $root,
-    'libraries'   => $root . '/vendor',
-    'application' => $root . '/application'
+    'libraries'   => $root . '/vendor/',
+    'application' => $root . '/application/'
 ], true)->start();
