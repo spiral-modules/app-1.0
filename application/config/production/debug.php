@@ -12,7 +12,7 @@ return [
         'reporting' => [
             'enabled'      => true,
             'maxSnapshots' => 200,
-            'directory'    => directory('runtime') . '/logging/snapshots',
+            'directory'    => directory('runtime') . 'logging/snapshots/',
             'filename'     => '{date}-{exception}.html',
             'dateFormat'   => 'd.m.Y-Hi.s',
         ]

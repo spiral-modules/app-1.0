@@ -10,6 +10,6 @@
 return [
     'cache' => [
         'enabled'   => true,
-        'directory' => directory("cache") . 'views'
+        'directory' => directory("cache") . 'views/'
     ],
 ];
