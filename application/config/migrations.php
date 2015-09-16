@@ -7,7 +7,7 @@
  * - list of environments where migration commands allowed to run without user confirmation
  */
 return [
-    'directory'    => directory('application') . '/migrations',
+    'directory'    => directory('application') . 'migrations/',
     'database'     => 'default',
     'table'        => 'migrations',
     'environments' => ['development', 'testing', 'staging']
