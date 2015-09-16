@@ -21,23 +21,23 @@ return [
         Logger::GLOBAL_CHANNEL => [
             Logger::ALL => [
                 'class'    => FileHandler::class,
-                'filename' => directory('runtime') . '/logging/global.log'
+                'filename' => directory('runtime') . 'logging/global.log'
             ]
         ],
         Debugger::class        => [
             Logger::ERROR => [
                 'class'    => FileHandler::class,
-                'filename' => directory('runtime') . '/logging/errors.log'
+                'filename' => directory('runtime') . 'logging/errors.log'
             ],
             Logger::ALL   => [
                 'class'    => FileHandler::class,
-                'filename' => directory('runtime') . '/logging/debug.log'
+                'filename' => directory('runtime') . 'logging/debug.log'
             ]
         ],
         HttpDispatcher::class  => [
             Logger::WARNING => [
                 'class'    => FileHandler::class,
-                'filename' => directory('runtime') . '/logging/httpErrors.log'
+                'filename' => directory('runtime') . 'logging/httpErrors.log'
             ]
         ]
     ],
@@ -47,7 +47,7 @@ return [
         'reporting' => [
             'enabled'      => false,
             'maxSnapshots' => 20,
-            'directory'    => directory('runtime') . '/logging/snapshots',
+            'directory'    => directory('runtime') . 'logging/snapshots',
             'filename'     => '{date}-{exception}.html',
             'dateFormat'   => 'd.m.Y-Hi.s',
         ]

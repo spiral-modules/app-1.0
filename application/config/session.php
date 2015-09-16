@@ -16,7 +16,7 @@ return [
         ],
         'file'  => [
             'class'     => Handlers\FileHandler::class,
-            'directory' => directory('runtime') . '/sessions'
+            'directory' => directory('runtime') . 'sessions'
         ],
         'cache' => [
             'class'  => Handlers\CacheHandler::class,

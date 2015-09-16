@@ -10,15 +10,15 @@
 return [
     'cache'        => [
         'enabled'   => true,
-        'directory' => directory("cache") . '/views'
+        'directory' => directory("cache") . 'views/'
     ],
     'namespaces'   => [
         'default' => [
-            directory("application") . '/views',
+            directory("application") . 'views/',
         ],
         'spiral'  => [
-            directory("application") . '/views/spiral',
-            directory("libraries") . '/spiral/framework/source/views'
+            directory("application") . 'views/spiral/',
+            directory("libraries") . 'spiral/framework/source/views/'
         ]
     ],
     'dependencies' => [

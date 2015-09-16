@@ -12,7 +12,7 @@ return [
     ],
     'namespace' => 'VirtualClasses',
     'phpstorm'  => [
-        'orm' => directory('runtime') . '/virtual-orm.php',
-        'odm' => directory('runtime') . '/virtual-odm.php'
+        'orm' => directory('runtime') . 'virtual-orm.php',
+        'odm' => directory('runtime') . 'virtual-odm.php'
     ]
 ];

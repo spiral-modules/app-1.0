@@ -13,27 +13,27 @@ return [
         'controller' => [
             'namespace' => 'Controllers',
             'postfix'   => 'Controller',
-            'directory' => directory('application') . '/classes/Controllers/'
+            'directory' => directory('application') . 'classes/Controllers/'
         ],
         'service'    => [
             'namespace' => 'Services',
             'postfix'   => 'Service',
-            'directory' => directory('application') . '/classes/Services/'
+            'directory' => directory('application') . 'classes/Services/'
         ],
         'entity'     => [
             'namespace' => 'Database',
             'postfix'   => '',
-            'directory' => directory('application') . '/classes/Database/'
+            'directory' => directory('application') . 'classes/Database/'
         ],
         'command'    => [
             'namespace' => 'Commands',
             'postfix'   => 'Command',
-            'directory' => directory('application') . '/classes/Commands/'
+            'directory' => directory('application') . 'classes/Commands/'
         ],
         'middleware' => [
             'namespace' => 'Middlewares',
             'postfix'   => 'Middleware',
-            'directory' => directory('application') . '/classes/Middlewares/'
+            'directory' => directory('application') . 'classes/Middlewares/'
         ],
         'migration'  => [
             'namespace' => 'Migrations',
@@ -44,7 +44,7 @@ return [
         'request'    => [
             'namespace' => 'Requests',
             'postfix'   => 'Request',
-            'directory' => directory('application') . '/classes/Requests/',
+            'directory' => directory('application') . 'classes/Requests/',
             'mapping'   => [
                 'int'    => [
                     'source'    => 'data',

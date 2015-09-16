@@ -13,7 +13,7 @@ use Spiral\ORM\Record;
 return [
     'entityCache'    => [
         'enabled' => true,
-        'maxSize' => 1000
+        'maxSize' => 10000
     ],
     'mutators'       => [
         'timestamp'  => ['accessor' => Accessors\ORMTimestamp::class],

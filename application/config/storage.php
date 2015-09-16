@@ -64,7 +64,7 @@ return [
             'prefix'  => 'local:',
             'options' => [
                 //Temporary location
-                'directory' => '/application/runtime/storage/'
+                'directory' => 'application/runtime/storage/'
             ]
         ],
         'amazon'    => [
