@@ -16,8 +16,8 @@ return [
         'maxSize' => 10000
     ],
     'mutators'       => [
-        'timestamp'  => ['accessor' => Accessors\ORMTimestamp::class],
-        'datetime'   => ['accessor' => Accessors\ORMTimestamp::class],
+        'timestamp'  => ['accessor' => Accessors\OrmTimestamp::class],
+        'datetime'   => ['accessor' => Accessors\OrmTimestamp::class],
         'php:int'    => ['setter' => 'intval', 'getter' => 'intval'],
         'php:float'  => ['setter' => 'floatval', 'getter' => 'floatval'],
         'php:string' => ['setter' => 'strval'],

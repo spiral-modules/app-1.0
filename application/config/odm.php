@@ -38,8 +38,8 @@ return [
             'bool'      => ['setter' => 'boolval'],
             'MongoId'   => ['setter' => [ODM::class, 'mongoID']],
             'array'     => ['accessor' => ScalarArray::class],
-            'MongoDate' => ['accessor' => Accessors\ODMTimestamp::class],
-            'timestamp' => ['accessor' => Accessors\ODMTimestamp::class],
+            'MongoDate' => ['accessor' => Accessors\MongoTimestamp::class],
+            'timestamp' => ['accessor' => Accessors\MongoTimestamp::class],
             'storage'   => ['accessor' => Accessors\StorageAccessor::class]
         ],
         'mutatorAliases' => [
