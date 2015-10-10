@@ -9,10 +9,10 @@ return [
             'options' => ['--quiet' => true],
             'footer'  => ' '
         ],
-        'orm:schema'        => [
+        'odm:schema'        => [
             'options' => []
         ],
-        'odm:schema'        => [
+        'orm:schema'        => [
             'options' => []
         ],
         'document:phpstorm' => [
