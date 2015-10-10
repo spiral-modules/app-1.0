@@ -21,7 +21,7 @@ return [
     'isolate'      => true,
     'exposeErrors' => true,
     'cookies'      => [
-        'domain' => '.%s',
+        'domain' => null,
         'method' => 'encrypt'
     ],
     'headers'      => [
