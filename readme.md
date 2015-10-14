@@ -13,7 +13,7 @@ Spiral DI container will work behind the scene, in most of cases you don't even 
 class HomeController extends Controller extends SingletonInterface
 {
     //Now DI will automatically link this class as singleton and return 
-    //same instance of every injection
+    //same instance on every injection
     const SINGLETON = self::class;
 
     public function index(Database $db)
