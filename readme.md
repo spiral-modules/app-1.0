@@ -17,6 +17,15 @@ class HomeController extends Controller
 }
 ```
 
+PSR-7 integration and method injections:
+
+```php
+public function index(ResponseInterface $response)
+{
+    return $response->withHeader('Spiral', 'Value!');
+}
+```
+
 https://twitter.com/spiralphp
 
 Use `./spiral` or `spiral` (Windows) to get list of console commands. Options `-v` and `-vv` used to get more details.
