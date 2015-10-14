@@ -70,6 +70,7 @@ class Post extends Record
         'status' => 'enum(published,draft)',
         'body'   => 'text',
         
+        //Simple relation definition
         'author'   => [self::BELONGS_TO => Author::class],
         'comments' => [self::HAS_MANY => Comment::class]
     ];
