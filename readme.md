@@ -30,6 +30,18 @@ public function index(ResponseInterface $response)
 }
 ```
 
+JSON
+
+```php
+public function index(ServerRequestInterface $request)
+{
+    return [
+        'status' => 200,
+        'uri'    => (string)$request->getUri()
+    ];
+}
+```
+
 https://twitter.com/spiralphp
 
 Use `./spiral` or `spiral` (Windows) to get list of console commands. Options `-v` and `-vv` used to get more details.
