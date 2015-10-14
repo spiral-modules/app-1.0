@@ -1,5 +1,6 @@
 # Spiral 
 [![Latest Stable Version](https://poser.pugx.org/spiral/application/v/stable)](https://packagist.org/packages/spiral/application) [![Total Downloads](https://poser.pugx.org/spiral/application/downloads)](https://packagist.org/packages/spiral/application) [![Latest Unstable Version](https://poser.pugx.org/spiral/application/v/unstable)](https://packagist.org/packages/spiral/application) [![License](https://poser.pugx.org/spiral/application/license)](https://packagist.org/packages/spiral/application)
+
 [![Build Status](https://travis-ci.org/spiral/application.svg?branch=master)](https://travis-ci.org/spiral/application)
 
 The Spiral framework provides a Rapid Application Development (RAD) platform to develop software applications using an HMVC architecture, using a simple but strong syntax similar to other popular frameworks. Framework will take care of database abstractions, ORM, MongoDB, working with Amazon or Rackspace, views and templates, etc. It's container does not require any configuring so you can start creating immediately!
