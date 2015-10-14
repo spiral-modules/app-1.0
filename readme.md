@@ -6,6 +6,7 @@
 The Spiral framework provides a Rapid Application Development (RAD) platform to develop software applications using an HMVC architecture, using a simple but strong syntax similar to other popular frameworks.
 
 Spiral will take care of database abstractions, ORM, MongoDB, working with Amazon or Rackspace, views and templates, etc. but it still compatime with any other library on a market. 
+
 Framework DI container does not require any configuring so you can start creating immediately!
 
 ```php
