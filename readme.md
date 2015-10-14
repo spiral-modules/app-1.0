@@ -45,7 +45,7 @@ public function index(ResponseInterface $response)
 }
 ```
 
-JSON
+JSON responses
 
 ```php
 public function index(ServerRequestInterface $request)
@@ -55,6 +55,33 @@ public function index(ServerRequestInterface $request)
         'uri'    => (string)$request->getUri()
     ];
 }
+```
+
+Simple but powerful ORM with automatic scaffolding for MySQL, PostgresSQL, SQLite, SQLServer
+
+```php
+class Post extends Record 
+{
+    use TimestampsTrait;
+
+    protected $schema = [
+        'id'     => 'bigPrimary',
+        'title'  => 'string(64)',
+        'status' => 'enum(published,draft)',
+        'body'   => 'text',
+        
+        'author'   => [self::BELONGS_TO => Author::class],
+        'comments' => [self::HAS_MANY => Comment::class]
+    ];
+}
+```
+
+```php
+$posts = Post::find()
+    ->with('comments') //Automatic joins
+    ->with('author')->where('author.name', '!=', $author)
+    ->load('comments) //Eager-loading
+    ->all();
 ```
 
 https://twitter.com/spiralphp
