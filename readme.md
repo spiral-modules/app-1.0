@@ -79,7 +79,7 @@ class Post extends Record
 ```php
 $posts = Post::find()
     ->with('comments') //Automatic joins
-    ->with('author')->where('author.name', 'LIKE', $authorName)
+    ->with('author')->where('author.name', 'LIKE', $authorName) //Fluent
     ->load('comments.author') //Cascade eager-loading
     ->all();
 
