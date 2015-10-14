@@ -14,7 +14,7 @@ Spiral DI container will work behind the scene, in most of cases you don't even 
 class HomeController extends Controller extends SingletonInterface
 {
     //Now DI will automatically link this class as singleton and return 
-    //same instance on every injection - I want to be a Singleton constant.
+    //same instance on every injection - "I want to be a Singleton" constant.
     const SINGLETON = self::class;
 
     /**
