@@ -10,8 +10,12 @@ Spiral will take care of database abstractions, ORM, MongoDB, working with Amazo
 Spiral DI container will work behind the scene, in most of cases you don't even need to know about it!
 
 ```php
-class HomeController extends Controller
+class HomeController extends Controller extends SingletonInterface
 {
+    //Now DI will automatically link this class as singleton and return 
+    //same instance of every injection
+    const SINGLETON = self::class;
+
     public function index(Database $db)
     {
         return $this->views->render('welcome', [
