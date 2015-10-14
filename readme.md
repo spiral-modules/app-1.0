@@ -16,8 +16,18 @@ class HomeController extends Controller extends SingletonInterface
     //same instance on every injection
     const SINGLETON = self::class;
 
-    public function index(Database $db)
+    /**
+     * Spiral can automatically deside what database/cache/storage
+     * instance to provide for every action parameter.
+     *
+     * @param Database $database
+     * @param Database $logDatabase
+     * @return string
+     */
+    public function index(Database $database, Database $logDatabase)
     {
+        $logDatabase->table('log')->insert(['message' => 'Yo!']);
+    
         return $this->views->render('welcome', [
             'users' => $db->table('users')->select()->all()
         ]);
