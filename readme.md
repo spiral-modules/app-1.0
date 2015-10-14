@@ -82,6 +82,11 @@ $posts = Post::find()
     ->with('author')->where('author.name', 'LIKE', $authorName)
     ->load('comments) //Eager-loading
     ->all();
+
+foreach($posts as $post)
+{
+    echo $post->author->getName();
+}
 ```
 
 https://twitter.com/spiralphp
