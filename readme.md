@@ -83,8 +83,7 @@ $posts = Post::find()
     ->load('comments.author') //Cascade eager-loading
     ->all();
 
-foreach($posts as $post)
-{
+foreach($posts as $post) {
     echo $post->author->getName();
 }
 ```
