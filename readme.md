@@ -80,7 +80,7 @@ class Post extends Record
 $posts = Post::find()
     ->with('comments') //Automatic joins
     ->with('author')->where('author.name', 'LIKE', $authorName)
-    ->load('comments) //Eager-loading
+    ->load('comments.author') //Cascade eager-loading
     ->all();
 
 foreach($posts as $post)
