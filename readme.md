@@ -7,7 +7,7 @@ The Spiral framework provides a Rapid Application Development (RAD) platform to 
 
 Spiral will take care of database abstractions, ORM, MongoDB, working with Amazon or Rackspace, views and templates, etc. but it still compatime with any other library on a market. 
 
-Framework DI container does not require any configuring so you can start creating immediately!
+Framework DI container will work behind the scene, in most of cases you don't even need to know about it!
 
 ```php
 class HomeController extends Controller
