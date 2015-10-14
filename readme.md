@@ -7,10 +7,10 @@ The Spiral framework provides a Rapid Application Development (RAD) platform to 
 ```php
 class HomeController extends Controller
 {
-    public function index(Database $database)
+    public function index(Database $db)
     {
         return $this->views->render('welcome', [
-            'users' => $database->table('users')->select()->all()
+            'users' => $db->table('users')->select()->all()
         ]);
     }
 }
