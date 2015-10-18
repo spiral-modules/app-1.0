@@ -8,7 +8,7 @@ The Spiral framework provides a Rapid Application Development (RAD) platform to 
 Spiral will take care of database abstractions, ORM, MongoDB, working with Amazon or Rackspace, Views and Templates, etc.
 It will help you to mount external libraries by providing simple API or design your application using **Services** and **DataEntities**.
 
-Spiral DI container will work behind the scene, in most of cases you don't even need to know about it!
+Spiral DI container will work behind the scene, in most of cases you don't even need to know about it:
 
 ```php
 class HomeController extends Controller extends SingletonInterface
