@@ -15,7 +15,7 @@ Components: https://github.com/spiral/components
 Spiral DI container will work behind the scene, in most of cases you don't even need to know about it:
 
 ```php
-class HomeController extends Controller extends SingletonInterface
+class HomeController extends Controller implements SingletonInterface
 {
     //Now DI will automatically link this class as singleton and return 
     //same instance on every injection - "I want to be a Singleton" constant.
