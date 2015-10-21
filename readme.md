@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/spiral/application.svg?branch=master)](https://travis-ci.org/spiral/application)
 
-The Spiral framework provides a simple Rapid Application Development (RAD) platform to develop software applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms.
+The Spiral framework provides a simple Rapid Application Development (RAD) platform to develop web applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms.
 
 Spiral will take care of database abstractions, ORM, MongoDB, working with Amazon or Rackspace, Views and Templates, etc.
 It will help you to mount external libraries by providing simple API or design your application using **Services** and **DataEntities**.
