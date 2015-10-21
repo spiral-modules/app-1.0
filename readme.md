@@ -182,6 +182,14 @@ Powerful HTML templater compatible with other templating engines:
 </spiral:cache>
 ```
 
+Frontend toolkit with automatic **AJAX forms**:
+
+```html
+<spiral:form action="/upload">
+    <form:input type="file" name="upload"/>
+</spiral:form>
+```
+
 https://twitter.com/spiralphp
 
 Use `./spiral` or `spiral` (Windows) to get list of console commands. Options `-v` and `-vv` used to get more details.
