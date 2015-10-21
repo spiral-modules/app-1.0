@@ -186,7 +186,7 @@ Frontend toolkit with automatic **AJAX forms**:
 
 ```html
 <spiral:form action="/upload">
-    <form:input type="file" name="upload"/>
+    <form:input label="Select your file:" type="file" name="upload"/>
 </spiral:form>
 ```
 
