@@ -166,6 +166,22 @@ class UserService extends Service implements SingletonInterface
 }
 ```
 
+Powerful HTML templater compatible with other templating engines:
+
+```html
+<spiral:grid source="<?= $uploads ?>" as="upload">
+    <grid:cell title="ID:" value="<?= $upload->getId() ?>"/>
+    <grid:cell title="Time Created:" value="<?= $upload->getTimeCreated() ?>"/>
+    <grid:cell.bytes title="Filesize:" value="<?= $upload->getFilesize() ?>"/>
+
+    <grid:cell><a href="#">Download</a></grid:cell>
+</spiral:grid>
+
+<spiral:cache lifetime="10">
+    <?= mt_rand(0, 100) ?>
+</spiral:cache>
+```
+
 https://twitter.com/spiralphp
 
 Use `./spiral` or `spiral` (Windows) to get list of console commands. Options `-v` and `-vv` used to get more details.
