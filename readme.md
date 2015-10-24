@@ -196,4 +196,4 @@ Use `./spiral` or `spiral` (Windows) to get list of console commands. Options `-
 To create new spiral application execute: `composer create-project spiral/application directory`
 > Your might need to update `spiral` permissions to use short cli enterpoint.
 
-> Profiler panel must be disabled by editing http configuration to speed up application.
+> Profiler panel can be disabled by editing http configuration to speed up application (it can also be done with  config swapping as well).
