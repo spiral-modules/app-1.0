@@ -96,6 +96,8 @@ function init() {
     profilerPanels();
     otherActions();
     initTabs();
+    changeTableLine();
+    document.getElementById('js-mode-switch').onclick = toggleMode;
 }
 
 function otherActions() {
@@ -190,28 +192,26 @@ function initTabs() {
 
     var i = 0;
 
-    for (var id in tabLinks) {
+    for ( var id in tabLinks ) {
         tabLinks[id].onclick = showTab;
-        tabLinks[id].onfocus = function () {
-            this.blur()
-        };
-        if (i == 0) tabLinks[id].className = 'selected';
+        tabLinks[id].onfocus = function() { this.blur() };
+        if ( i == 0 ) tabLinks[id].className = 'selected';
         i++;
     }
 
     var i = 0;
 
-    for (var id in contentDivs) {
-        if (i != 0) contentDivs[id].className = 'tab-block hide';
+    for ( var id in contentDivs ) {
+        if ( i != 0 ) contentDivs[id].className = 'tab-block hide';
         i++;
     }
 }
 
 function showTab() {
-    var selectedId = getHash(this.getAttribute('href'));
+    var selectedId = getHash( this.getAttribute('href') );
 
-    for (var id in contentDivs) {
-        if (id == selectedId) {
+    for ( var id in contentDivs ) {
+        if ( id == selectedId ) {
             tabLinks[id].className = 'selected';
             contentDivs[id].className = 'tab-block';
         } else {
@@ -223,13 +223,43 @@ function showTab() {
     return false;
 }
 
-function getFirstChildWithTagName(element, tagName) {
-    for (var i = 0; i < element.childNodes.length; i++) {
-        if (element.childNodes[i].nodeName == tagName) return element.childNodes[i];
+function getFirstChildWithTagName( element, tagName ) {
+    for ( var i = 0; i < element.childNodes.length; i++ ) {
+        if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
     }
 }
 
-function getHash(url) {
-    var hashPos = url.lastIndexOf('#');
-    return url.substring(hashPos + 1);
+function getHash( url ) {
+    var hashPos = url.lastIndexOf ( '#' );
+    return url.substring( hashPos + 1 );
+}
+
+function changeTableLine() {
+    var triggerLink = document.getElementById('trigger-link');
+    triggerLink.onclick = changeLinkClass;
+}
+
+function changeLinkClass() {
+    var triggerLink = document.getElementById('trigger-link');
+    var link = document.getElementById('trigger-link').className;
+    var div = document.getElementById('profiler-time-flow');
+
+        if ( link == "change-size narrow-size" ) {
+            triggerLink.className = "change-size origin-size";
+            div.className = 'flow'
+        } else {
+            triggerLink.className = "change-size narrow-size";
+            div.className = "flow narrow-size"
+        }
+
+    return false;
+}
+
+function toggleMode(){
+    var profiler = document.getElementById('spiral-profiler');
+    if(profiler.className.indexOf('dark-profiler') !== -1){
+        profiler.className = '';
+    } else {
+        profiler.className = 'dark-profiler'
+    }
 }

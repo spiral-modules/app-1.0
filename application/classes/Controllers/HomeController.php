@@ -19,7 +19,7 @@ class HomeController extends Controller
      *
      * @return mixed
      */
-    public function index()
+    public function indexAction()
     {
         return $this->views->render('welcome');
     }
@@ -29,7 +29,7 @@ class HomeController extends Controller
      *
      * @return array
      */
-    public function json()
+    public function jsonAction()
     {
         return [
             'status' => 200,
@@ -44,7 +44,7 @@ class HomeController extends Controller
      *
      * @return RedirectResponse
      */
-    public function redirect()
+    public function redirectAction()
     {
         return new RedirectResponse('http://google.com/');
     }
@@ -54,7 +54,7 @@ class HomeController extends Controller
      *
      * @return RedirectResponse
      */
-    public function internalRedirect(Router $router)
+    public function internalRedirectAction(Router $router)
     {
         return new RedirectResponse($router->createUri('jsonRoute'));
     }

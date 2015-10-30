@@ -5,7 +5,6 @@
  * - view namespaces associated with list of source directories
  * - list of view dependencies, used by default compiler to create unique cache name
  * - list of view engines associated with their extension, compiler and default view class
- * - configuration of default spiral compiler it's processors and other options
  */
 return [
     'cache'        => [
@@ -13,12 +12,16 @@ return [
         'directory' => directory("cache") . 'views/'
     ],
     'namespaces'   => [
-        'default' => [
-            directory("application") . 'views/',
+        'default'  => [
+            directory("application") . 'views/'
         ],
-        'spiral'  => [
+        'spiral'   => [
             directory("application") . 'views/spiral/',
-            directory("libraries") . 'spiral/framework/source/views/'
+            directory("libraries") . 'spiral/framework/source/views/',
+            directory("libraries") . 'spiral/toolkit/source/views/'
+        ],
+        'profiler' => [
+            directory("libraries") . 'spiral/profiler/source/views/'
         ]
     ],
     'dependencies' => [
@@ -37,16 +40,15 @@ return [
                 'php'
             ],
             'compiler'   => 'Spiral\Views\Compiler',
-            'view'       => 'Spiral\Views\View'
-        ]
-    ],
-    'compiler'     => [
-        'processors' => [
-            'Spiral\Views\Processors\ExpressionsProcessor' => [],
-            'Spiral\Views\Processors\TranslateProcessor'   => [],
-            'Spiral\Views\Processors\TemplateProcessor'    => [],
-            'Spiral\Views\Processors\EvaluateProcessor'    => [],
-            'Spiral\Views\Processors\PrettifyProcessor'    => []
+            'view'       => 'Spiral\Views\View',
+            'processors' => [
+                'Spiral\Views\Processors\ExpressionsProcessor' => [],
+                'Spiral\Views\Processors\TranslateProcessor'   => [],
+                'Spiral\Views\Processors\TemplateProcessor'    => [],
+                'Spiral\Views\Processors\EvaluateProcessor'    => [],
+                'Spiral\Views\Processors\PrettifyProcessor'    => [],
+                'Spiral\Toolkit\ResourceManager'                => []
+            ]
         ]
     ]
 ];
