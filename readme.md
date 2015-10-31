@@ -11,6 +11,7 @@ Guide: https://github.com/spiral/guide
 
 Components: https://github.com/spiral/components
 
+
 Spiral DI container will work behind the scene, in most of cases you don't even need to know about it:
 
 ```php
@@ -28,12 +29,12 @@ class HomeController extends Controller implements SingletonInterface
      * @param Database $logDatabase
      * @return string
      */
-    public function index(Database $database, Database $logDatabase)
+    public function indexAction(Database $database, Database $logDatabase)
     {
         $logDatabase->table('log')->insert(['message' => 'Yo!']);
     
         return $this->views->render('welcome', [
-            'users' => $db->table('users')->select()->all()
+            'users' => $database->table('users')->select()->all()
         ]);
     }
 }
@@ -42,7 +43,7 @@ class HomeController extends Controller implements SingletonInterface
 PSR-7 integration and method injections:
 
 ```php
-public function index(ResponseInterface $response)
+public function indexAction(ResponseInterface $response)
 {
     return $response->withHeader('Spiral', 'Value!');
 }
@@ -51,12 +52,28 @@ public function index(ResponseInterface $response)
 JSON responses
 
 ```php
-public function index(ServerRequestInterface $request)
+public function indexAction(ServerRequestInterface $request)
 {
     return [
         'status' => 200,
         'uri'    => (string)$request->getUri()
     ];
+}
+```
+
+StorageManger to simplify process of working with remote storages:
+
+```php
+public function uploadAction(StorageBucket $uploads)
+{
+    $object = $bucket->put(
+        'my-upload.file',
+        $this->input->files->get('upload')
+    );
+    
+    //...
+    
+    echo $object->replace('amazon')->getAddress();
 }
 ```
 
@@ -85,6 +102,7 @@ $posts = Post::find()
     ->with('comments') //Automatic joins
     ->with('author')->where('author.name', 'LIKE', $authorName) //Fluent
     ->load('comments.author') //Cascade eager-loading
+    ->paginate(10) //Quick and easy pagination
     ->all();
 
 foreach($posts as $post) {
@@ -165,7 +183,7 @@ class UserService extends Service implements SingletonInterface
 }
 ```
 
-Powerful HTML templater compatible with other templating engines:
+Powerful and extendable HTML templater compatible with other engines like Blade or Twig:
 
 ```html
 <spiral:grid source="<?= $uploads ?>" as="upload">
@@ -173,7 +191,9 @@ Powerful HTML templater compatible with other templating engines:
     <grid:cell title="Time Created:" value="<?= $upload->getTimeCreated() ?>"/>
     <grid:cell.bytes title="Filesize:" value="<?= $upload->getFilesize() ?>"/>
 
-    <grid:cell><a href="#">Download</a></grid:cell>
+    <grid:cell>
+        <a href="#">Download</a>
+    </grid:cell>
 </spiral:grid>
 
 <spiral:cache lifetime="10">
@@ -181,13 +201,15 @@ Powerful HTML templater compatible with other templating engines:
 </spiral:cache>
 ```
 
-Frontend toolkit with automatic **AJAX forms**:
+Frontend toolkit with powerful **AJAX forms** and widgets:
 
 ```html
 <spiral:form action="/upload">
     <form:input label="Select your file:" type="file" name="upload"/>
 </spiral:form>
 ```
+
+Plug and Play extensions, IDE friendly, auto-indexed translator, Symfony Console integration, debugging, profiling tools and much more!
 
 https://twitter.com/spiralphp
 
