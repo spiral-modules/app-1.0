@@ -15,6 +15,10 @@ It will help you to mount external libraries by providing simple API or design y
 
 Spiral DI container will work behind the scene, in most of cases you don't even need to know about it:
 
+Installation
+============
+Simply execute `composer create-project spiral/application {directory}`
+
 ```php
 class HomeController extends Controller implements SingletonInterface
 {
