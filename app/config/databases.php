@@ -83,7 +83,7 @@ return [
             'options'    => []
         ],
         'runtime'   => [
-            'driver'     => Drivers\Sqlite\SQLiteDriver::class,
+            'driver'     => Drivers\SQLite\SQLiteDriver::class,
             'connection' => 'sqlite:' . directory('runtime') . 'runtime.db',
             'profiling'  => env('DEBUG', false),
             'username'   => 'sqlite',
@@ -91,7 +91,7 @@ return [
             'options'    => []
         ],
         'sqlServer' => [
-            'driver'     => Drivers\SqlServer\SQLServerDriver::class,
+            'driver'     => Drivers\SQLServer\SQLServerDriver::class,
             'connection' => 'sqlsrv:Server=DESKTOP-ETTP923\SQLEXPRESS;Database=spiral',
             'profiling'  => env('DEBUG', false),
             'username'   => 'sqlServer',
