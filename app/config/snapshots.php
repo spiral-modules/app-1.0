@@ -1,10 +1,11 @@
 <?php
 /**
- * Spiral Framework.
+ * Configuration options for Snapshot class. Attention, configs might include runtime code which depended
+ * on environment values only.
  *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
+ * @see SnapshotConfig
  */
+
 return [
     'view'      => env('EXCEPTION_VIEW', 'spiral:exceptions/light/slow.php'),
     'reporting' => [

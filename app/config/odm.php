@@ -54,7 +54,7 @@ return [
             /*
              * Mutator aliases can be used to declare custom getter and setter filter methods.
              */
-            /*{{mutator-aliases}}*/
+            /*{{mutators.aliases}}*/
         ]
     ]
 ];
