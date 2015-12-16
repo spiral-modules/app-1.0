@@ -18,7 +18,7 @@ return [
          * Slow cache store to be used in develop environments.
          */
         Stores\FileStore::class     => [
-            'directory' => directory('runtime') . 'data-cache/',
+            'directory' => directory('runtime') . 'cache/',
             'extension' => 'cache'
         ],
         /*
