@@ -30,7 +30,7 @@ return [
         //Runtime (local) databases, this safe db to check some ideas and drafts
         'dynamic'  => 'runtime',
         'develop'  => 'runtime',
-        'sandbox'  => 'primary',
+        'sandbox'  => 'runtime',
 
         /*{{aliases}}*/
     ],
@@ -43,19 +43,19 @@ return [
      * different databases (for now).
      */
     'databases'   => [
-        //'primary'   => [
-        //    'connection'  => 'mysql',
-        //    'tablePrefix' => 'primary_'
-        //],
-        //'secondary' => [
-        //    'connection'  => 'postgres',
-        //    'tablePrefix' => 'secondary_',
-        //],
+        'primary'   => [
+            'connection'  => 'mysql',
+            'tablePrefix' => 'primary_'
+        ],
+        'secondary' => [
+            'connection'  => 'postgres',
+            'tablePrefix' => 'secondary_',
+        ],
         /*
          * You can use this database to store application specific settings, obviously data has to be
          * cached and no client data can land here.
          */
-        'runtime' => [
+        'runtime'   => [
             'connection'  => 'runtime',
             'tablePrefix' => '',
         ],
@@ -70,8 +70,8 @@ return [
             'driver'     => Drivers\MySQL\MySQLDriver::class,
             'connection' => 'mysql:host=127.0.0.1;dbname=demo',
             'profiling'  => env('DEBUG', false),
-            'username'   => 'root',
-            'password'   => 'root',
+            'username'   => 'mysql',
+            'password'   => '~~',
             'options'    => []
         ],
         'postgres'  => [
@@ -79,7 +79,7 @@ return [
             'connection' => 'pgsql:host=127.0.0.1;dbname=spiral',
             'profiling'  => env('DEBUG', false),
             'username'   => 'postgres',
-            'password'   => '',
+            'password'   => '~~',
             'options'    => []
         ],
         'runtime'   => [
@@ -94,8 +94,8 @@ return [
             'driver'     => Drivers\SqlServer\SqlServerDriver::class,
             'connection' => 'sqlsrv:Server=DESKTOP-ETTP923\SQLEXPRESS;Database=spiral',
             'profiling'  => env('DEBUG', false),
-            'username'   => null,
-            'password'   => null,
+            'username'   => 'sqlServer',
+            'password'   => '~~',
             'options'    => []
         ],
         /*{{connections}}*/
