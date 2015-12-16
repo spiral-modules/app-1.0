@@ -7,4 +7,4 @@ php:
   - hhvm
 
 install: composer install --no-interaction --prefer-source --no-scripts
-script: php -r "copy('.env.sample', '.env');" && php webroot/index.php configure -vv -k && php webroot/index.php updare -vv && php webroot/index.php seed
+script: php -r "copy('.env.sample', '.env');" && php webroot/index.php configure -vv -k && php webroot/index.php update -vv && php webroot/index.php seed
