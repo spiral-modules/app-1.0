@@ -6,7 +6,7 @@
  * @author    Anton Titov (Wolfy-J)
  */
 return [
-    'view'      => env('EXCEPTION_VIEW'),
+    'view'      => env('EXCEPTION_VIEW', 'spiral:exceptions/light/slow.php'),
     'reporting' => [
         'enabled'      => true,
         'maxSnapshots' => 20,

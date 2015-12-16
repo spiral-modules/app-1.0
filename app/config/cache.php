@@ -12,7 +12,7 @@ return [
      * Class name of default cache store to be used by application. You can all request specific
      * store class in your dependencies.
      */
-    'store'  => env('CACHE_STORE'),
+    'store'  => env('CACHE_STORE', 'Spiral\Cache\Stores\FileStore'),
     'stores' => [
         /*
          * Slow cache store to be used in develop environments.

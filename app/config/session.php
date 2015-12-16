@@ -15,7 +15,7 @@ return [
     /*
      * Cookie name for sessions. Used by SessionStarter middleware.
      */
-    'cookie'   => env('SESSION_COOKIE'),
+    'cookie'   => env('SESSION_COOKIE', 'PHPSESSID'),
     /*
      * Default handler is set to file. You can switch this values based on your environments.
      * SessionStore will be initiated on demand to prevent performance issues. Since spiral provides
@@ -25,7 +25,7 @@ return [
      * You can set this value to "native" to disable custom session handler and use default php
      * mechanism.
      */
-    'handler'  => env('SESSION_HANDLER'),
+    'handler'  => env('SESSION_HANDLER', 'native'),
     'handlers' => [
         'null'  => [
             'class' => Handlers\NullHandler::class

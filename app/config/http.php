@@ -18,7 +18,7 @@ return [
      * When set to false http dispatcher will stop reacting on application exception and will
      * return only 500 error page.
      */
-    'exposeErrors' => env('DEBUG'),
+    'exposeErrors' => env('DEBUG', false),
     /*
      * Configuration options for CookieManager middleware.
      */
