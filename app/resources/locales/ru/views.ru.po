@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.6\n"
+
+msgid "Welcome to Spiral!"
+msgstr "Добро пожаловать"
+
+msgid "Welcome To Spiral"
+msgstr "Добро пожаловать в Spiral Framework"
+
+msgid "Welcome to Spiral Framework"
+msgstr "Добро пожаловать в Spiral Framework"
+
+msgid "GitHub"
+msgstr "GitHub"
+
+msgid "Twig Version"
+msgstr "Twig версия"
+
+msgid "Framework Guide"
+msgstr "Руководство"
+
+msgid "This view file is located in {link} and rendered by {controller}."
+msgstr "Это представление расположено в {link} и вызвано в {controller}."
+
+msgid "Welcome to Spiral"
+msgstr "Добро пожаловать в Spiral Framework"
+
+msgid "Stempler Version"
+msgstr "Stempler версия"
+
+msgid "This view file is located in"
+msgstr "Это представление расположено в"
+
+msgid "and rendered by"
+msgstr "и вызвано через "

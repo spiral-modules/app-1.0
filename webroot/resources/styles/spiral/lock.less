@@ -1,0 +1,72 @@
+.locked .form-content {
+  pointer-events: none;
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  opacity: .7;
+}
+
+.sf-spinner {
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-indent: -9999em;
+  border: 3px solid rgba(90, 90, 90, 0.2);
+  border-left-color: #74b5eb;
+  margin: -15px 0 0 -15px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: sf-spinner 1.1s infinite linear;
+  animation: sf-spinner 1.1s infinite linear;
+}
+
+.sf-spinner,
+.sf-spinner:after {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+@-webkit-keyframes sf-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sf-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.sf-progress {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  width: 80%;
+  height: 10px;
+  background: rgba(90, 90, 90, .2);
+  border-radius: 2px;
+}
+
+.sf-progress-line {
+  background: #74b5eb;
+  width: 0;
+  height: 10px;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

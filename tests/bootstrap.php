@@ -1,6 +1,6 @@
 <?php
 /**
- * Spiral Framework
+ * Spiral Framework, SpiralScout LLC.
  *
  * @package   spiralFramework
  * @author    Anton Titov (Wolfy-J)
@@ -13,7 +13,7 @@ mb_internal_encoding('UTF-8');
 
 //Error reporting
 error_reporting(E_ALL | E_STRICT);
-ini_set('display_errors', false);
+ini_set('display_errors', true);
 
 //Root directory
 $root = dirname(__DIR__) . '/';
@@ -24,13 +24,9 @@ require $root . 'vendor/autoload.php';
 //Forcing work directory
 chdir($root);
 
-//Initiating shared container, bindings, directories and etc
-$application = App::init([
-    'root'        => $root,
-    'libraries'   => $root . 'vendor/',
-    'application' => $root . 'app/',
-    //other directories calculated based on default pattern, @see Core::__constructor()
-]);
-
 //Let's start!
-$application->start();
+App::init([
+    'root'        => $root,
+    'libraries'   => $root . '/vendor/',
+    'application' => $root . '/app/'
+], null, false);

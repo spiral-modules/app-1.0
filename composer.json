@@ -5,29 +5,30 @@
   "authors": [
     {
       "name": "Wolfy-J",
-      "email": "wolfy-j@spiralscout.com"
+      "email": "wolfy.jd@gmail.com"
     }
   ],
   "require": {
-    "spiral/framework": "*",
-    "spiral/profiler": "*",
-    "spiral/toolkit": "*"
-  },
-  "recommend": {
-    "spiral/images": "*",
-    "spiral/redis": "*"
+    "spiral/framework": "^0.8.0",
+    "spiral/profiler": "^0.8.0",
+    "spiral/toolkit": "^0.8.0",
+    "fzaninotto/faker": "^1.5"
   },
   "scripts": {
     "post-install-cmd": [
-      "php webroot/index.php configure -v --key"
+      "php webroot/index.php configure -vv",
+      "php webroot/index.php app:key"
     ],
     "post-update-cmd": [
       "php webroot/index.php configure"
+    ],
+    "post-root-package-install": [
+      "php -r \"copy('.env.sample', '.env');\""
     ]
   },
   "autoload": {
     "psr-4": {
-      "": "application/classes/"
+      "": "app/classes/"
     }
   }
 }

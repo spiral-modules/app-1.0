@@ -1,12 +1,10 @@
 *.log
 *.log.old
-application/runtime/*.php
-application/runtime/cache/*.php
-application/runtime/cache/views/*.php
-application/runtime/logging/snapshots/*.html
+application/runtime/*
 .idea/
 libraries
 composer.lock
 composer.phar
 data/*
 vendor/
+.env

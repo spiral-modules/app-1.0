@@ -15,8 +15,8 @@ body {
 .wrapper {
     position: relative;
     top: 10%;
-    transform: translate(50%, -50%);
-    -webkit-transform: translate(50%, 50%);
+    transform: translate(50%, -40%);
+    -webkit-transform: translate(50%, 40%);
     text-align: center;
     width: 50%;
 }
