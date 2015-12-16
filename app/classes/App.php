@@ -4,7 +4,6 @@
  *
  * @license   MIT
  * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
  */
 use Spiral\Core\Core;
 use Spiral\Debug;
@@ -46,7 +45,7 @@ class App extends Core
     protected function bootstrap()
     {
         /*
-         * Debug mode automatically enables spiral profiler or any other added bootloader listed
+         * Debug mode automatically enables spiral profiler or any other bootloaders listed
          * in a following method.
          *
          * In addition, it sets different snapshot class which provides ability to render

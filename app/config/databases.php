@@ -68,7 +68,7 @@ return [
     'connections' => [
         'mysql'     => [
             'driver'     => Drivers\MySQL\MySQLDriver::class,
-            'connection' => 'mysql:host=127.0.0.1;dbname=demo',
+            'connection' => 'mysql:host=127.0.0.1;dbname=spiral',
             'profiling'  => env('DEBUG', false),
             'username'   => 'mysql',
             'password'   => '~~',

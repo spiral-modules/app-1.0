@@ -1,9 +1,9 @@
-Spiral RAD PSR-7 HMVC Framework - DEV
+Spiral RAD PSR-7 HMVC Framework (beta)
 =======================
 [![Latest Stable Version](https://poser.pugx.org/spiral/framework/v/stable)](https://packagist.org/packages/spiral/framework) [![Total Downloads](https://poser.pugx.org/spiral/framework/downloads)](https://packagist.org/packages/spiral/framework) [![License](https://poser.pugx.org/spiral/framework/license)](https://packagist.org/packages/spiral/framework) [![Build Status](https://travis-ci.org/spiral/application.svg?branch=master)](https://travis-ci.org/spiral/application)
 
 The Spiral framework provides a simple Rapid Application Development (RAD) platform to develop web 
-applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms.
+applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms (temporary in transition).
 
 Check bundle application: **https://github.com/spiral-php/application**
 
@@ -17,12 +17,8 @@ Examples
 ========
 
 ```php
-class HomeController extends Controller implements SingletonInterface
+class HomeController extends Controller 
 {
-    //Now DI will automatically link this class as singleton and return 
-    //same instance on every injection - "I want to be a Singleton" constant.
-    const SINGLETON = self::class;
-
     /**
      * Spiral can automatically deside what database/cache/storage
      * instance to provide for every action parameter.

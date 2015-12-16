@@ -19,7 +19,7 @@
 
             <div style="font-size: 12px; margin-top: 10px;">
                 [[This view file is located in]]
-                <a href="${git}/app/blob/master/application/views/welcome.dark.php">app/views/welcome.dark.php</a>
+                <a href="${git}/application/blob/master/app/views/welcome.dark.php">app/views/welcome.dark.php</a>
                 [[and rendered by]] <b>Controllers\HomeController</b>.
             </div>
         </div>
