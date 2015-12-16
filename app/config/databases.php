@@ -43,14 +43,14 @@ return [
      * different databases (for now).
      */
     'databases'   => [
-        'primary'   => [
-            'connection'  => 'mysql',
-            'tablePrefix' => 'primary_'
-        ],
-        'secondary' => [
-            'connection'  => 'postgres',
-            'tablePrefix' => 'secondary_',
-        ],
+        //'primary'   => [
+        //    'connection'  => 'mysql',
+        //    'tablePrefix' => 'primary_'
+        //],
+        //'secondary' => [
+        //    'connection'  => 'postgres',
+        //    'tablePrefix' => 'secondary_',
+        //],
         /*
          * You can use this database to store application specific settings, obviously data has to be
          * cached and no client data can land here.
