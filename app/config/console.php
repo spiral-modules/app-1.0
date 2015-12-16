@@ -20,7 +20,7 @@ return [
      * models with passive schemas.
      */
     'updateSequence'    => [
-        'odm:schema' => ['options' => ['--sync' => true]],
+        //'odm:schema' => ['options' => ['--sync' => true]],
         'orm:schema' => ['options' => ['--sync' => true]],
         /*{{sequence.update}}*/
     ]
