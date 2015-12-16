@@ -12,31 +12,28 @@ return [
      * Class name of default cache store to be used by application. You can all request specific
      * store class in your dependencies.
      */
-    'store'  => env('CACHE_STORE', 'Spiral\Cache\Stores\FileStore'),
+    'store'  => env('CACHE_STORE', 'files'),
     'stores' => [
         /*
          * Slow cache store to be used in develop environments.
          */
-        Stores\FileStore::class     => [
+        'files'    => [
+            'class'     => Stores\FileStore::class,
             'directory' => directory('runtime') . 'cache/',
             'extension' => 'cache'
         ],
-        /*
-         * Only when xCache is installed.
-         */
-        Stores\XCacheStore::class   => [
+        'xcache'   => [
+            'class'  => Stores\XCacheStore::class,
             'prefix' => 'spiral:'
+
         ],
-        /*
-         * Can work APC and APCU extensions.
-         */
-        Stores\APCStore::class      => [
+        'apc'      => [
+            'class'  => Stores\APCStore::class,
             'prefix' => 'spiral:'
+
         ],
-        /*
-         * Can work with memcached and memcache extensions.
-         */
-        Stores\MemcacheStore::class => [
+        'memcache' => [
+            'class'   => Stores\MemcacheStore::class,
             'prefix'  => 'spiral:',
             'options' => [],
             'servers' => [
@@ -45,5 +42,6 @@ return [
             ]
         ],
         /*{{stores}}*/
+
     ]
 ];
