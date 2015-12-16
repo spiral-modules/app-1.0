@@ -25,7 +25,7 @@ return [
      * You can set this value to "native" to disable custom session handler and use default php
      * mechanism.
      */
-    'handler'  => env('SESSION_HANDLER', 'native'),
+    'handler'  => env('SESSION_HANDLER', false),
     'handlers' => [
         'null'  => [
             'class' => Handlers\NullHandler::class
