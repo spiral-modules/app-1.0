@@ -140,6 +140,7 @@ Frontend toolkit with powerful **AJAX forms** and widgets:
     <form:input label="Select your file:" type="file" name="upload"/>
 </spiral:form>
 ```
+
 Also included
 =============
 
