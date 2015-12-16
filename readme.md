@@ -13,6 +13,9 @@ Components: https://github.com/spiral/components
 
 **Installation**: `composer create-project spiral/application {directory}`
 
+Examples
+========
+
 ```php
 class HomeController extends Controller implements SingletonInterface
 {
