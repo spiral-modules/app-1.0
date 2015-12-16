@@ -2,7 +2,8 @@ Spiral RAD PSR-7 HMVC Framework - DEV
 =======================
 [![Latest Stable Version](https://poser.pugx.org/spiral/framework/v/stable)](https://packagist.org/packages/spiral/framework) [![Total Downloads](https://poser.pugx.org/spiral/framework/downloads)](https://packagist.org/packages/spiral/framework) [![License](https://poser.pugx.org/spiral/framework/license)](https://packagist.org/packages/spiral/framework) [![Build Status](https://travis-ci.org/spiral/application.svg?branch=master)](https://travis-ci.org/spiral/application)
 
-The Spiral framework provides a simple Rapid Application Development (RAD) platform to develop web applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms.
+The Spiral framework provides a simple Rapid Application Development (RAD) platform to develop web 
+applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms.
 
 Check bundle application: **https://github.com/spiral-php/application**
 
@@ -10,14 +11,7 @@ Guide: https://github.com/spiral/guide
 
 Components: https://github.com/spiral/components
 
-Spiral will take care of database abstractions, ORM, MongoDB, working with Amazon or Rackspace, Views and Templates, etc.
-It will help you to mount external libraries by providing simple API or design your application using **Services** and **DataEntities**.
-
-Spiral DI container will work behind the scene, in most of cases you don't even need to know about it:
-
-Installation
-============
-Simply execute `composer create-project spiral/application {directory}`
+**Installation**: `composer create-project spiral/application {directory}`
 
 ```php
 class HomeController extends Controller implements SingletonInterface
