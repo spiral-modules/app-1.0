@@ -55,8 +55,8 @@ return [
          * You can use this database to store application specific settings, obviously data has to be
          * cached and no client data can land here.
          */
-        'runtime'   => [
-            'connection'  => 'sqlite',
+        'runtime' => [
+            'connection'  => 'runtime',
             'tablePrefix' => '',
         ],
         /*{{databases}}*/
@@ -69,7 +69,7 @@ return [
         'mysql'     => [
             'driver'     => Drivers\MySQL\MySQLDriver::class,
             'connection' => 'mysql:host=127.0.0.1;dbname=demo',
-            'profiling'  => env('DEBUG'),
+            'profiling'  => env('DEBUG', false),
             'username'   => 'root',
             'password'   => 'root',
             'options'    => []
@@ -77,15 +77,15 @@ return [
         'postgres'  => [
             'driver'     => Drivers\Postgres\PostgresDriver::class,
             'connection' => 'pgsql:host=127.0.0.1;dbname=spiral',
-            'profiling'  => env('DEBUG'),
+            'profiling'  => env('DEBUG', false),
             'username'   => 'postgres',
             'password'   => '',
             'options'    => []
         ],
-        'sqlite'    => [
+        'runtime'   => [
             'driver'     => Drivers\Sqlite\SqliteDriver::class,
             'connection' => 'sqlite:' . directory('runtime') . 'runtime.db',
-            'profiling'  => env('DEBUG'),
+            'profiling'  => env('DEBUG', false),
             'username'   => 'sqlite',
             'password'   => '',
             'options'    => []
@@ -93,7 +93,7 @@ return [
         'sqlServer' => [
             'driver'     => Drivers\SqlServer\SqlServerDriver::class,
             'connection' => 'sqlsrv:Server=DESKTOP-ETTP923\SQLEXPRESS;Database=spiral',
-            'profiling'  => env('DEBUG'),
+            'profiling'  => env('DEBUG', false),
             'username'   => null,
             'password'   => null,
             'options'    => []
