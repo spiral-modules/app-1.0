@@ -1,10 +1,6 @@
-*.log
-*.log.old
-application/runtime/*
+app/runtime/*
 .idea/
-libraries
 composer.lock
 composer.phar
-data/*
 vendor/
 .env
