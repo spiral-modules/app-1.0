@@ -141,7 +141,7 @@ Frontend toolkit with powerful **AJAX forms** and widgets:
 
 ```html
 <spiral:form action="/upload">
-    <form:input label="Select your file:" type="file" name="upload"/>
+    <form:input label="Select your file:" type="file" name="upload" style="color: red" label-style="font-weight: bold"/>
 </spiral:form>
 ```
 Also included
