@@ -2,8 +2,7 @@ Spiral RAD PSR-7 HMVC Framework (beta)
 =======================
 [![Latest Stable Version](https://poser.pugx.org/spiral/application/v/stable)](https://packagist.org/packages/spiral/application) [![Total Downloads](https://poser.pugx.org/spiral/application/downloads)](https://packagist.org/packages/spiral/application) [![License](https://poser.pugx.org/spiral/application/license)](https://packagist.org/packages/spiral/application) [![Build Status](https://travis-ci.org/spiral/application.svg?branch=master)](https://travis-ci.org/spiral/application)
 
-The Spiral framework provides a simple Rapid Application Development (RAD) platform to develop web 
-applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms (temporary in transition).
+The Spiral framework provides a simple Rapid Application Development (RAD) platform to develop web applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms (temporary in transition).
 
 Check bundle application: **https://github.com/spiral-php/application**
 
@@ -11,13 +10,17 @@ Guide: https://github.com/spiral/guide
 
 Components: https://github.com/spiral/components
 
-**Installation**: `composer create-project spiral/application {directory}`
+Temporary in transition
+=======================
+* Scaffolding module
+* PHPStorm IDE help module (ORM and ODM)
+* Documentation update (current version has pre-symfony/zend state)
 
-Examples
+Examples:
 ========
 
 ```php
-class HomeController extends Controller 
+class HomeController extends Controller
 {
     /**
      * Spiral can automatically deside what database/cache/storage
@@ -58,6 +61,10 @@ public function indexAction(ServerRequestInterface $request)
     ];
 }
 ```
+
+Contextual injections and database introspection:
+
+![Databases](https://raw.githubusercontent.com/spiral/guide/master/resources/db-schema.gif)
 
 StorageManger to simplify process of working with remote storages:
 
@@ -108,6 +115,10 @@ foreach($posts as $post) {
 }
 ```
 
+Shared components and shortcuts to container bindings:
+
+![Shared bindings](https://raw.githubusercontent.com/spiral/guide/master/resources/virtual-bindings.gif)
+
 Powerful and extendable HTML templater compatible with other engines like Blade or Twig (included as well):
 
 ```html
@@ -133,11 +144,10 @@ Frontend toolkit with powerful **AJAX forms** and widgets:
     <form:input label="Select your file:" type="file" name="upload"/>
 </spiral:form>
 ```
-
 Also included
 =============
 
 Plug and Play extensions, IDE friendly, frontend toolkit, static analysis, cache and logic cache, 
 meta programing ideas, cloud storages, scaffolding, auto-indexed translator, Interop Container,
-Symfony Console integration, Zend Diactoros, Symfony Translation, Monolog, Symfony Events, Twig, 
+Zend Diactoros, Symfony Console, Symfony Translation, Symfony Events, Monolog, Twig, 
 debugging/profiling tools and much more!
