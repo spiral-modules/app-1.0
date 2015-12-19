@@ -7,13 +7,20 @@
  */
 namespace Tests;
 
+use Spiral\Core\Traits\SharedTrait;
+
 class TestCase extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @return \App
+     * Magic properties
      */
-    protected function application()
+    use SharedTrait;
+
+    /**
+     * @return \Interop\Container\ContainerInterface
+     */
+    protected function container()
     {
-        return \App::sharedContainer()->get(\App::class);
+        return \App::sharedContainer();
     }
 }

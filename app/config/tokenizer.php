@@ -21,6 +21,7 @@ return [
      */
     'exclude'     => [
         'vendor',
+        'tests'
         /*{{exclude}}*/
     ]
 ];

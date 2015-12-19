@@ -12,23 +12,31 @@
     "spiral/framework": "^0.8.0",
     "spiral/profiler": "^0.8.0",
     "spiral/toolkit": "^0.8.0",
-    "fzaninotto/faker": "^1.5"
+    "fzaninotto/faker": "~1.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
   },
   "scripts": {
-    "post-install-cmd": [
-      "php webroot/index.php configure -vv",
+    "post-root-package-install": [
+      "php -r \"copy('.env.sample', '.env');\"",
       "php webroot/index.php app:key"
     ],
-    "post-update-cmd": [
-      "php webroot/index.php configure"
-    ],
-    "post-root-package-install": [
-      "php -r \"copy('.env.sample', '.env');\""
+    "post-install-cmd": [
+      "php webroot/index.php configure -vv"
     ]
   },
   "autoload": {
     "psr-4": {
       "": "app/classes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": [
+        "tests/",
+        "tests/cases/"
+      ]
     }
   }
 }
