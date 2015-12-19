@@ -70,11 +70,7 @@ trait HttpTrait
         array $headers = []
     ) {
         $request = new ServerRequest([], [], $uri, $method, 'php://temp', $headers);
-        $request->withParsedBody($data);
-        $request->withQueryParams($query);
-        $request->withCookieParams($cookies);
-
-        return $request;
+        return $request->withParsedBody($data)->withQueryParams($query)->withCookieParams($cookies);
     }
 
     /**
