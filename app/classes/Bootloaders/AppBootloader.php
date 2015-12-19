@@ -81,6 +81,20 @@ class AppBootloader extends Bootloader implements SingletonInterface
      */
     public function boot(HttpDispatcher $http)
     {
+        //Register route in a default http router (you can change router using setRouter() method)
+        $http->addRoute($this->sampleRole());
+
+        //Default route used as "fallback" when no other route work
+        $http->defaultRoute($this->defaultRoute());
+    }
+
+    /**
+     * html like urls
+     *
+     * @return Route
+     */
+    public function sampleRole()
+    {
         //Custom application routes can be located here (this one: /twig.html, /index.html).
         $route = new Route('home', '<action>.html', 'Controllers\HomeController::<action>');
 
@@ -89,9 +103,16 @@ class AppBootloader extends Bootloader implements SingletonInterface
             return $next($request, $response)->withHeader('My-Header', 'Yay!');
         });
 
-        //Registering route in a default http router (you can change router using setRouter() method)
-        $http->addRoute($route);
+        return $route;
+    }
 
+    /**
+     * Default (fallback) application route
+     *
+     * @return ControllersRoute
+     */
+    private function defaultRoute()
+    {
         //Default route points to controllers located in namespace "Controllers" but not deeper
         $defaultRoute = new ControllersRoute(
             'default',                          //Route name
@@ -105,10 +126,9 @@ class AppBootloader extends Bootloader implements SingletonInterface
             'index' => \Controllers\HomeController::class
         ])->defaults([
             //All controller names are automatically lcased(), better logic help needed :)
-            'controller' => 'home',
+            'controller' => 'index',
         ]);
 
-        //Default route used as "fallback" when no other route work
-        $http->defaultRoute($defaultRoute);
+        return $defaultRoute;
     }
 }
