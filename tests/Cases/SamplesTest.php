@@ -17,7 +17,6 @@ class SamplesTest extends TestCase
     public function testList()
     {
         $response = $this->get('/sample');
-
         $this->assertContains('Edit element', (string)$response->getBody());
     }
 
@@ -31,11 +30,6 @@ class SamplesTest extends TestCase
     {
         $response = $this->get('/sample/edit/abc');
         $this->assertEquals(404, $response->getStatusCode());
-    }
-
-    public function setUp()
-    {
-        $this->orm->cache()->flushCache();
     }
 
     public function tearDown()
