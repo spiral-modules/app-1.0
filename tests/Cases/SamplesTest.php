@@ -14,6 +14,11 @@ class SamplesTest extends TestCase
 {
     use HttpTrait;
 
+    public function tearDown()
+    {
+        $this->orm->cache()->flushCache();
+    }
+
     public function testList()
     {
         $response = $this->get('/sample');
