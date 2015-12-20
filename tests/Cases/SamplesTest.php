@@ -29,6 +29,7 @@ class SamplesTest extends TestCase
     public function testBadElement()
     {
         $response = $this->get('/sample/edit/abc');
+        $this->assertEquals(404, $response->getStatusCode());
     }
 
     public function tearDown()
