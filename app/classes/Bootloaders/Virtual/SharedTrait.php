@@ -52,7 +52,7 @@ use Spiral\Core\Exceptions\SugarException;
  * @property-read \Spiral\ORM\ORM                          $orm        See SpiralBindings
  *
  * Shared entities:
- * @property-read \Spiral\Cache\CacheStore                 $cache      See SpiralBindings
+ * @property-read \Spiral\Cache\StoreInterface             $cache      See SpiralBindings
  * @property-read \Spiral\Database\Entities\Database       $db         See SpiralBindings
  * @property-read \Spiral\ODM\Entities\MongoDatabase       $mongo      See SpiralBindings
  *
