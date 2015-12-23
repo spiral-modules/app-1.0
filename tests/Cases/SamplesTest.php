@@ -31,7 +31,7 @@ class SamplesTest extends TestCase
         $response = $this->get('/sample/edit/abc');
         $this->assertEquals(404, $response->getStatusCode());
     }
-    
+
     public function tearDown()
     {
         $this->orm->cache()->flushCache();

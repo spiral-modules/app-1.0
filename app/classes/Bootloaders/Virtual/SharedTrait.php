@@ -38,13 +38,13 @@ use Spiral\Core\Exceptions\SugarException;
  * @property-read \Spiral\Http\HttpDispatcher              $http       See SpiralBindings
  *
  * Shared components:
- * @property-read \Spiral\Encrypter\Encrypter              $encrypter  See SpiralBindings
- * @property-read \Spiral\Files\FileManager                $files      See SpiralBindings
- * @property-read \Spiral\Tokenizer\Tokenizer              $tokenizer  See SpiralBindings
- * @property-read \Spiral\Tokenizer\ClassLocator           $locator    See SpiralBindings
+ * @property-read \Spiral\Encrypter\EncrypterInterface     $encrypter  See SpiralBindings
+ * @property-read \Spiral\Files\FilesInterface             $files      See SpiralBindings
+ * @property-read \Spiral\Tokenizer\TokenizerInteface      $tokenizer  See SpiralBindings
+ * @property-read \Spiral\Tokenizer\ClassLocatorInteface   $locator    See SpiralBindings
  * @property-read \Spiral\Translator\Translator            $translator See SpiralBindings
  * @property-read \Spiral\Views\ViewManager                $views      See SpiralBindings
- * @property-read \Spiral\Storage\StorageManager           $storage    See SpiralBindings
+ * @property-read \Spiral\Storage\StorageInterface         $storage    See SpiralBindings
  *
  * Databases and models:
  * @property-read \Spiral\Database\DatabaseManager         $dbal       See SpiralBindings
@@ -52,15 +52,15 @@ use Spiral\Core\Exceptions\SugarException;
  * @property-read \Spiral\ORM\ORM                          $orm        See SpiralBindings
  *
  * Shared entities:
- * @property-read \Spiral\Cache\CacheStore                 $cache      See SpiralBindings
+ * @property-read \Spiral\Cache\StoreInterface             $cache      See SpiralBindings
  * @property-read \Spiral\Database\Entities\Database       $db         See SpiralBindings
  * @property-read \Spiral\ODM\Entities\MongoDatabase       $mongo      See SpiralBindings
  *
  * Scope dependent:
- * @property-read \Spiral\Session\SessionStore             $session    See SpiralBindings
+ * @property-read \Spiral\Session\SessionInterface         $session    See SpiralBindings
  * @property-read \Spiral\Http\Input\InputManager          $input      See SpiralBindings
  * @property-read \Spiral\Http\Cookies\CookieManager       $cookies    See SpiralBindings
- * @property-read \Spiral\Http\Routing\Router              $router     See SpiralBindings
+ * @property-read \Spiral\Http\Routing\RouterInterface     $router     See SpiralBindings
  * @property-read \Spiral\Http\Responses\Responder         $responses  See SpiralBindings
  *
  * @property-read \Psr\Http\Message\ServerRequestInterface $request    See SpiralBindings

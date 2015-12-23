@@ -54,7 +54,8 @@ class SampleController extends Controller
      */
     public function editAction($id)
     {
-        if (empty($entity = Sample::findByPK($id))) {
+        //You can do the same thing using source by overwriting findByPK method
+        if (empty($entity = Sample::findByPK($id, ['child']))) {
             throw new NotFoundException();
         }
 
@@ -77,7 +78,7 @@ class SampleController extends Controller
          * @var Sample $entity
          */
         if (!empty($id)) {
-            if (empty($entity = Sample::findByPK($id))) {
+            if (empty($entity = Sample::findByPK($id, ['child']))) {
                 throw new NotFoundException();
             }
         } else {
