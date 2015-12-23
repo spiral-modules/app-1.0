@@ -4,11 +4,7 @@ Spiral RAD PSR-7 HMVC Framework (beta)
 
 The Spiral framework provides a simple Rapid Application Development (RAD) platform to develop web applications using an HMVC architecture, PSR-7, simple syntax and powerful scaffolding mechanisms (use existed or write your own).
 
-Check bundle application: **https://github.com/spiral-php/application**
-
-Guide: https://github.com/spiral/guide
-
-Components: https://github.com/spiral/components
+[**Framework bundle**](https://github.com/spiral/spiral) | [Website](prod-url-here) | [Guide](https://github.com/spiral/guide) | [**Components**](https://github.com/spiral/components)
 
 Temporary in transition
 =======================
