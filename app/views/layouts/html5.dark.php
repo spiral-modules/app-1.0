@@ -6,7 +6,7 @@
     <block:head>
         <title>${title}</title>
         <script>
-            window.csrfToken = "<?= spiral('request')->getAttribute('csrfToken') ?>";
+            window.csrfToken = "<?= app()->request->getAttribute('csrfToken') ?>";
         </script>
         <asset:style href="resources/styles/spiral/spiral.css"/>
         <block:resources/>
