@@ -9,7 +9,7 @@ use Spiral\Core\Core;
 use Spiral\Debug;
 
 /**
- * Application core.
+ * Application core. You can rename this class to reflect your project name.
  */
 class App extends Core
 {
