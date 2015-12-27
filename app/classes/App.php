@@ -34,7 +34,7 @@ class App extends Core
     ];
 
     /**
-     * Application core bootloading, you can also put your rotes definition here.
+     * Application core bootloading, you can configure your enviroment here.
      */
     protected function bootstrap()
     {
