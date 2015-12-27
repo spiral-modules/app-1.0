@@ -30,20 +30,20 @@ return [
     'domains'          => [
         'validation' => [
             'spiral-validation-*',
-            /*{{domain.validation}}*/
+            /*{{domains.validation}}*/
         ],
         'spiral'     => [
             'spiral-*',
             'view-spiral-*',
-            /*{{domain.spiral}}*/
+            /*{{domains.spiral}}*/
         ],
         'profiler'   => [
             'view-profiler-*',
-            /*{{domain.profiler}}*/
+            /*{{domains.profiler}}*/
         ],
         'views'      => [
             'view-*',
-            /*{{domain.views}}*/
+            /*{{domains.views}}*/
         ],
         'messages'   => ['*'],
         /*{{domains}}*/
