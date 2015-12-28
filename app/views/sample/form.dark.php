@@ -20,7 +20,7 @@
         <form.textarea label="Content" name="content" value="<?= e($entity->content) ?>" rows="15"/>
         <form.input label="Value" name="value" value="<?= $entity->child->value ?>"/>
 
-        <input type="submit" class="btn btn-default" value="<?= $entity->isLoaded() ? '[[Update Element]]' : '[[Create Element]]' ?>"/>
+        <input type="submit" class="btn btn-default" value="<?= $entity->isLoaded() ? '[[Update]]' : '[[Create]]' ?>"/>
     </spiral:form>
 
     <?php if ($entity->isLoaded() && !empty($source)): ?>
