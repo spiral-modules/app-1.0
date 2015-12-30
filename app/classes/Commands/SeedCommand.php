@@ -34,9 +34,6 @@ class SeedCommand extends Command
     {
         $this->writeln("Seeding sample entities...");
 
-        //Disabling entity cache
-        $this->orm->cache()->configureCache(false);
-
         $progress = new ProgressBar($this->output, 100);
         for ($i = 0; $i < 100; $i++) {
 
@@ -50,8 +47,5 @@ class SeedCommand extends Command
 
             $entity->save() && $progress->advance();
         }
-
-        //We now can enable entity cache back
-        $this->orm->cache()->configureCache(true);
     }
 }
