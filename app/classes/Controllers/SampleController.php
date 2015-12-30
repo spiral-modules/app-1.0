@@ -85,6 +85,8 @@ class SampleController extends Controller
             $entity = new Sample();
         }
 
+        //Alternatively you can ask entity to validate itself and skip request wrapper
+        //or use it without populate method
         if (!$request->isValid() || !$request->populate($entity)) {
             return [
                 'status' => 400,
