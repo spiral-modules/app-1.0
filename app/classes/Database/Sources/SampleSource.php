@@ -19,7 +19,12 @@ class SampleSource extends RecordSource implements SingletonInterface
     const SINGLETON = self::class;
 
     /**
-     * Linked record
+     * This constant helps ORM automatically link this class to 
+     * your entity which makes possible to use it like:
+     * 
+     * Sample::source()->findByValue();
+     * 
+     * P.S. You still better request it via DI. :)
      */
     const RECORD = Sample::class;
 
