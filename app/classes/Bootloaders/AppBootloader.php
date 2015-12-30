@@ -31,9 +31,6 @@ use Spiral\Views\ViewManager;
  */
 class AppBootloader extends Bootloader implements SingletonInterface
 {
-    //To be constructed only once and binded under it's own class name
-    const SINGLETON = self::class;
-
     /**
      * Requested to be bootloaded.
      */
