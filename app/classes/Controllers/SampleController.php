@@ -66,7 +66,7 @@ class SampleController extends Controller
     }
 
     /**
-     * Create or update entity (using only source class).
+     * Create or update entity.
      *
      * @param string        $id
      * @param SampleRequest $request
