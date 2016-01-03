@@ -58,7 +58,9 @@ return [
     'router'       => [
         //You can use your own router or entirely replace http endpoint using option above
         'class'      => Http\Routing\Router::class,
-        'parameters' => ['basePath' => '/']
+        'parameters' => [
+            'basePath' => '/'
+        ]
     ],
     /*
      * This is set of "global" middlewares, they will be applied to every request before endpoint
