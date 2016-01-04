@@ -29,7 +29,6 @@ class Sample extends Record
         'name'    => 'string',
         'content' => 'text',
 
-        //Relations
         'child'   => [self::HAS_ONE => SampleChild::class],
     ];
 

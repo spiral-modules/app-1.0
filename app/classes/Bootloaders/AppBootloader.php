@@ -31,9 +31,6 @@ use Spiral\Views\ViewManager;
  */
 class AppBootloader extends Bootloader implements SingletonInterface
 {
-    //To be constructed only once and binded under it's own class name
-    const SINGLETON = self::class;
-
     /**
      * Requested to be bootloaded.
      */
@@ -93,7 +90,7 @@ class AppBootloader extends Bootloader implements SingletonInterface
      *
      * @return Route
      */
-    public function sampleRole()
+    private function sampleRole()
     {
         //Custom application routes can be located here (this one: /twig.html, /index.html).
         $route = new Route('home', '<action>.html', 'Controllers\HomeController::<action>');
