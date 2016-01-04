@@ -72,7 +72,7 @@ class AppBootloader extends Bootloader implements SingletonInterface
     }
 
     /**
-     * Method injections.
+     * Spiral will automatically populate requested method injections for boot method.
      *
      * @param HttpDispatcher $http
      */

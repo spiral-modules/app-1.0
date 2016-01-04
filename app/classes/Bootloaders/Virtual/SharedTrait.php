@@ -40,8 +40,8 @@ use Spiral\Core\Exceptions\SugarException;
  * Shared components:
  * @property-read \Spiral\Encrypter\EncrypterInterface     $encrypter  See SpiralBindings
  * @property-read \Spiral\Files\FilesInterface             $files      See SpiralBindings
- * @property-read \Spiral\Tokenizer\TokenizerInteface      $tokenizer  See SpiralBindings
- * @property-read \Spiral\Tokenizer\ClassLocatorInteface   $locator    See SpiralBindings
+ * @property-read \Spiral\Tokenizer\TokenizerInterface     $tokenizer  See SpiralBindings
+ * @property-read \Spiral\Tokenizer\ClassLocatorInterface  $locator    See SpiralBindings
  * @property-read \Spiral\Translator\Translator            $translator See SpiralBindings
  * @property-read \Spiral\Views\ViewManager                $views      See SpiralBindings
  * @property-read \Spiral\Storage\StorageInterface         $storage    See SpiralBindings
@@ -61,7 +61,7 @@ use Spiral\Core\Exceptions\SugarException;
  * @property-read \Spiral\Http\Input\InputManager          $input      See SpiralBindings
  * @property-read \Spiral\Http\Cookies\CookieManager       $cookies    See SpiralBindings
  * @property-read \Spiral\Http\Routing\RouterInterface     $router     See SpiralBindings
- * @property-read \Spiral\Http\Responses\Responder         $responses  See SpiralBindings
+ * @property-read \Spiral\Http\Responses\Responder         $response   See SpiralBindings
  *
  * @property-read \Psr\Http\Message\ServerRequestInterface $request    See SpiralBindings
  */

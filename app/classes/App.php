@@ -9,7 +9,7 @@ use Spiral\Core\Core;
 use Spiral\Debug;
 
 /**
- * Application core.
+ * Application core. You can rename this class to reflect your project name.
  */
 class App extends Core
 {
@@ -34,7 +34,7 @@ class App extends Core
     ];
 
     /**
-     * Application core bootloading, you can also put your rotes definition here.
+     * Application core bootloading, you can configure your enviroment here.
      */
     protected function bootstrap()
     {
