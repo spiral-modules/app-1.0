@@ -14,6 +14,7 @@ return [
         directory('application'),
         directory('libraries') . '/spiral/framework',
         directory('libraries') . '/spiral/components',
+        directory('libraries') . 'spiral/scaffolder',
         /*{{directories}}*/
     ],
     /*
