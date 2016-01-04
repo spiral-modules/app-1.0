@@ -14,12 +14,6 @@ use Spiral\Debug;
 class App extends Core
 {
     /**
-     * Set to false if you don't want spiral to cache autoloading list. When true you will have to
-     * run "app:reload" every time you doing change in your bootloader bindings.
-     */
-    const MEMORIZE_BOOTLOADERS = true;
-
-    /**
      * List of classes and bootloaders to be initiated with your application.
      *
      * Attention, bootloader's bindings are compiled and cached, to reload application cache run

@@ -30,7 +30,7 @@
 
         <!-- Some cells can be defined using tag context -->
         <grid:cell>
-            <a href="/sample/edit/<?= $sample->id ?>">[[Edit element]]</a>
+            <a href="<?= uri('sample::edit', ['id' => $sample->id]) ?>">[[Edit element]]</a>
         </grid:cell>
     </spiral:grid>
 </define:content>

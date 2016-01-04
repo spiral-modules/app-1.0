@@ -64,7 +64,7 @@ return [
             'prefix'  => 'local:',
             'options' => [
                 //Directory has to be specified relatively to root directory of associated server
-                'directory' => 'application/runtime/storage/'
+                'directory' => 'app/runtime/storage/'
             ]
         ],
         'uploads'   => [
