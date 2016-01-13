@@ -22,11 +22,11 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "php -r \"copy('.env.sample', '.env');\"",
-      "php webroot/index.php app:key"
+      "php -r \"copy('.env.sample', '.env');\""
     ],
     "post-install-cmd": [
-      "php webroot/index.php configure -vv"
+      "php webroot/index.php configure -vv",
+      "php webroot/index.php app:key"
     ]
   },
   "autoload": {
