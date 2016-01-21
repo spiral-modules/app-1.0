@@ -1,31 +1,45 @@
-<extends:layouts.blank page="[[Add Element]]"/>
-<?php
+<dark:use bundle="spiral:bundle"/>
+<?php #compile
 /**
- * @var \Database\Sample               $entity
- * @var \Database\Sources\SampleSource $source
+ * This php block will only be executed at moment of view compilation (see #compile flag).
+ *
+ * @var \Database\Sample $sample
  */
+
+/*
+ * Following block of code is only allowed inside #comple php blocks,
+ * at moment of compilation runtime variable named $sample will be created
+ * using 'entity' attribute value.
+ *
+ * Example:
+ *
+ * <sample:form entity="< ?= $entity ? >" uri="update/url" submit="UPDATE"/>
+ *
+ * OR
+ *
+ * <sample:form entity="< ?= new Entity() ? >" uri="create/url" submit="CREATE"/>
+ *
+ * Since this form defines context block you can use it this way as well:
+ *
+ * <sample:form entity="< ?= new Entity() ? >" uri="create/url" submit="CREATE">
+ *    <form:input label="Some page specific form element"/>
+ * </sample:form>
+ */
+$this->runtimeVariable('sample', '${entity}');
 ?>
 
-<define:content>
-    <a href="/sample">[[Back to elements list]]</a>
+<spiral:form action="${url}" style="margin-top: 20px;">
+    <form:input label="Name" name="name" value="<?= e($sample->name) ?>"/>
 
-    <spiral:form action="/sample/save/<?= $entity->id ?>" style="margin-top: 20px;">
-        <form.input label="Name" name="name" value="<?= e($entity->name) ?>"/>
+    <form:select label="Status" name="status" value="<?= $sample->status ?>" values="<?= [
+        'active'   => 'Active',
+        'disabled' => 'Disabled'
+    ] ?>"/>
 
-        <form.select label="Status" name="status" values="<?= [
-            'active'   => 'Active',
-            'disabled' => 'Disabled'
-        ] ?>" value="<?= $entity->status ?>"/>
+    <form:textarea label="Content" name="content" value="<?= e($sample->content) ?>" rows="15"/>
+    <form:input label="Value" name="value" value="<?= $sample->child->value ?>"/>
 
-        <form.textarea label="Content" name="content" value="<?= e($entity->content) ?>" rows="15"/>
-        <form.input label="Value" name="value" value="<?= $entity->child->value ?>"/>
+    ${context}
 
-        <input type="submit" class="btn btn-default" value="<?= $entity->isLoaded() ? '[[Update]]' : '[[Create]]' ?>"/>
-    </spiral:form>
-
-    <?php if ($entity->isLoaded() && !empty($source)): ?>
-        <div class="similar" style="margin-top: 20px;">
-            [[Similar elements]]: <?= $source->findByValue($entity->child->value)->count() ?>
-        </div>
-    <?php endif; ?>
-</define:content>
+    <input type="submit" class="btn btn-default" value="${submit|[[SAVE]]}"/>
+</spiral:form>

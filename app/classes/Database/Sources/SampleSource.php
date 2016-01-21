@@ -9,6 +9,7 @@ namespace Database\Sources;
 
 use Database\Sample;
 use Spiral\Core\Container\SingletonInterface;
+use Spiral\ORM\Entities\RecordSelector;
 use Spiral\ORM\Entities\RecordSource;
 
 class SampleSource extends RecordSource implements SingletonInterface
@@ -19,24 +20,34 @@ class SampleSource extends RecordSource implements SingletonInterface
     const SINGLETON = self::class;
 
     /**
-     * This constant helps ORM automatically link this class to 
+     * This constant helps ORM automatically link this class to
      * your entity which makes possible to use it like:
-     * 
+     *
      * Sample::source()->findByValue();
-     * 
+     *
      * P.S. You still better request it via DI. :)
      */
     const RECORD = Sample::class;
 
     /**
-     * @return \Spiral\ORM\Entities\RecordSelector
+     * @param int|string $id
+     * @return null|Sample
+     */
+    public function findByPK($id)
+    {
+        return $this->find()->load('child')->findByPK((int)$id);
+    }
+
+    /**
+     * @return RecordSelector
      */
     public function findAll()
     {
         return $this->find()->load('child');
     }
 
-    /**|PaginableInterface
+    /**
+     * @return RecordSelector
      */
     public function findActive()
     {
@@ -47,7 +58,7 @@ class SampleSource extends RecordSource implements SingletonInterface
      * Active records with specific value in child table.
      *
      * @param int $value
-     * @return \Spiral\ORM\Entities\RecordSelector
+     * @return RecordSelector
      */
     public function findByValue($value)
     {
@@ -69,5 +80,14 @@ class SampleSource extends RecordSource implements SingletonInterface
         }
 
         return true;
+    }
+
+    /**
+     * @param Sample $entity
+     */
+    public function delete(Sample $entity)
+    {
+        //Perfect spot to implement soft deletes in combination with find() method altering
+        $entity->delete();
     }
 }

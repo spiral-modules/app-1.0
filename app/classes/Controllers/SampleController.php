@@ -22,12 +22,12 @@ class SampleController extends Controller
      * @see SeedCommand
      * @return string
      */
-    public function indexAction()
+    public function indexAction(SampleSource $source)
     {
         /*
-         * Sample::source() == SampleSource (automatically resolved on orm schema update)
+         * $source == Sample::source() (automatically resolved on orm schema update)
          */
-        $selector = Sample::source()->findAll()->orderBy('sample.id', 'DESC')->paginate(25);
+        $selector = $source->findAll()->orderBy('sample.id', 'DESC')->paginate(25);
 
         return $this->views->render('sample/list', [
             'selector' => $selector
@@ -39,50 +39,90 @@ class SampleController extends Controller
      *                             static methods.
      * @return string
      */
-    public function createAction(SampleSource $source)
+    public function addAction(SampleSource $source)
     {
-        return $this->views->render('sample/form', [
-            'entity' => $source->create()
+        return $this->views->render('sample/add', [
+            'entity' => $source->create() //Identical to new Sample()
         ]);
     }
 
     /**
-     * Shortcuts.
-     *
-     * @param string $id
+     * @param string       $id
+     * @param SampleSource $source
      * @return string
      */
-    public function editAction($id)
+    public function editAction($id, SampleSource $source)
     {
-        //You can do the same thing using source by overwriting findByPK method
-        if (empty($entity = Sample::findByPK($id, ['child']))) {
-            throw new NotFoundException();
+        //Same as Sample::findByPK($id, ['child']);
+        if (empty($entity = $source->findByPK($id))) {
+            throw new NotFoundException('Unable to find Sample entity');
         }
 
-        return $this->views->render('sample/form', [
+        return $this->views->render('sample/edit', [
             'entity' => $entity,
-            'source' => Sample::source()
+            'source' => $source
         ]);
     }
 
     /**
-     * Create or update entity.
-     *
-     * @param string        $id
-     * @param SampleRequest $request
+     * @param SampleSource  $source
+     * @param SampleRequest $request It's not really needed in most of your CRUD controllers.
      * @return array
      */
-    public function saveAction($id, SampleRequest $request)
+    public function createAction(SampleSource $source, SampleRequest $request)
     {
         /**
          * @var Sample $entity
          */
-        if (!empty($id)) {
-            if (empty($entity = Sample::findByPK($id, ['child']))) {
-                throw new NotFoundException();
-            }
-        } else {
-            $entity = new Sample();
+        $entity = $source->create();
+
+        //Alternatively you can ask entity to validate itself and skip request wrapper
+        //or use it without populate method
+        if (!$request->isValid() || !$request->populate($entity)) {
+            return [
+                'status' => 400,
+                'errors' => $request->getErrors()
+            ];
+        }
+
+        /*
+         * You can move entity validations into Sample model (almost same code) and use it this way:
+         *
+         * $entity->setFields($this->input->data); //Can automatically fill child->value property
+         */
+
+        //Alternatives: $entity->save()
+        if (!$source->save($entity, $errors)) {
+            return [
+                'status' => 500,
+                'errors' => $errors
+            ];
+        }
+
+        return [
+            'status'  => 201,
+            'message' => $this->say("Sample entity has been successfully created"),
+            'action'  => [
+                //Wait for 2 seconds
+                'delay'    => 2000,
+                'redirect' => $this->router->uri('sample::edit', $entity)
+            ]
+        ];
+    }
+
+    /**
+     * @param string        $id
+     * @param SampleSource  $source
+     * @param SampleRequest $request
+     * @return array
+     */
+    public function updateAction($id, SampleSource $source, SampleRequest $request)
+    {
+        /**
+         * @var Sample $entity
+         */
+        if (empty($entity = $source->findByPK($id))) {
+            throw new NotFoundException();
         }
 
         //Alternatively you can ask entity to validate itself and skip request wrapper
@@ -94,31 +134,22 @@ class SampleController extends Controller
             ];
         }
 
-        //Alternatives: $source->save($entity) or Sample::source()->save($entity), see SampleSource
-        if (!$entity->save()) {
+        /*
+         * You can move entity validations into Sample model (almost same code) and use it this way:
+         *
+         * $entity->setFields($this->input->data); //Can automatically fill child->value property
+         */
+
+        if (!$source->save($entity, $errors)) {
             return [
                 'status' => 500,
-                'errors' => $entity->getErrors()
-            ];
-        }
-
-        if (!empty($id)) {
-            return [
-                'status'  => 200,
-                'message' => $this->say("Sample entity has been successfully updated.")
+                'errors' => $errors
             ];
         }
 
         return [
-            'status'  => 201,
-            'message' => $this->say("Sample entity has been successfully created."),
-            'action'  => [
-                //Wait for 2 seconds
-                'delay'    => 2000,
-                'redirect' => $this->router->uri('sample::edit', [
-                    'id' => $entity->primaryKey()
-                ])
-            ]
+            'status'  => 200,
+            'message' => $this->say("Sample entity has been successfully updated")
         ];
     }
 }
