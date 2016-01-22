@@ -17,23 +17,20 @@ class SamplesTest extends TestCase
     public function testList()
     {
         $response = $this->get('/sample');
-        $this->assertContains('Edit element', (string)$response->getBody());
+        $this->assertContains('EDIT', (string)$response->getBody());
     }
 
     public function testElement()
     {
-        $response = $this->get('/sample/edit/1');
-        $this->assertEquals(200, $response->getStatusCode());
+        for ($i = 1; $i < 10; $i++) {
+            $response = $this->get("/sample/edit/{$i}");
+            $this->assertEquals(200, $response->getStatusCode());
+        }
     }
 
     public function testBadElement()
     {
         $response = $this->get('/sample/edit/abc');
         $this->assertEquals(404, $response->getStatusCode());
-    }
-
-    public function tearDown()
-    {
-        $this->orm->cache()->flushCache();
     }
 }
