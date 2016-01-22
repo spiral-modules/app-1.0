@@ -9,15 +9,11 @@
 namespace Controllers;
 
 use Controllers\Nested\SayController;
-use Psr\Http\Message\ResponseInterface;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
-use Tests\Traits\HttpTrait;
 
 class HomeController extends Controller
 {
-    use HttpTrait;
-
     /**
      * @return string
      */
@@ -62,7 +58,7 @@ class HomeController extends Controller
     /**
      * Sample redirect.
      *
-     * @return ResponseInterface
+     * @return \Psr\Http\Message\ResponseInterface
      */
     public function redirectAction()
     {
