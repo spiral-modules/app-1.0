@@ -22,8 +22,10 @@ class SamplesTest extends TestCase
 
     public function testElement()
     {
-        $response = $this->get('/sample/edit/1');
-        $this->assertEquals(200, $response->getStatusCode());
+        for ($i = 1; $i < 100; $i++) {
+            $response = $this->get("/sample/edit/{$i}");
+            $this->assertEquals(200, $response->getStatusCode());
+        }
     }
 
     public function testBadElement()
