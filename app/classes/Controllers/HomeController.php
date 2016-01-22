@@ -12,9 +12,12 @@ use Controllers\Nested\SayController;
 use Psr\Http\Message\ResponseInterface;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
+use Tests\Traits\HttpTrait;
 
 class HomeController extends Controller
 {
+    use HttpTrait;
+
     /**
      * @return string
      */

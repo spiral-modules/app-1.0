@@ -22,7 +22,7 @@ class SamplesTest extends TestCase
 
     public function testElement()
     {
-        for ($i = 1; $i < 100; $i++) {
+        for ($i = 1; $i < 10; $i++) {
             $response = $this->get("/sample/edit/{$i}");
             $this->assertEquals(200, $response->getStatusCode());
         }
