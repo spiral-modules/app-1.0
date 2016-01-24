@@ -8,10 +8,12 @@
 namespace Database\Sources;
 
 use Database\Sample;
+use Spiral\Core\Container\SingletonInterface;
 use Spiral\ORM\Entities\RecordSelector;
 use Spiral\ORM\Entities\RecordSource;
 
-class SampleSource extends RecordSource
+//Only one source per container env
+class SampleSource extends RecordSource implements SingletonInterface
 {
     /**
      * This constant helps ORM automatically link this class to
