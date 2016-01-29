@@ -83,7 +83,7 @@ class SampleSource extends RecordSource implements SingletonInterface
      */
     public function delete(Sample $entity)
     {
-        //Perfect spot to implement soft deletes in combination with find() method altering
+        //Your specific delete logic: soft-delete, archiving, deactivation and etc
         $entity->delete();
     }
 }
