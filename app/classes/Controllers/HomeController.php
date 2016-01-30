@@ -62,6 +62,6 @@ class HomeController extends Controller
      */
     public function redirectAction()
     {
-        return $this->response->redirect('http://google.com');
+        return $this->responder->redirect('http://google.com');
     }
 }
