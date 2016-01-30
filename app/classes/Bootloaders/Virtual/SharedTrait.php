@@ -61,8 +61,9 @@ use Spiral\Core\Exceptions\SugarException;
  * @property-read \Spiral\Http\Input\InputManager          $input      See SpiralBindings
  * @property-read \Spiral\Http\Cookies\CookieManager       $cookies    See SpiralBindings
  * @property-read \Spiral\Http\Routing\RouterInterface     $router     See SpiralBindings
- * @property-read \Spiral\Http\Responses\Responder         $response   See SpiralBindings
- *
+ * @property-read \Spiral\Http\Responses\Responder         $responses  See SpiralBindings
+ * @property-read \Spiral\Http\Responses\Responder         $responder  See SpiralBindings
+
  * @property-read \Psr\Http\Message\ServerRequestInterface $request    See SpiralBindings
  */
 trait SharedTrait
