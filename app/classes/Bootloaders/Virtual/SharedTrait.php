@@ -59,7 +59,7 @@ use Spiral\Core\Exceptions\SugarException;
  * Scope dependent:
  * @property-read \Spiral\Session\SessionInterface         $session    See SpiralBindings
  * @property-read \Spiral\Http\Input\InputManager          $input      See SpiralBindings
- * @property-read \Spiral\Http\Cookies\CookieManager       $cookies    See SpiralBindings
+ * @property-read \Spiral\Http\Cookies\CookieQueue         $cookies    See SpiralBindings
  * @property-read \Spiral\Http\Routing\RouterInterface     $router     See SpiralBindings
  * @property-read \Spiral\Http\Responses\Responder         $responses  See SpiralBindings
  * @property-read \Spiral\Http\Responses\Responder         $responder  See SpiralBindings
