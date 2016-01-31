@@ -58,6 +58,16 @@ return [
             'postfix'   => '',
             'class'     => Declarations\Database\RecordDeclaration::class
         ],
+        'document'       => [
+            'namespace' => 'Database',
+            'postfix'   => '',
+            'class'     => Declarations\Database\DocumentDeclaration::class
+        ],
+        'documentEntity' => [
+            'namespace' => 'Database',
+            'postfix'   => '',
+            'class'     => Declarations\Database\DocumentEntityDeclaration::class
+        ],
         /*{{generators}}*/
     ]
 ];
