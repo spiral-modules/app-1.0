@@ -18,4 +18,4 @@ Modules
 
 [Vault](https://github.com/spiral-modules/vault) - friendly and extendable administration panel based on Materialize CSS and Security component.
 
-[Auth](https://github.com/spiral-modules/auth) - authentication layer with multiple token providers and firewall middlewares.
+[Auth](https://github.com/spiral-modules/auth) - authentication layer with multiple token operators and firewall middlewares.
