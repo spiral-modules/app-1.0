@@ -116,10 +116,10 @@ class AppBootloader extends Bootloader implements SingletonInterface
         );
 
         //Here we can define controller aliases and default controller
-       return $defaultRoute->controllers([
+       return $defaultRoute->withControllers([
             //Aliases (you can register controllers with non default namespace here)
             'index' => \Controllers\HomeController::class
-        ])->defaults([
+        ])->withDefaults([
             //All controller names are automatically lcased(), better logic help needed :)
             'controller' => 'index',
         ]);
