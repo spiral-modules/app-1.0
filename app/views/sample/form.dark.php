@@ -13,15 +13,15 @@
  *
  * Example:
  *
- * <sample:form entity="< ?= $entity ? >" uri="update/url" submit="UPDATE"/>
+ * <sample:form entity="<?= $entity ?>" uri="update/url" submit="UPDATE"/>
  *
  * OR
  *
- * <sample:form entity="< ?= new Entity() ? >" uri="create/url" submit="CREATE"/>
+ * <sample:form entity="<?= new Entity() ?>" uri="create/url" submit="CREATE"/>
  *
  * Since this form defines context block you can use it this way as well:
  *
- * <sample:form entity="< ?= new Entity() ? >" uri="create/url" submit="CREATE">
+ * <sample:form entity="<?= new Entity() ?>" uri="create/url" submit="CREATE">
  *    <form:input label="Some page specific form element"/>
  * </sample:form>
  */

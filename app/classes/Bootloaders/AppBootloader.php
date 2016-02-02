@@ -96,7 +96,7 @@ class AppBootloader extends Bootloader implements SingletonInterface
         $route = new Route('home', '<action>.html', 'Controllers\HomeController::<action>');
 
         //Middlewares can be registered as closure, class name or anything callable
-        $route->middleware(function ($request, $response, $next) {
+        $route->withMiddleware(function ($request, $response, $next) {
             return $next($request, $response)->withHeader('My-Header', 'Yay!');
         });
 
@@ -118,10 +118,10 @@ class AppBootloader extends Bootloader implements SingletonInterface
         );
 
         //Here we can define controller aliases and default controller
-        $defaultRoute->controllers([
+        $defaultRoute->withControllers([
             //Aliases (you can register controllers with non default namespace here)
             'index' => \Controllers\HomeController::class
-        ])->defaults([
+        ])->withDefaults([
             //All controller names are automatically lcased(), better logic help needed :)
             'controller' => 'index',
         ]);
