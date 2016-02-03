@@ -31,6 +31,8 @@ class App extends Core
 
         //Application specific bindings and bootloading
         \Bootloaders\AppBootloader::class,
+        \Bootloaders\ServicesBootloader::class,
+        \Bootloaders\HttpBootloader::class,
     ];
 
     /**

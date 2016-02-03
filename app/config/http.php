@@ -67,14 +67,12 @@ return [
      * executed.
      */
     'middlewares'  => [
-        Middlewares\CsrfFilter::class,
         Middlewares\ExceptionWrapper::class,
 
         //Sample middleware
         \Middlewares\LocaleDetector::class,
 
         Session\Http\SessionStarter::class,
-        //Middlewares\JsonParser::class,
         Http\Cookies\CookieManager::class,
 
         /*{{middlewares}}*/
