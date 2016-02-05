@@ -47,11 +47,11 @@ return [
     'databases'   => [
         'primary'   => [
             'connection'  => 'mysql',
-            'tablePrefix' => 'primary_'
+            'tablePrefix' => ''
         ],
         'secondary' => [
             'connection'  => 'postgres',
-            'tablePrefix' => 'secondary_',
+            'tablePrefix' => '',
         ],
         
         /*
