@@ -23,105 +23,20 @@ use Spiral\Views\ViewManager;
  * If you want to define more custom bindings use form [self::class, 'method'] as it will allow
  * spiral to defer construction and class loading until such binding will be requested.
  *
- * To re-build bootloading cache execute console command "app:reload".
- *
- * Attention, you still can use SINGLETON and INJECTOR defined classes without any bootloader!
- *
  * @see SharedTrait for ide tooltips.
  */
 class AppBootloader extends Bootloader implements SingletonInterface
 {
     /**
-     * Requested to be bootloaded.
-     */
-    const BOOT = true;
-
-    /**
      * @return array
      */
     protected $bindings = [
-        //Same binding using spiral database service
         'app'   => \App::class,
-        'twig'  => [self::class, 'twig'],
-        'faker' => Generator::class,
     ];
 
     /**
      * @var array
      */
     protected $singletons = [
-        Generator::class => [self::class, 'faker']
     ];
-
-    /**
-     * @param ViewManager $views
-     * @return  \Twig_Environment
-     */
-    public function twig(ViewManager $views)
-    {
-        return $views->engine('twig')->twig();
-    }
-
-    /**
-     * @param Factory $factory
-     * @return \Faker\Generator
-     */
-    public function faker(Factory $factory)
-    {
-        return $factory->create();
-    }
-
-    /**
-     * Spiral will automatically populate requested method injections for boot method.
-     *
-     * @param HttpDispatcher $http
-     */
-    public function boot(HttpDispatcher $http)
-    {
-        //Register route in a default http router (you can change router using setRouter() method)
-        $http->addRoute($this->sampleRole());
-
-        //Default route used as "fallback" when no other route work
-        $http->defaultRoute($this->defaultRoute());
-    }
-
-    /**
-     * html like urls
-     *
-     * @return Route
-     */
-    private function sampleRole()
-    {
-        //Custom application routes can be located here (this one: /twig.html, /index.html).
-        $route = new Route('home', '<action>.html', 'Controllers\HomeController::<action>');
-
-        //Middlewares can be registered as closure, class name or anything callable
-        return $route->withMiddleware(function ($request, $response, $next) {
-            return $next($request, $response)->withHeader('My-Header', 'Yay!');
-        });
-    }
-
-    /**
-     * Default (fallback) application route
-     *
-     * @return ControllersRoute
-     */
-    private function defaultRoute()
-    {
-        //Default route points to controllers located in namespace "Controllers" but not deeper
-        $defaultRoute = new ControllersRoute(
-            'default',                          //Route name
-            '[<controller>[/<action>[/<id>]]]', //Pattern [] braces define optional segment
-            'Controllers'                       //Default namespace
-        );
-
-        //Here we can define controller aliases and default controller
-       return $defaultRoute->withControllers([
-            //Aliases (you can register controllers with non default namespace here)
-            'index' => \Controllers\HomeController::class
-        ])->withDefaults([
-            //All controller names are automatically lcased(), better logic help needed :)
-            'controller' => 'index',
-        ]);
-    }
 }
