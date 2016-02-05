@@ -11,6 +11,10 @@ use Spiral\Console\Command;
 use Spiral\Translator\TranslatorInterface;
 use Symfony\Component\Console\Input\InputOption;
 
+/**
+ * You can add new commands at any moment, simply drop command file here and
+ * run "console:reload" after.
+ */ 
 class WelcomeCommand extends Command
 {
     /**
