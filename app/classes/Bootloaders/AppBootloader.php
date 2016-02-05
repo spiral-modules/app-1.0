@@ -7,18 +7,11 @@
  */
 namespace Bootloaders;
 
-use Faker\Factory;
-use Faker\Generator;
 use Spiral\Core\Bootloaders\Bootloader;
 use Spiral\Core\Container\SingletonInterface;
-use Spiral\Http\HttpDispatcher;
-use Spiral\Http\Routing\ControllersRoute;
-use Spiral\Http\Routing\Route;
-use Spiral\Views\ViewManager;
 
 /**
- * Internal application bindings. All bootloaders are cachable by default so you can define needed
- * bindings in a string/array form.
+ * Internal application bindings.
  *
  * If you want to define more custom bindings use form [self::class, 'method'] as it will allow
  * spiral to defer construction and class loading until such binding will be requested.
