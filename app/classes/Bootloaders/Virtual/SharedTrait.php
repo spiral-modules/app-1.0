@@ -18,13 +18,14 @@ use Spiral\Core\Exceptions\SugarException;
  * Here you list your own virtual bindings to help your IDE:
  *
  * @see AppBootloader
+ * @see ServicesBootloader
  * @see SpiralBindings
  *
  * Application bindings:
  *
- * @property-read \Twig_Environment                        $twig       See AppBootloader
+ * @property-read \Twig_Environment                        $twig       See ServicesBootloader
  * @property-read \App                                     $app        See AppBootloader
- * @property-read \Faker\Generator                         $faker      See AppBootloader
+ * @property-read \Faker\Generator                         $faker      See ServicesBootloader
  *
  * Spiral shared bindings.
  * @property-read \Spiral\Core\HippocampusInterface        $memory     See SpiralBindings
