@@ -12,10 +12,12 @@ return [
      * Default session lifetime is 1 day.
      */
     'lifetime' => 86400,
+    
     /*
      * Cookie name for sessions. Used by SessionStarter middleware.
      */
     'cookie'   => env('SESSION_COOKIE', 'PHPSESSID'),
+    
     /*
      * Default handler is set to file. You can switch this values based on your environments.
      * SessionStore will be initiated on demand to prevent performance issues. Since spiral provides
@@ -26,6 +28,7 @@ return [
      * mechanism.
      */
     'handler'  => env('SESSION_HANDLER', false),
+    
     'handlers' => [
         'null'  => [
             'class' => Handlers\NullHandler::class
