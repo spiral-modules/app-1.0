@@ -7,8 +7,8 @@
  */
 namespace Bootloaders;
 
+use Configs\Config\AppConfig;
 use Spiral\Core\Bootloaders\Bootloader;
-use Spiral\Core\Container\SingletonInterface;
 
 /**
  * Internal application bindings.
@@ -18,19 +18,30 @@ use Spiral\Core\Container\SingletonInterface;
  *
  * @see SharedTrait for ide tooltips.
  */
-class AppBootloader extends Bootloader implements SingletonInterface
+class AppBootloader extends Bootloader
 {
+    const BOOT = true;
+
     /**
      * @return array
      */
     protected $bindings = [
-        'app'   => \App::class,
+        'app' => \App::class,
     ];
 
     /**
      * @var array
      */
     protected $singletons = [
-        
+
     ];
+
+    /**
+     * @param \App      $app
+     * @param AppConfig $config
+     */
+    public function boot(\App $app, AppConfig $config)
+    {
+        $app->setTimezone($config->getTimezone());
+    }
 }
