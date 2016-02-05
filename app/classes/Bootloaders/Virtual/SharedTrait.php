@@ -12,7 +12,7 @@ use Spiral\Core\Exceptions\Container\AutowireException;
 use Spiral\Core\Exceptions\SugarException;
 
 /**
- * Twin original SharedTrait, include it and your component will get access to all shared bindings
+ * Twin of original SharedTrait, use it and your component will get access to all shared bindings
  * of your application.
  *
  * Here you list your own virtual bindings to help your IDE:
