@@ -9,8 +9,7 @@ namespace Middlewares;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Spiral\Core\Component;
-use Spiral\Core\Traits\SharedTrait;
+use Spiral\Core\Service;
 use Spiral\Http\MiddlewareInterface;
 
 /**
@@ -18,10 +17,8 @@ use Spiral\Http\MiddlewareInterface;
  *
  * @see app/config/http.php
  */
-class LocaleDetector extends Component implements MiddlewareInterface
+class LocaleDetector extends Service implements MiddlewareInterface
 {
-    use SharedTrait;
-
     /**
      * {@inheritdoc}
      */
