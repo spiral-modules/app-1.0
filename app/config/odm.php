@@ -22,6 +22,7 @@ return [
         'db'       => 'default',
         'mongo'    => 'default'
     ],
+    
     'databases' => [
         'default' => [
             'server'    => 'mongodb://localhost:27017',
@@ -33,6 +34,7 @@ return [
         ],
         /*{{databases}}*/
     ],
+    
     'schemas'   => [
         /*
          * Set of mutators to be applied for specific field types.
