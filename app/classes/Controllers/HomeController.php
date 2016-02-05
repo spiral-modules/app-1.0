@@ -9,6 +9,7 @@
 namespace Controllers;
 
 use Controllers\Nested\SayController;
+use Database\Sample;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
 use Spiral\Session\SessionInterface;
@@ -48,6 +49,11 @@ class HomeController extends Controller
         //This approaches are identical
         dump($this->session === $this->request->getAttribute('session'));
         dump($this->session === $session);
+
+        /*
+         * auth (auth module required), session, cookieQueue and other things
+         * are also can be accessed via IoC scope.
+         */
 
         //This is class which helps you to manipulate with
         //response which is active in current IoC scope
