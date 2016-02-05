@@ -103,7 +103,7 @@ class SampleController extends Controller
             'status'  => 201,
             'message' => $this->say("Sample entity has been successfully created"),
             'action'  => [
-                //Wait for 2 seconds
+                //Wait for 2 seconds (FIY, there is flash notifications in vault panel)
                 'delay'    => 2000,
                 'redirect' => $this->router->uri('sample::edit', $entity)
             ]
