@@ -17,11 +17,13 @@ return [
         '',
         '@author {author-name}'
     ],
+
     /*
      * Base directory for generated classes, class will be automatically localed into sub directory
      * using given namespace.
      */
     'directory' => directory('application') . 'classes/',
+
     /*
      * Default namespace to be applied for every generated class.
      *
@@ -29,6 +31,7 @@ return [
      * Controllers: MyApplication\Controllers\SampleController
      */
     'namespace' => '',
+
     /*
      * This is set of default settings to be used for your scaffolding commands.
      */
@@ -133,6 +136,6 @@ return [
             'postfix'   => '',
             'class'     => Declarations\Database\DocumentEntityDeclaration::class
         ],
-        /*{{generators}}*/
+        /*{{elements}}*/
     ],
 ];
