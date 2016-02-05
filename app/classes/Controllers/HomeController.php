@@ -11,6 +11,7 @@ namespace Controllers;
 use Controllers\Nested\SayController;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
+use Spiral\Session\SessionInterface;
 
 class HomeController extends Controller
 {
@@ -20,6 +21,37 @@ class HomeController extends Controller
     public function indexAction()
     {
         return $this->views->render('welcome');
+    }
+
+    /**
+     * @param SessionInterface $session
+     * @return \Psr\Http\Message\MessageInterface
+     */
+    public function scopeAction(SessionInterface $session)
+    {
+        //This is request active in current IoC scope
+        dump($this->request);
+
+        //This is input service which uses this request
+        //to provide set of simple methods
+        dump($this->input->query);
+        dump($this->input->data);
+        dump($this->input->headers);
+        dump($this->input->files);
+        dump($this->input->attributes);
+
+        //Some instances can be accessed without request,
+        //for example session;
+
+        dump($this->session);
+
+        //This approaches are identical
+        dump($this->session === $this->request->getAttribute('session'));
+        dump($this->session === $session);
+
+        //This is class which helps you to manipulate with
+        //response which is active in current IoC scope
+        return $this->responder->html('Hello world');
     }
 
     /**

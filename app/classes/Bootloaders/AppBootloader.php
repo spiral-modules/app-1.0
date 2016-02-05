@@ -7,7 +7,7 @@
  */
 namespace Bootloaders;
 
-use Configs\Config\AppConfig;
+use Configs\AppConfig;
 use Spiral\Core\Bootloaders\Bootloader;
 
 /**

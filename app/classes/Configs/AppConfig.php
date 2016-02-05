@@ -5,7 +5,7 @@
  * @license MIT
  * @author  Anton Titov (Wolfy-J)
  */
-namespace Configs\Config;
+namespace Configs;
 
 use Spiral\Core\InjectableConfig;
 
