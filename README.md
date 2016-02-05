@@ -14,6 +14,8 @@ Installation
 ============
 Execute `./spiral up` and `./spiral seed` after installation to create and populate database.
 
+You can play with sample entities using url "/sample", to get view or current request scope open "/home/scope".
+
 Modules
 =======
 [Scaffolder](https://github.com/spiral-modules/scaffolder) - provides set of console commands and extendable class declarations for application scaffolding.
