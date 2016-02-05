@@ -14,6 +14,7 @@ return [
      * available using $this->db shared binding.
      */
     'default'     => 'default',
+    
     /*
      * Database aliases provide you ability to store your ORM records or tables in multiple logical
      * sources, on practice you can point all your aliases to one database to make application solid
@@ -34,6 +35,7 @@ return [
 
         /*{{aliases}}*/
     ],
+    
     /*
      * This section defines list of your application databases, every database must have specified
      * connection and optional isolation prefix (table prefix). You can link multiple databases to
@@ -51,6 +53,7 @@ return [
             'connection'  => 'postgres',
             'tablePrefix' => 'secondary_',
         ],
+        
         /*
          * You can use this database to store application specific settings, obviously data has to be
          * cached and no client data can land here.
@@ -61,6 +64,7 @@ return [
         ],
         /*{{databases}}*/
     ],
+    
     /*
      * Connection provides you lower access level to your database and database schema. You can link
      * as many connections to one database as you want.
