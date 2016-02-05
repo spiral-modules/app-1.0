@@ -58,7 +58,7 @@ return [
         ],
         'request'        => [
             'namespace' => 'Requests',
-            'postfix'   => '',
+            'postfix'   => 'Request',
             'class'     => Declarations\RequestDeclaration::class,
             'mapping'   => [
                 'int'    => [
