@@ -6,7 +6,7 @@ Spiral, modular RAD Framework (beta)
 
 The Spiral framework provides a modular Rapid Application Development (RAD) platform to develop web applications using an HMVC architecture, separation of database and service layers, code re-usability, modern practices, PSR-7, simple syntax and customizable scaffolding mechanisms.
 
-[**Framework bundle**](https://github.com/spiral/spiral) | [Guide](https://github.com/spiral/guide) | [**Forum**](https://groups.google.com/forum/#!forum/spiral-framework) | [Components](https://github.com/spiral/components) | [**Installation Notes**](https://github.com/spiral/guide/blob/master/installation.md)
+[**Spiral Framework**](https://github.com/spiral/spiral) | [Guide](https://github.com/spiral/guide) | [**Forum**](https://groups.google.com/forum/#!forum/spiral-framework) | [Components](https://github.com/spiral/components) | [**Installation Notes**](https://github.com/spiral/guide/blob/master/installation.md)
 
 <br/><br/>
 
