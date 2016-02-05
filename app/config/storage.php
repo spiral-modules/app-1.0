@@ -58,6 +58,7 @@ return [
         ],
         /*{{servers}}*/
     ],
+    
     'buckets' => [
         'local'     => [
             'server'  => 'local',
