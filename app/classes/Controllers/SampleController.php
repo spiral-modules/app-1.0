@@ -152,4 +152,6 @@ class SampleController extends Controller
             'message' => $this->say("Sample entity has been successfully updated")
         ];
     }
+    
+    //TODO: You can create SampleService responsible for updating sample entities (DRY)
 }
