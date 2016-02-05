@@ -10,6 +10,10 @@ The Spiral framework provides a modular Rapid Application Development (RAD) plat
 
 <br/><br/>
 
+Installation
+============
+Execute `./spiral up` and `./spiral seed` after installation to create and populate database.
+
 Modules
 =======
 [Scaffolder](https://github.com/spiral-modules/scaffolder) - provides set of console commands and extendable class declarations for application scaffolding.
