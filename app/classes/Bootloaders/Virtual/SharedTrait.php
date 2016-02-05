@@ -12,19 +12,20 @@ use Spiral\Core\Exceptions\Container\AutowireException;
 use Spiral\Core\Exceptions\SugarException;
 
 /**
- * Twin original SharedTrait, include it and your component will get access to all shared bindings
+ * Twin of original SharedTrait, use it and your component will get access to all shared bindings
  * of your application.
  *
  * Here you list your own virtual bindings to help your IDE:
  *
  * @see AppBootloader
+ * @see ServicesBootloader
  * @see SpiralBindings
  *
  * Application bindings:
  *
- * @property-read \Twig_Environment                        $twig       See AppBootloader
  * @property-read \App                                     $app        See AppBootloader
- * @property-read \Faker\Generator                         $faker      See AppBootloader
+ * @property-read \Twig_Environment                        $twig       See ServicesBootloader
+ * @property-read \Faker\Generator                         $faker      See ServicesBootloader
  *
  * Spiral shared bindings.
  * @property-read \Spiral\Core\HippocampusInterface        $memory     See SpiralBindings

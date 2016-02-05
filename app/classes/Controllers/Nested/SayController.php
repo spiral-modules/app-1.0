@@ -10,6 +10,7 @@ namespace Controllers\Nested;
 use Spiral\Core\Controller;
 use Symfony\Component\Translation\TranslatorInterface;
 
+//This controller can not be invoked by routes as it located in 2dn level namespace
 class SayController extends Controller //see ControllerInterface
 {
     /**

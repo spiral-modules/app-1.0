@@ -13,8 +13,6 @@ use Spiral\Core\Service;
 use Spiral\Http\MiddlewareInterface;
 
 /**
- * Read header set value middleware.
- *
  * @see app/config/http.php
  */
 class LocaleDetector extends Service implements MiddlewareInterface
