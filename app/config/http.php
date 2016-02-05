@@ -14,11 +14,13 @@ return [
      * Base application path is required to perform valid routing.
      */
     'basePath'     => '/',
+    
     /*
      * When set to false http dispatcher will stop reacting on application exception and will
      * return only 500 error page.
      */
     'exposeErrors' => env('DEBUG', false),
+    
     /*
      * Configuration options for CookieManager middleware.
      */
@@ -32,6 +34,7 @@ return [
             /*{{cookies.excluded}}*/
         ]
     ],
+    
     /*
      * Configuration options for CSRF middleware.
      */
@@ -40,6 +43,7 @@ return [
         'length'   => 16,
         'lifetime' => 86400
     ],
+    
     /*
      * Set of headers to be added to every response by default.
      */
@@ -48,10 +52,12 @@ return [
         'Generator'    => 'Spiral',
         /*{{headers}}*/
     ],
+    
     /*
      * You can set your own endpoint class here to change spiral http flow.
      */
     'endpoint'     => null,
+    
     /*
      * When no endpoints set HttpDispatcher will use constructed router instance.
      */
@@ -62,6 +68,7 @@ return [
             'basePath' => '/'
         ]
     ],
+    
     /*
      * This is set of "global" middlewares, they will be applied to every request before endpoint
      * executed.
@@ -77,6 +84,7 @@ return [
 
         /*{{middlewares}}*/
     ],
+    
     /*
      * ExceptionIsolator middleware can automatically handle ClientExceptions and populate response
      * with corresponding error page. This list must contain array of error codes associated with
