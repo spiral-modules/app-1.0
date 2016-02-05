@@ -7,5 +7,6 @@
  */
 
 return [
+    //Default application timezone
     'timezone' => 'UTC'
 ];
