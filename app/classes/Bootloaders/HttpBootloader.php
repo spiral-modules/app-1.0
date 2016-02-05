@@ -57,7 +57,10 @@ class HttpBootloader extends Bootloader
     }
 
     /**
-     * Default (fallback) application route
+     * Default (fallback) application route, this route can handle
+     * many controller and action pairs, so you don't need to create
+     * custom route for every new controller (unless you want to define
+     * custom path, middleware or pattern).
      *
      * @return ControllersRoute
      */
