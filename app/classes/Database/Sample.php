@@ -35,15 +35,6 @@ class Sample extends Record
     /**
      * @var array
      */
-    protected $fillable = [
-        'status',
-        'name',
-        'content'
-    ];
-
-    /**
-     * @var array
-     */
     protected $defaults = [
         'status' => 'disabled'
     ];
@@ -55,6 +46,15 @@ class Sample extends Record
         [self::INDEX, 'status']
     ];
 
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'status',
+        'name',
+        'content'
+    ];
+    
     /**
      * @return int
      */
