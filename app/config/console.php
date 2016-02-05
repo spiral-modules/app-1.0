@@ -14,6 +14,7 @@ return [
         'views:compile' => ['options' => []],
         /*{{sequence.configure}}*/
     ],
+    
     /*
      * Set of commands executed inside "update" command. If you want to use any external migration
      * tool like https://phinx.org/ - you can add it's command right here and combine it with orm
