@@ -23,8 +23,8 @@ use Spiral\Core\Exceptions\SugarException;
  *
  * Application bindings:
  *
- * @property-read \Twig_Environment                        $twig       See ServicesBootloader
  * @property-read \App                                     $app        See AppBootloader
+ * @property-read \Twig_Environment                        $twig       See ServicesBootloader
  * @property-read \Faker\Generator                         $faker      See ServicesBootloader
  *
  * Spiral shared bindings.
