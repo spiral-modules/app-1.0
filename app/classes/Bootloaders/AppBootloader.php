@@ -31,5 +31,6 @@ class AppBootloader extends Bootloader implements SingletonInterface
      * @var array
      */
     protected $singletons = [
+        
     ];
 }
