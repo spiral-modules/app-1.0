@@ -12,9 +12,4 @@ return [
      * command "app:key".
      */
     'key'    => getenv('SPIRAL_KEY'),
-
-    /*
-     * Default encryption algorithm.
-     */
-    'cipher' => 'aes-256-cbc'
 ];
