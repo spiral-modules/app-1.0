@@ -17,10 +17,15 @@ class TestCase extends \PHPUnit_Framework_TestCase
     use SharedTrait;
 
     /**
+     * @var \App
+     */
+    static public $app;
+
+    /**
      * @return \Interop\Container\ContainerInterface
      */
     protected function container()
     {
-        return \App::sharedContainer();
+        return self::$app->container;
     }
 }

@@ -24,8 +24,7 @@ require $root . 'vendor/autoload.php';
 //Forcing work directory
 chdir($root);
 
-//Let's start!
-App::init([
+\Tests\TestCase::$app = App::init([
     'root'        => $root,
     'libraries'   => $root . '/vendor/',
     'application' => $root . '/app/'
