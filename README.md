@@ -14,6 +14,8 @@ Installation
 ============
 Execute `./spiral up` and `./spiral seed` after installation to create and populate database.
 
+> Attention, this version does not use migrations and manage database using diff algo, migrations (you can use Phinx as well) module are coming.
+
 You can play with sample entities using url "/sample", to get view or current request scope open "/home/scope".
 
 Modules
