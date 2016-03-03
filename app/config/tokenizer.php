@@ -12,8 +12,8 @@ return [
      */
     'directories' => [
         directory('application'),
-        directory('libraries') . '/spiral/framework',
-        directory('libraries') . '/spiral/components',
+        directory('libraries') . 'spiral/framework',
+        directory('libraries') . 'spiral/components',
         directory('libraries') . 'spiral/scaffolder',
         /*{{directories}}*/
     ],
@@ -22,7 +22,8 @@ return [
      */
     'exclude'     => [
         'vendor',
-        'tests'
+        'tests',
+        'runtime'
         /*{{exclude}}*/
     ]
 ];

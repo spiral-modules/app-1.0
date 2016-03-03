@@ -9,7 +9,6 @@
 namespace Controllers;
 
 use Controllers\Nested\SayController;
-use Database\Sample;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
 use Spiral\Session\SessionInterface;
