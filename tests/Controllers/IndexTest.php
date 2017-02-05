@@ -30,7 +30,6 @@ class IndexTest extends HttpTest
         $this->assertSame(200, $response->getStatusCode());
         $this->assertContains('Добро пожаловать в Spiral Framework', (string)$response->getBody());
         $this->assertContains('welcome.dark.php', (string)$response->getBody());
-
     }
 
     public function testSeeWelcomeTwig()
