@@ -9,7 +9,6 @@
 
 namespace Controllers;
 
-use Controllers\Nested\SayController;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
 use Spiral\Session\SessionInterface;
@@ -27,7 +26,7 @@ class IndexController extends Controller
     /**
      * @param SessionInterface $session
      *
-     * @return \Psr\Http\Message\MessageInterface
+     * @return MessageInterface
      */
     public function scopeAction(SessionInterface $session): ResponseInterface
     {
@@ -84,7 +83,7 @@ class IndexController extends Controller
     /**
      * Sample redirect.
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
     public function redirectAction(): ResponseInterface
     {
