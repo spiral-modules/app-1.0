@@ -1,7 +1,7 @@
 <extends:layouts.html5 title="[[Welcome To Spiral]]" git="https://github.com/spiral"/>
 
 <!--Let's import our partials under tag named "links".-->
-<dark:use path="partials/links" as="links"/>
+<dark:use path="partials/links" as="homepage:links"/>
 
 <define:head>
     <yield:head/>
@@ -15,7 +15,7 @@
 
             <h2>[[Welcome to Spiral Framework]]</h2>
 
-            <links git="${git}" style="font-weight: bold;"/>
+            <homepage:links git="${git}" style="font-weight: bold;"/>
 
             <div style="font-size: 12px; margin-top: 10px;">
                 [[This view file is located in]]
