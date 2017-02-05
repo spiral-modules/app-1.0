@@ -33,6 +33,8 @@ return [
         'method' => Http\Configs\HttpConfig::COOKIE_ENCRYPT,
 
         'excluded' => [
+            'csrf-token',
+            'SID',
             /*{{cookies.excluded}}*/
         ]
     ],
