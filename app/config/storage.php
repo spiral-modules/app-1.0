@@ -78,10 +78,10 @@ return [
         ],
         'amazon'    => [
             'server'  => 'amazon',
-            'prefix'  => 'https://s3.amazonaws.com/spiralEngine/',
+            'prefix'  => 'https://s3.amazonaws.com/bucketName/',
             'options' => [
                 'public' => true,
-                'bucket' => 'spiralEngine'
+                'bucket' => 'bucketName'
             ]
         ],
         'rackspace' => [
