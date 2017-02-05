@@ -23,7 +23,7 @@ class App extends Core
      * @var array
      */
     const LOAD = [
-        //Can speed up class loading a little.
+        //Can speed up class loading a bit
         \Spiral\Core\Loader::class,
 
         //Short bindings in spiral services (eg http, db, ...)
@@ -31,6 +31,8 @@ class App extends Core
 
         //Application specific bindings and bootloading
         \Bootloaders\AppBootloader::class,
+
+        //Routes, middlewares and etc
         \Bootloaders\HttpBootloader::class,
     ];
 
