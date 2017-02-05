@@ -1,12 +1,11 @@
 <extends:layouts.html5 title="[[Welcome To Spiral]]" git="https://github.com/spiral"/>
 
-<!--Let's import our partials under tag named "links".-->
 <dark:use path="partials/links" as="homepage:links"/>
 
-<define:head>
-    <yield:head/>
+<define:styles>
+    <yield:styles/>
     <link rel="stylesheet" href="@{basePath}resources/styles/welcome.css"/>
-</define:head>
+</define:styles>
 
 <define:body>
     <div class="wrapper">
