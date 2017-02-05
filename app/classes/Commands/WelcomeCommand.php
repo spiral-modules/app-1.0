@@ -5,6 +5,7 @@
  * @license   MIT
  * @author    Anton Titov (Wolfy-J)
  */
+
 namespace Commands;
 
 use Spiral\Console\Command;
@@ -14,7 +15,7 @@ use Symfony\Component\Console\Input\InputOption;
 /**
  * You can add new commands at any moment, simply drop command file here and
  * run "console:reload" after.
- */ 
+ */
 class WelcomeCommand extends Command
 {
     /**
@@ -22,19 +23,19 @@ class WelcomeCommand extends Command
      *
      * @var string
      */
-    protected $name = 'welcome';
+    const NAME = 'welcome';
 
     /**
      * Short command description.
      *
      * @var string
      */
-    protected $description = 'Welcome command';
+    const DESCRIPTION = 'Welcome command';
 
     /**
      * @var array
      */
-    protected $options = [
+    const OPTIONS = [
         ['lang', 'l', InputOption::VALUE_OPTIONAL, 'Locale id to be used', 'en']
     ];
 
@@ -44,13 +45,9 @@ class WelcomeCommand extends Command
     public function perform(TranslatorInterface $translator)
     {
         if (!empty($this->option('lang'))) {
-            $translator->setLocale(
-                $this->option('lang')
-            );
+            $translator->setLocale($this->option('lang'));
         }
 
-        $this->writeln(
-            "<info>{$translator->trans("Welcome to Spiral Framework")}</info>"
-        );
+        $this->writeln("<info>{$translator->trans("Welcome to Spiral Framework")}</info>");
     }
 }

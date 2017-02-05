@@ -22,7 +22,7 @@ class App extends Core
      * @see \Spiral\Core\Bootloaders\Bootloader
      * @var array
      */
-    protected $load = [
+    const LOAD = [
         //Can speed up class loading a little.
         \Spiral\Core\Loader::class,
 
@@ -55,7 +55,7 @@ class App extends Core
     private function enableDebugging()
     {
         //Initiating all needed binding (no need to use memory caching)
-        $this->bootloader()->bootload([
+        $this->getBootloader()->bootload([
             \Spiral\Profiler\ProfilerHeader::class,
             \Spiral\Profiler\ProfilerPanel::class,
 
