@@ -46,7 +46,7 @@ class App extends Core
          * In addition, it sets different snapshot class which provides ability to render
          * error information in a nicely form.
          */
-        env('DEBUG') && $this->enableDebugging();
+        //env('DEBUG') && $this->enableDebugging();
     }
 
     /**
