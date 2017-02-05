@@ -37,7 +37,7 @@ class App extends Core
     ];
 
     /**
-     * Application core bootloading, you can configure your enviroment here.
+     * Application core bootloading, you can configure your environment here.
      */
     protected function bootstrap()
     {
