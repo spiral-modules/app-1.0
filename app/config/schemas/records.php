@@ -17,7 +17,6 @@ return [
         /*{{mutators}}*/
     ],
     'aliases'  => [
-        // 'storage' => Accessors\StorageAccessor::class,
         /*{{mutators.aliases}}*/
     ],
 ];

@@ -78,7 +78,7 @@ return [
         ],
         'sqlServer' => [
             'driver'     => Drivers\SQLServer\SQLServerDriver::class,
-            'connection' => 'sqlsrv:Server=WOLFY-PC;Database=' . env('DB_NAME'),
+            'connection' => 'sqlsrv:Server=MY-PC;Database=' . env('DB_NAME'),
             'profiling'  => env('DEBUG', false),
             'username'   => env('DB_USERNAME'),
             'password'   => env('DB_PASSWORD'),
