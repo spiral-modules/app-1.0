@@ -21,6 +21,18 @@ class IndexTest extends HttpTest
 
     }
 
+    public function testSeeWelcomeRussian()
+    {
+        $response = $this->get('/', [], [
+            'Accept-Language' => 'ru'
+        ]);
+
+        $this->assertSame(200, $response->getStatusCode());
+        $this->assertContains('Добро пожаловать в Spiral Framework', (string)$response->getBody());
+        $this->assertContains('welcome.dark.php', (string)$response->getBody());
+
+    }
+
     public function testSeeWelcomeTwig()
     {
         $response = $this->get('/twig.html');
