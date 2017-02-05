@@ -2,6 +2,7 @@
 
 <block:resources>
     <yield:resources/>
+
     <asset:style href="resources/styles/spiral/blank.css"/>
 </block:resources>
 

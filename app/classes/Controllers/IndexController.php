@@ -9,6 +9,7 @@
 
 namespace Controllers;
 
+use Psr\Http\Message\ResponseInterface;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
 use Spiral\Session\SessionInterface;
@@ -26,7 +27,7 @@ class IndexController extends Controller
     /**
      * @param SessionInterface $session
      *
-     * @return MessageInterface
+     * @return ResponseInterface
      */
     public function scopeAction(SessionInterface $session): ResponseInterface
     {

@@ -5,7 +5,7 @@
 
 <define:head>
     <yield:head/>
-    <asset:style href="@{basePath}resources/styles/welcome.css"/>
+    <link rel="stylesheet" href="@{basePath}resources/styles/welcome.css"/>
 </define:head>
 
 <define:body>

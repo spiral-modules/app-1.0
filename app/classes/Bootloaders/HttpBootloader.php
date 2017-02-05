@@ -10,7 +10,7 @@ namespace Bootloaders;
 
 use Spiral\Core\Bootloaders\Bootloader;
 use Spiral\Http\HttpDispatcher;
-use Spiral\Http\Middlewares\CsrfFilter;
+use Spiral\Http\Middlewares\CsrfFirewall;
 use Spiral\Http\Routing\ControllersRoute;
 use Spiral\Http\Routing\Route;
 
@@ -43,7 +43,11 @@ class HttpBootloader extends Bootloader
     private function sampleRole(): Route
     {
         //Custom application routes can be located here (this one: /twig.html, /index.html).
-        $route = new Route('home', '<action>.html', 'Controllers\HomeController::<action>');
+        $route = new Route(
+            'index',
+            '<action>.html',
+            'Controllers\IndexController::<action>'
+        );
 
         //Middlewares can be registered as closure, class name or anything callable
         return $route->withMiddleware([
@@ -52,7 +56,7 @@ class HttpBootloader extends Bootloader
                 return $next($request, $response)->withHeader('My-Header', 'Yay!');
             },
             //CSRF protection
-            CsrfFilter::class
+            CsrfFirewall::class
         ]);
     }
 
