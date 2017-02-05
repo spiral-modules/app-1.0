@@ -31,7 +31,7 @@ return [
      * models with passive schemas.
      */
     'updateSequence'    => [
-        'odm:schema' => ['options' => []],
+        //'odm:schema' => ['options' => []],
         'orm:schema' => ['options' => []],
         /*{{sequence.update}}*/
     ]
