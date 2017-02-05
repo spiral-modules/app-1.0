@@ -8,6 +8,7 @@
 
 namespace Bootloaders;
 
+use Middlewares\LocaleDetector;
 use Spiral\Core\Bootloaders\Bootloader;
 use Spiral\Http\HttpDispatcher;
 use Spiral\Http\Middlewares\CsrfFirewall;
@@ -33,6 +34,9 @@ class HttpBootloader extends Bootloader
 
         //Default route used as "fallback" when no other route work
         $http->defaultRoute($this->defaultRoute());
+
+        //Locale detection middleware, application specific
+        $http->pushMiddleware(LocaleDetector::class);
     }
 
     /**
