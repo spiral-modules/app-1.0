@@ -40,6 +40,10 @@ return [
             directory("libraries") . 'spiral/framework/source/views/',
             /*{{namespaces.spiral}}*/
         ],
+        'profiler' => [
+           directory('libraries') . 'spiral/profiler/source/views/',
+           /*{{namespaces.profiler}}*/
+        ],
         /*{{namespaces}}*/
     ],
 

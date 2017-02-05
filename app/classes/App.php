@@ -55,13 +55,12 @@ class App extends Core
     private function enableDebugging()
     {
         //Initiating all needed binding (no need to use memory caching)
-//        $this->getBootloader()->bootload([
-//            \Spiral\Profiler\ProfilerHeader::class,
-//            \Spiral\Profiler\ProfilerPanel::class,
-//
-//            //Other debug modules, for example automatic orm/odm schema refresh middleware/service
-//            //can be enabled here
-//        ]);
+        $this->getBootloader()->bootload([
+            \Spiral\Profiler\ProfilerBootloader::class,
+
+            //Other debug modules, for example automatic orm/odm schema refresh middleware/service
+            //can be enabled here
+        ]);
 
         /*
          * This snapshot class provides ability to render exception trace in a nicely form, you

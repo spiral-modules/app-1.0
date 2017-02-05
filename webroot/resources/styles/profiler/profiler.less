@@ -132,7 +132,7 @@
     display: inline-block;
     background: @spiral-white;
     position: fixed;
-    z-index: 150;
+    z-index: 1500;
     right: 0;
     bottom: 0;
     height: 40px;
@@ -323,7 +323,7 @@
   .shadow {
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     left: 0px;
     right: 0px;
     top: 0px;
@@ -333,7 +333,7 @@
 
   .content {
     position: fixed;
-    z-index: 130;
+    z-index: 1300;
     left: 100px;
     right: 100px;
     top: 100px;
@@ -402,11 +402,12 @@
         background: @spiral-light-blue;
         border-bottom: 1px solid @spiral-blue;
         border-top: none;
-        //height: 30px;
+        border-radius: 0;
         line-height: 30px;
         font-size: 15px;
         color: @spiral-white;
         text-shadow: 1px 1px 0 @spiral-blue;
+        text-align: center;
 
         a {
           color: @spiral-white;
@@ -417,6 +418,7 @@
         td {
           background: @spiral-white;
           padding: 6px 10px;
+          border-radius: 0;
         }
 
         &:nth-child(odd) {
