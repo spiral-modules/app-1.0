@@ -14,7 +14,7 @@ return [
     /*
      * Database name to store information about migrations status
      */
-    'database'  => 'runtime',
+    'database'  => 'primary',
 
     /*
      * Table name to store information about migrations status

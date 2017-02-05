@@ -1,10 +1,8 @@
 <?php
 /**
- * Spiral Framework.
+ * Spiral skeleton application
  *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
+ * @author Wolfy-J
  */
 
 namespace Controllers;

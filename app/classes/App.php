@@ -1,10 +1,10 @@
 <?php
 /**
- * Spiral Framework.
+ * Spiral skeleton application
  *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
+ * @author Wolfy-J
  */
+
 use Spiral\Core\Core;
 use Spiral\Debug;
 

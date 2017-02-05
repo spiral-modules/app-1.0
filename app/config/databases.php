@@ -13,7 +13,7 @@ return [
      * Such database will be returned from DatabaseManager->database(null) call and also can be
      * available using $this->db shared binding.
      */
-    'default'     => 'runtime',
+    'default'     => 'primary',
 
     /*
      * Database aliases provide you ability to store your ORM records or tables in multiple logical
