@@ -26,9 +26,7 @@ return [
     ],
 
     /*
-     * Set of commands executed inside "update" command. If you want to use any external migration
-     * tool like https://phinx.org/ - you can add it's command right here and combine it with orm
-     * models with passive schemas.
+     * Set of commands executed inside "update" command.
      */
     'updateSequence'    => [
         //'odm:schema' => ['options' => []],

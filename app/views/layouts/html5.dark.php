@@ -6,13 +6,14 @@
         <script>
             window.csrfToken = "<?= app()->request->getAttribute('csrfToken') ?>";
         </script>
-        <asset:style href="resources/styles/spiral/spiral.css"/>
         <block:resources/>
-        <!--[STYLES]-->
+        <yield:styles>
+            <link rel="stylesheet" href="@{basePath}resources/styles/spiral.css"/>
+        </yield:styles>
     </block:head>
 </head>
 <body>
 <yield:body/>
-<!--[SCRIPTS]-->
+<yield:scrips/>
 </body>
 </html>

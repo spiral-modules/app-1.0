@@ -27,12 +27,15 @@ return [
      */
     'cookies'      => [
         //You force specific domain or use pattern like ".{host}" to share cookies with sub domains
-        'domain' => null,
+        'domain'   => null,
 
         //Cookie protection method
-        'method' => Http\Configs\HttpConfig::COOKIE_ENCRYPT,
+        'method'   => Http\Configs\HttpConfig::COOKIE_ENCRYPT,
 
+        //Remove this excluded cookies if yuo want to encrypt session id and csrf token values
         'excluded' => [
+            'csrf-token',
+            'SID',
             /*{{cookies.excluded}}*/
         ]
     ],
