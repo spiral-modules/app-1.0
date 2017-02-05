@@ -5,6 +5,7 @@
  * @license MIT
  * @author  Anton Titov (Wolfy-J)
  */
+
 namespace Configs;
 
 use Spiral\Core\InjectableConfig;
@@ -29,7 +30,7 @@ class AppConfig extends InjectableConfig
     /**
      * @return string
      */
-    public function getTimezone()
+    public function getTimezone(): string
     {
         return $this->config['timezone'];
     }

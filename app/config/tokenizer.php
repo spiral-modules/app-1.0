@@ -12,18 +12,22 @@ return [
      */
     'directories' => [
         directory('application'),
-        directory('libraries') . 'spiral/framework',
-        directory('libraries') . 'spiral/components',
-        directory('libraries') . 'spiral/scaffolder',
+
+        //Default set of spiral console commands
+        directory('framework') . 'Spiral/Commands/',
+
+        //Needed to allow Translator locate i18n validation messages
+        directory('framework') . 'Spiral/Validation/'
+
         /*{{directories}}*/
     ],
     /*
      * Such paths are excluded from tokenization. You can use format compatible with Symfony Finder.
      */
     'exclude'     => [
-        'vendor',
-        'tests',
-        'runtime'
+        'config',
+        'resources',
+        'migrations',
         /*{{exclude}}*/
     ]
 ];

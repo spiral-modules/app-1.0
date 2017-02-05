@@ -45,6 +45,10 @@ return [
             'view-*',
             /*{{domains.views}}*/
         ],
+        'requests'   => [
+            'requests-*'
+        ],
+        'external'   => ['external'],
         'messages'   => ['*'],
         /*{{domains}}*/
     ],

@@ -5,9 +5,9 @@
  * @license   MIT
  * @author    Anton Titov (Wolfy-J)
  */
+
 namespace Bootloaders;
 
-use Controllers\HomeController;
 use Spiral\Core\Bootloaders\Bootloader;
 use Spiral\Http\HttpDispatcher;
 use Spiral\Http\Middlewares\CsrfFilter;
@@ -40,7 +40,7 @@ class HttpBootloader extends Bootloader
      *
      * @return Route
      */
-    private function sampleRole()
+    private function sampleRole(): Route
     {
         //Custom application routes can be located here (this one: /twig.html, /index.html).
         $route = new Route('home', '<action>.html', 'Controllers\HomeController::<action>');
@@ -64,7 +64,7 @@ class HttpBootloader extends Bootloader
      *
      * @return ControllersRoute
      */
-    private function defaultRoute()
+    private function defaultRoute(): ControllersRoute
     {
         //Default route points to controllers located in namespace "Controllers" but not deeper
         $defaultRoute = new ControllersRoute(
@@ -74,14 +74,12 @@ class HttpBootloader extends Bootloader
         );
 
         //Here we can define controller aliases and default controller
-        return $defaultRoute->withControllers([
-            //Aliases (you can register controllers with non default namespace here)
-            'index' => HomeController::class
-        ])->withDefaults([
+        return $defaultRoute->withDefaults([
+            //Default controller to be called on / url
             'controller' => 'index',
         ])->withMiddleware([
             //CSRF protection
-            CsrfFilter::class
+            CsrfFirewall::class
         ]);
     }
 }

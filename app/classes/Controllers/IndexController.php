@@ -6,6 +6,7 @@
  * @author    Anton Titov (Wolfy-J)
  * @copyright ©2009-2015
  */
+
 namespace Controllers;
 
 use Controllers\Nested\SayController;
@@ -13,21 +14,22 @@ use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
 use Spiral\Session\SessionInterface;
 
-class HomeController extends Controller
+class IndexController extends Controller
 {
     /**
      * @return string
      */
-    public function indexAction()
+    public function indexAction(): string
     {
         return $this->views->render('welcome');
     }
 
     /**
      * @param SessionInterface $session
+     *
      * @return \Psr\Http\Message\MessageInterface
      */
-    public function scopeAction(SessionInterface $session)
+    public function scopeAction(SessionInterface $session): ResponseInterface
     {
         //This is request active in current IoC scope
         dump($this->request);
@@ -62,23 +64,10 @@ class HomeController extends Controller
     /**
      * @return string
      */
-    public function twigAction()
+    public function twigAction(): string
     {
         //dump($this->twig->getFunctions());
         return $this->views->render('default:hello.twig');
-    }
-
-    /**
-     * Nested controller example
-     *
-     * @return mixed
-     */
-    public function sayAction()
-    {
-        //Can also be done via method injection
-        return $this->app->callAction(SayController::class, 'say', [
-            'say' => 'Hello world!'
-        ]);
     }
 
     /**
@@ -97,7 +86,7 @@ class HomeController extends Controller
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function redirectAction()
+    public function redirectAction(): ResponseInterface
     {
         return $this->responder->redirect('http://google.com');
     }

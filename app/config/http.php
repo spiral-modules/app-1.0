@@ -6,44 +6,45 @@
  * @see HttpConfig
  */
 use Spiral\Http;
+use Spiral\Http\Cookies;
 use Spiral\Http\Middlewares;
-use Spiral\Session;
 
 return [
     /*
      * Base application path is required to perform valid routing.
      */
     'basePath'     => '/',
-    
+
     /*
      * When set to false http dispatcher will stop reacting on application exception and will
      * return only 500 error page.
      */
     'exposeErrors' => env('DEBUG', false),
-    
+
     /*
      * Configuration options for CookieManager middleware.
      */
     'cookies'      => [
         //You force specific domain or use pattern like ".{host}" to share cookies with sub domains
-        'domain'   => null,
+        'domain' => null,
+
         //Cookie protection method
-        'method'   => Http\Configs\HttpConfig::COOKIE_HMAC,
+        'method' => Http\Configs\HttpConfig::COOKIE_ENCRYPT,
+
         'excluded' => [
-            'csrf-token',
             /*{{cookies.excluded}}*/
         ]
     ],
-    
+
     /*
      * Configuration options for CSRF middleware.
      */
     'csrf'         => [
         'cookie'   => 'csrf-token',
-        'length'   => 16,
-        'lifetime' => 86400
+        'length'   => 64,
+        'lifetime' => null
     ],
-    
+
     /*
      * Set of headers to be added to every response by default.
      */
@@ -52,39 +53,35 @@ return [
         'Generator'    => 'Spiral',
         /*{{headers}}*/
     ],
-    
+
     /*
      * You can set your own endpoint class here to change spiral http flow.
      */
     'endpoint'     => null,
-    
+
     /*
      * When no endpoints set HttpDispatcher will use constructed router instance.
      */
     'router'       => [
         //You can use your own router or entirely replace http endpoint using option above
-        'class'      => Http\Routing\Router::class,
-        'parameters' => [
-            'basePath' => '/'
-        ]
+        'class'   => Http\Routing\Router::class,
+        'options' => []
     ],
-    
+
     /*
      * This is set of "global" middlewares, they will be applied to every request before endpoint
      * executed.
      */
     'middlewares'  => [
+        Middlewares\CsrfMiddleware::class,
         Middlewares\ExceptionWrapper::class,
+        Cookies\CookieManager::class,
 
-        //Sample middleware
-        \Middlewares\LocaleDetector::class,
-
-        Session\Http\SessionStarter::class,
-        Http\Cookies\CookieManager::class,
+        //Session\Http\SessionStarter::class,
 
         /*{{middlewares}}*/
     ],
-    
+
     /*
      * ExceptionIsolator middleware can automatically handle ClientExceptions and populate response
      * with corresponding error page. This list must contain array of error codes associated with

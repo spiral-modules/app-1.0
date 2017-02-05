@@ -6,31 +6,21 @@
  *
  * @see DebuggerConfig
  */
-use Spiral\Debug\SharedLogger as DefaultLogger;
 use Spiral\Http\Middlewares\ExceptionWrapper as HttpErrors;
 
 return [
     /*
      * This is default spiral logger, all error messages are passed into it.
      */
-    DefaultLogger::class => [
+    \Spiral\Debug\LogManager::DEBUG_CHANNEL => [
         [
             'handler' => \Monolog\Handler\RotatingFileHandler::class,
             'format'  => "[%datetime%] %level_name%: %message%\n",
             'options' => [
-                'level'    => \Psr\Log\LogLevel::ERROR,
-                'maxFiles' => 1,
-                'filename' => directory('runtime') . 'logs/errors.log',
-                'bubble'   => false
-            ],
-        ],
-        [
-            'handler' => \Monolog\Handler\RotatingFileHandler::class,
-            'format'  => "[%datetime%] %level_name%: %message%\n",
-            'options' => [
-                'level'    => \Psr\Log\LogLevel::DEBUG,
-                'maxFiles' => 1,
-                'filename' => directory('runtime') . 'logs/debug.log'
+                'level'          => \Psr\Log\LogLevel::ERROR,
+                'maxFiles'       => 1,
+                'filename'       => directory('runtime') . 'logs/errors.log',
+                'bubble'         => false
             ],
         ],
         /*{{handlers.debug}}*/
@@ -40,7 +30,7 @@ return [
      * Such middleware provides ability to isolate ClientExceptions into nice error pages. You can
      * use it's log to collect http errors.
      */
-    HttpErrors::class    => [
+    HttpErrors::class                       => [
         [
             'handler' => \Monolog\Handler\RotatingFileHandler::class,
             'format'  => "[%datetime%] %message%\n",

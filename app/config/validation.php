@@ -22,11 +22,10 @@ return [
         "required::withoutAll",
         "file::exists",
         "file::uploaded",
-        "image::exists",
-        "image::uploaded",
+        "image:valid"
         /*{{empties}}*/
     ],
-    
+
     /*
      * Checkers are resolved using container and provide ability to isolate some validation rules
      * under common name and class. You can register new checkers at any moment without any
@@ -43,7 +42,7 @@ return [
         "image"    => Checkers\ImageChecker::class,
         /*{{checkers}}*/
     ],
-    
+
     /*
      * Aliases are only used to simplify developer life.
      */

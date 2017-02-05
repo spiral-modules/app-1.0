@@ -5,6 +5,7 @@
  * @license   MIT
  * @author    Anton Titov (Wolfy-J)
  */
+
 namespace Bootloaders;
 
 use Configs\AppConfig;
@@ -25,15 +26,14 @@ class AppBootloader extends Bootloader
     /**
      * @return array
      */
-    protected $bindings = [
-        'app' => \App::class,
+    const BINDINGS = [
     ];
 
     /**
      * @var array
      */
-    protected $singletons = [
-
+    const SINGLETONS = [
+        'app' => \App::class,
     ];
 
     /**
