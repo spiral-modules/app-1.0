@@ -51,7 +51,7 @@ return [
     ],
 
     /*
-     * Environment variable define what cache version to be used for different engines, it primary
+     * Environment variables define what cache version to be used for different engines, it's primary
      * goal is to provide ability to evaluate some functionality at compilation (not runtime) phase.
      */
     'environment' => [
