@@ -36,6 +36,10 @@ class IndexController extends Controller
         //Isolated session section
         dump(++$indexSession->counter);
 
+        if ($indexSession->counter >= 10) {
+            $indexSession->clear();
+        }
+
         //This is request active in current IoC scope
         dump($this->request);
 
