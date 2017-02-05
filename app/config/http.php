@@ -8,6 +8,7 @@
 use Spiral\Http;
 use Spiral\Http\Cookies;
 use Spiral\Http\Middlewares;
+use Spiral\Session;
 
 return [
     /*
@@ -73,11 +74,17 @@ return [
      * executed.
      */
     'middlewares'  => [
-        Middlewares\CsrfMiddleware::class,
+        //Converts ClientExceptions into proper error pages
         Middlewares\ExceptionWrapper::class,
+
+        //Manages CSRF tokens
+        Middlewares\CsrfMiddleware::class,
+
+        //Provides support for cookie queue and cookie protection
         Cookies\CookieManager::class,
 
-        //Session\Http\SessionStarter::class,
+        //Starts and manages user sessions
+        Session\Http\SessionStarter::class,
 
         /*{{middlewares}}*/
     ],

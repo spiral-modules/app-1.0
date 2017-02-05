@@ -14,7 +14,8 @@ return [
          * Indicates that view engines must enable caching for their templates, you can reset existed
          * view cache by executing command "view:compile"
          */
-        'enabled'   => env('VIEW_CACHE'),
+        'enabled'   => env('VIEW_CACHE', false),
+
         /*
          * Location where view cache has to be stored into. By default you can use
          * app/runtime/cache/views directory.

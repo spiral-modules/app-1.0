@@ -4,6 +4,9 @@
  * to be automatically attached to different field types. Attention, configs might include runtime
  * code which depended on environment values only.
  *
+ * Attention, this config is pre-placed in application, install spiral/odm in order to use Mongo
+ * databases and ODM models.
+ *
  * @see SchemasConfig
  */
 use Spiral\Models\Accessors;

@@ -46,13 +46,6 @@ return [
                 'directory' => directory('runtime') . 'sessions'
             ]
         ],
-        //Session with data storage located in external simple cache adapter
-        'cache' => [
-            'class'   => Handlers\CacheHandler::class,
-            'options' => [
-                'cache' => bind(\Psr\SimpleCache\CacheInterface::class)
-            ]
-        ]
         /*{{handlers}}*/
     ]
 ];

@@ -11,5 +11,5 @@ return [
      * Encryption key can be found in .env file. You can generate new encryption key via console
      * command "app:key".
      */
-    'key'    => getenv('SPIRAL_KEY'),
+    'key' => env('SPIRAL_KEY'),
 ];

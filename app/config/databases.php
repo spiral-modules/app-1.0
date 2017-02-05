@@ -40,13 +40,9 @@ return [
      * different databases (for now).
      */
     'databases'   => [
-        'runtime' => [
-            'connection'  => 'runtime',
+        'primary' => [
+            'connection'  => 'mysql',
             'tablePrefix' => '',
-        ],
-        'other'   => [
-            'connection'  => 'runtime',
-            'tablePrefix' => 'secondary_',
         ],
         /*{{databases}}*/
     ],
@@ -56,12 +52,36 @@ return [
      * as many connections to one database as you want.
      */
     'connections' => [
-        'runtime' => [
+        'mysql'     => [
+            'driver'     => Drivers\MySQL\MySQLDriver::class,
+            'connection' => 'mysql:host=127.0.0.1;dbname=' . env('DB_NAME'),
+            'profiling'  => env('DEBUG', false),
+            'username'   => env('DB_USERNAME'),
+            'password'   => env('DB_PASSWORD'),
+            'options'    => []
+        ],
+        'postgres'  => [
+            'driver'     => Drivers\Postgres\PostgresDriver::class,
+            'connection' => 'pgsql:host=127.0.0.1;dbname=' . env('DB_NAME'),
+            'profiling'  => env('DEBUG', false),
+            'username'   => env('DB_USERNAME'),
+            'password'   => env('DB_PASSWORD'),
+            'options'    => []
+        ],
+        'runtime'   => [
             'driver'     => Drivers\SQLite\SQLiteDriver::class,
             'connection' => 'sqlite:' . directory('runtime') . 'runtime.db',
             'profiling'  => env('DEBUG', false),
             'username'   => 'sqlite',
             'password'   => '',
+            'options'    => []
+        ],
+        'sqlServer' => [
+            'driver'     => Drivers\SQLServer\SQLServerDriver::class,
+            'connection' => 'sqlsrv:Server=WOLFY-PC;Database=' . env('DB_NAME'),
+            'profiling'  => env('DEBUG', false),
+            'username'   => env('DB_USERNAME'),
+            'password'   => env('DB_PASSWORD'),
             'options'    => []
         ],
         /*{{connections}}*/
