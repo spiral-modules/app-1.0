@@ -1,5 +1,3 @@
-<dark:use bundle="spiral:bundle"/>
-
 <!DOCTYPE html>
 <html>
 <head>

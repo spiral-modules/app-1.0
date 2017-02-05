@@ -5,29 +5,29 @@
  *
  * @see ViewsConfig
  */
-use Spiral\Stempler;
 use Spiral\Views\Engines;
-use Spiral\Views\Modifiers;
 use Spiral\Views\Processors;
 
 return [
-    'cache'       => [
+    'cache' => [
         /*
          * Indicates that view engines must enable caching for their templates, you can reset existed
          * view cache by executing command "view:compile"
          */
-        'enabled'   => env('VIEW_CACHE'),
+        'enabled'   => env('VIEW_CACHE', false),
+
         /*
          * Location where view cache has to be stored into. By default you can use
          * app/runtime/cache/views directory.
          */
         'directory' => directory("cache") . 'views/'
     ],
+
     'namespaces'  => [
         /*
          * This is default application namespace which can be used without any prefix.
          */
-        'default'  => [
+        'default' => [
             directory("application") . 'views/',
             /*{{namespaces.default}}*/
         ],
@@ -36,17 +36,17 @@ return [
          * used in snapshots. In addition, same namespace used by Toolkit module to share it's
          * views and widgets.
          */
-        'spiral'   => [
+        'spiral'  => [
             directory("libraries") . 'spiral/framework/source/views/',
-            directory('libraries') . 'spiral/toolkit/source/views/',
             /*{{namespaces.spiral}}*/
         ],
         'profiler' => [
-            directory('libraries') . 'spiral/profiler/source/views/',
-            /*{{namespaces.profiler}}*/
+           directory('libraries') . 'spiral/profiler/source/views/',
+           /*{{namespaces.profiler}}*/
         ],
         /*{{namespaces}}*/
     ],
+
     /*
      * Environment variable define what cache version to be used for different engines, it primary
      * goal is to provide ability to evaluate some functionality at compilation (not runtime) phase.
@@ -56,6 +56,7 @@ return [
         'basePath' => ['http', 'basePath'],
         /*{{environment}}*/
     ],
+
     /*
      * You can connect as many engines as you want, simply declare engine name, class and extension
      * to be handled. Every engine class resolve using container, you are able to define your own
@@ -71,6 +72,7 @@ return [
             'options'    => [
                 'auto_reload' => true
             ],
+
             /*
             * Modifiers applied to imported or extended view source before it's getting parsed by
             * HtmlTemplater, every modifier has to implement ModifierInterface and as result view
@@ -79,13 +81,14 @@ return [
             */
             'modifiers'  => [
                 //Automatically replaces [[string]] with their translations
-                Modifiers\TranslateModifier::class,
+                Processors\TranslateProcessor::class,
 
                 //Mounts view environment variables using @{name} pattern.
-                Modifiers\EnvironmentModifier::class,
+                Processors\EnvironmentProcessor::class,
 
                 /*{{twig.modifiers}}*/
             ],
+
             /*
             * Here you define list of extensions to be mounted into twig engine, every extension
             * class will be resolved using container so you can use constructor dependencies.
@@ -103,15 +106,13 @@ return [
          */
         'dark'   => [
             'class'      => Engines\StemplerEngine::class,
-            /*
-             * Class to be used for syntax definitions. Do not change (create new engine instead).
-             */
-            'syntax'     => Stempler\Syntaxes\DarkSyntax::class,
+
             /*
              * Do not change this extension, it used across spiral toolkit, profiler and
              * administration modules.
              */
             'extension'  => 'dark.php',
+
             /*
              * Modifiers applied to imported or extended view source before it's getting parsed by
              * HtmlTemplater, every modifier has to implement ModifierInterface and as result view
@@ -120,18 +121,19 @@ return [
              */
             'modifiers'  => [
                 //Automatically replaces [[string]] with their translations
-                Modifiers\TranslateModifier::class,
+                Processors\TranslateProcessor::class,
 
                 //Mounts view environment variables using @{name} pattern.
-                Modifiers\EnvironmentModifier::class,
+                Processors\EnvironmentProcessor::class,
 
                 //This modifier automatically replace some php constructors with evaluated php code,
                 //such modifier used in spiral toolkit to simplify widget includes (see documentation
                 //and examples).
-                Modifiers\EvaluatorExpressions::class,
+                Processors\ExpressionsProcessors::class,
 
                 /*{{dark.modifiers}}*/
             ],
+
             /*
              * Processors applied to compiled view source after templating work is done and view is
              * fully composited.
@@ -139,9 +141,6 @@ return [
             'processors' => [
                 //Evaluates php block with #compile comment at moment of template compilation
                 Processors\EvaluateProcessor::class,
-
-                //Provides ability to automatically include js and css requested by widgets and tags
-                Spiral\Toolkit\AssetManager::class,
 
                 //Drops empty lines and normalize attributes
                 Processors\PrettifyProcessor::class,

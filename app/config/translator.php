@@ -45,6 +45,10 @@ return [
             'view-*',
             /*{{domains.views}}*/
         ],
+        'requests'   => [
+            'requests-*'
+        ],
+        'external'   => ['external'],
         'messages'   => ['*'],
         /*{{domains}}*/
     ],
@@ -84,7 +88,7 @@ return [
      * When true Translator will be reloading application messages from hard drive on every request.
      * This option might simplify development but slow down your application a bit.
      */
-    'autoReload'       => !env('TRANSLATOR_CACHE'),
+    'autoReload'       => !env('TRANSLATOR_CACHE', false),
 
     /*
      * Automatically register all missed string into fallback locale, attention, this options can

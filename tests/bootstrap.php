@@ -2,30 +2,13 @@
 /**
  * Spiral Framework, SpiralScout LLC.
  *
- * @package   spiralFramework
  * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2011
  */
 define('SPIRAL_INITIAL_TIME', microtime(true));
 
-//No comments
-mb_internal_encoding('UTF-8');
-
-//Error reporting
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', true);
-
-//Root directory
-$root = dirname(__DIR__) . '/';
+mb_internal_encoding('UTF-8');
 
 //Composer
-require $root . 'vendor/autoload.php';
-
-//Forcing work directory
-chdir($root);
-
-\Tests\TestCase::$app = App::init([
-    'root'        => $root,
-    'libraries'   => $root . '/vendor/',
-    'application' => $root . '/app/'
-], null, false);
+require dirname(__DIR__) . '/vendor/autoload.php';

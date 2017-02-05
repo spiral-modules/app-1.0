@@ -2,11 +2,13 @@ language: php
 
 php:
   - 7.0
-  - hhvm
+  - 7.1
 
-matrix:
-  allow_failures:
-    - php: hhvm
+install:
+  - composer install --no-interaction --prefer-source --no-scripts --dev
 
-install: composer install --no-interaction --prefer-source --no-scripts --dev
-script: php -r "copy('.env.sample', '.env');" && php webroot/index.php configure -vv -k && php webroot/index.php update -vv && php webroot/index.php seed && phpunit
+script:
+  - php -r "copy('.env.sample', '.env');"
+  - php webroot/index.php configure -vv -k
+  - php webroot/index.php update -vv
+  - phpunit

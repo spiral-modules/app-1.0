@@ -1,10 +1,10 @@
 <?php
 /**
- * Spiral Framework.
+ * Spiral skeleton application
  *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
+ * @author Wolfy-J
  */
+
 use Spiral\Core\Core;
 use Spiral\Debug;
 
@@ -22,8 +22,8 @@ class App extends Core
      * @see \Spiral\Core\Bootloaders\Bootloader
      * @var array
      */
-    protected $load = [
-        //Can speed up class loading a little.
+    const LOAD = [
+        //Can speed up class loading a bit
         \Spiral\Core\Loader::class,
 
         //Short bindings in spiral services (eg http, db, ...)
@@ -31,12 +31,13 @@ class App extends Core
 
         //Application specific bindings and bootloading
         \Bootloaders\AppBootloader::class,
-        \Bootloaders\ServicesBootloader::class,
+
+        //Routes, middlewares and etc
         \Bootloaders\HttpBootloader::class,
     ];
 
     /**
-     * Application core bootloading, you can configure your enviroment here.
+     * Application core bootloading, you can configure your environment here.
      */
     protected function bootstrap()
     {
@@ -56,9 +57,8 @@ class App extends Core
     private function enableDebugging()
     {
         //Initiating all needed binding (no need to use memory caching)
-        $this->bootloader()->bootload([
-            \Spiral\Profiler\ProfilerHeader::class,
-            \Spiral\Profiler\ProfilerPanel::class,
+        $this->getBootloader()->bootload([
+            \Spiral\Profiler\ProfilerBootloader::class,
 
             //Other debug modules, for example automatic orm/odm schema refresh middleware/service
             //can be enabled here

@@ -1,34 +1,41 @@
 <?php
 /**
- * Spiral Framework.
+ * Spiral skeleton application
  *
- * @license   MIT
- * @author    Anton Titov (Wolfy-J)
- * @copyright ©2009-2015
+ * @author Wolfy-J
  */
+
 namespace Controllers;
 
-use Controllers\Nested\SayController;
+use Psr\Http\Message\ResponseInterface;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
+use Spiral\Session\SectionInterface;
 use Spiral\Session\SessionInterface;
 
-class HomeController extends Controller
+class IndexController extends Controller
 {
     /**
      * @return string
      */
-    public function indexAction()
+    public function indexAction(): string
     {
         return $this->views->render('welcome');
     }
 
     /**
      * @param SessionInterface $session
-     * @return \Psr\Http\Message\MessageInterface
+     * @param SectionInterface $indexSession
+     *
+     * @return ResponseInterface
      */
-    public function scopeAction(SessionInterface $session)
-    {
+    public function scopeAction(
+        SessionInterface $session,
+        SectionInterface $indexSession
+    ): ResponseInterface {
+        //Isolated session section
+        dump(++$indexSession->counter);
+
         //This is request active in current IoC scope
         dump($this->request);
 
@@ -56,29 +63,16 @@ class HomeController extends Controller
 
         //This is class which helps you to manipulate with
         //response which is active in current IoC scope
-        return $this->responder->html('Hello world');
+        return $this->response->html('Hello world');
     }
 
     /**
      * @return string
      */
-    public function twigAction()
+    public function twigAction(): string
     {
         //dump($this->twig->getFunctions());
         return $this->views->render('default:hello.twig');
-    }
-
-    /**
-     * Nested controller example
-     *
-     * @return mixed
-     */
-    public function sayAction()
-    {
-        //Can also be done via method injection
-        return $this->app->callAction(SayController::class, 'say', [
-            'say' => 'Hello world!'
-        ]);
     }
 
     /**
@@ -95,10 +89,10 @@ class HomeController extends Controller
     /**
      * Sample redirect.
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function redirectAction()
+    public function redirectAction(): ResponseInterface
     {
-        return $this->responder->redirect('http://google.com');
+        return $this->response->redirect('http://google.com');
     }
 }

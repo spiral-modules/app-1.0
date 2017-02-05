@@ -127,7 +127,7 @@
   display: inline-block;
   background: #ffffff;
   position: fixed;
-  z-index: 150;
+  z-index: 1500;
   right: 0;
   bottom: 0;
   height: 40px;
@@ -288,7 +288,7 @@
 .profiler .shadow {
   display: none;
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   left: 0px;
   right: 0px;
   top: 0px;
@@ -297,7 +297,7 @@
 }
 .profiler .content {
   position: fixed;
-  z-index: 130;
+  z-index: 1300;
   left: 100px;
   right: 100px;
   top: 100px;
@@ -366,6 +366,8 @@
   font-size: 15px;
   color: #ffffff;
   text-shadow: 1px 1px 0 #33a3fe;
+  border-radius: 0;
+  text-align: center;
 }
 .profiler .content table th a {
   color: #ffffff;
@@ -373,6 +375,7 @@
 .profiler .content table tr td {
   background: #ffffff;
   padding: 6px 10px;
+  border-radius: 0;
 }
 .profiler .content table tr:nth-child(odd) td {
   background: #efefef;

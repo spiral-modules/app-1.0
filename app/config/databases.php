@@ -13,8 +13,8 @@ return [
      * Such database will be returned from DatabaseManager->database(null) call and also can be
      * available using $this->db shared binding.
      */
-    'default'     => 'default',
-    
+    'default'     => 'primary',
+
     /*
      * Database aliases provide you ability to store your ORM records or tables in multiple logical
      * sources, on practice you can point all your aliases to one database to make application solid
@@ -28,14 +28,9 @@ return [
         'database' => 'primary',
         'db'       => 'primary',
 
-        //Runtime (local) databases, this safe db to check some ideas and drafts
-        'dynamic'  => 'runtime',
-        'develop'  => 'runtime',
-        'sandbox'  => 'runtime',
-
         /*{{aliases}}*/
     ],
-    
+
     /*
      * This section defines list of your application databases, every database must have specified
      * connection and optional isolation prefix (table prefix). You can link multiple databases to
@@ -45,26 +40,13 @@ return [
      * different databases (for now).
      */
     'databases'   => [
-        'primary'   => [
+        'primary' => [
             'connection'  => 'mysql',
-            'tablePrefix' => ''
-        ],
-        'secondary' => [
-            'connection'  => 'postgres',
-            'tablePrefix' => '',
-        ],
-        
-        /*
-         * You can use this database to store application specific settings, obviously data has to be
-         * cached and no client data can land here.
-         */
-        'runtime'   => [
-            'connection'  => 'runtime',
             'tablePrefix' => '',
         ],
         /*{{databases}}*/
     ],
-    
+
     /*
      * Connection provides you lower access level to your database and database schema. You can link
      * as many connections to one database as you want.
@@ -72,18 +54,18 @@ return [
     'connections' => [
         'mysql'     => [
             'driver'     => Drivers\MySQL\MySQLDriver::class,
-            'connection' => 'mysql:host=127.0.0.1;dbname=spiral',
+            'connection' => 'mysql:host=127.0.0.1;dbname=' . env('DB_NAME'),
             'profiling'  => env('DEBUG', false),
-            'username'   => 'mysql',
-            'password'   => '~~',
+            'username'   => env('DB_USERNAME'),
+            'password'   => env('DB_PASSWORD'),
             'options'    => []
         ],
         'postgres'  => [
             'driver'     => Drivers\Postgres\PostgresDriver::class,
-            'connection' => 'pgsql:host=127.0.0.1;dbname=spiral',
+            'connection' => 'pgsql:host=127.0.0.1;dbname=' . env('DB_NAME'),
             'profiling'  => env('DEBUG', false),
-            'username'   => 'postgres',
-            'password'   => '~~',
+            'username'   => env('DB_USERNAME'),
+            'password'   => env('DB_PASSWORD'),
             'options'    => []
         ],
         'runtime'   => [
@@ -96,10 +78,10 @@ return [
         ],
         'sqlServer' => [
             'driver'     => Drivers\SQLServer\SQLServerDriver::class,
-            'connection' => 'sqlsrv:Server=DESKTOP-ETTP923\SQLEXPRESS;Database=spiral',
+            'connection' => 'sqlsrv:Server=WOLFY-PC;Database=' . env('DB_NAME'),
             'profiling'  => env('DEBUG', false),
-            'username'   => 'sqlServer',
-            'password'   => '~~',
+            'username'   => env('DB_USERNAME'),
+            'password'   => env('DB_PASSWORD'),
             'options'    => []
         ],
         /*{{connections}}*/
