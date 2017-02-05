@@ -7,7 +7,10 @@
 
 namespace Tests;
 
-class BaseTest extends TestCase
+use Monolog\Handler\NullHandler;
+use PHPUnit\Framework\TestCase;
+
+abstract class BaseTest extends TestCase
 {
     /**
      * @var \App
@@ -43,13 +46,5 @@ class BaseTest extends TestCase
 
         gc_collect_cycles();
         clearstatcache();
-    }
-
-    /**
-     * @return \Spiral\Core\ContainerInterface
-     */
-    protected function iocContainer()
-    {
-        return $this->app->container;
     }
 }

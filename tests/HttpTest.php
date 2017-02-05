@@ -7,10 +7,14 @@
 
 namespace Tests;
 
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\UriInterface;
+use Zend\Diactoros\ServerRequest;
+
 /**
  * Provides ability to query application via HttpDispatcher.
  */
-class HttpTest extends BaseTest
+abstract class HttpTest extends BaseTest
 {
     /**
      * Execute GET query.
@@ -20,7 +24,7 @@ class HttpTest extends BaseTest
      * @param array               $headers
      * @param array               $cookies
      *
-     * @return \Tests\ResponseInterface
+     * @return ResponseInterface
      */
     protected function get(
         $uri,
@@ -28,7 +32,9 @@ class HttpTest extends BaseTest
         array $headers = [],
         array $cookies = []
     ): ResponseInterface {
-        return $this->app->http->perform($this->request($uri, 'GET', $query, $headers, $cookies));
+        return $this->app->http->perform(
+            $this->createRequest($uri, 'GET', $query, $headers, $cookies)
+        );
     }
 
     /**
@@ -39,7 +45,7 @@ class HttpTest extends BaseTest
      * @param array               $headers
      * @param array               $cookies
      *
-     * @return \Tests\ResponseInterface
+     * @return ResponseInterface
      */
     protected function post(
         $uri,
@@ -48,7 +54,7 @@ class HttpTest extends BaseTest
         array $cookies = []
     ): ResponseInterface {
         return $this->app->http->perform(
-            $this->request($uri, 'POST', [], $headers, $cookies)->withParsedBody($data)
+            $this->createRequest($uri, 'POST', [], $headers, $cookies)->withParsedBody($data)
         );
     }
 
@@ -59,7 +65,7 @@ class HttpTest extends BaseTest
      * @param array               $headers
      * @param array               $cookies
      *
-     * @return \Tests\ServerRequest
+     * @return ServerRequest
      */
     protected function createRequest(
         $uri,

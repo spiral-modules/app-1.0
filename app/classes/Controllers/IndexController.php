@@ -12,6 +12,7 @@ namespace Controllers;
 use Psr\Http\Message\ResponseInterface;
 use Spiral\Core\Controller;
 use Spiral\Encrypter\EncrypterInterface;
+use Spiral\Session\SectionInterface;
 use Spiral\Session\SessionInterface;
 
 class IndexController extends Controller
@@ -26,11 +27,17 @@ class IndexController extends Controller
 
     /**
      * @param SessionInterface $session
+     * @param SectionInterface $indexSession
      *
      * @return ResponseInterface
      */
-    public function scopeAction(SessionInterface $session): ResponseInterface
-    {
+    public function scopeAction(
+        SessionInterface $session,
+        SectionInterface $indexSession
+    ): ResponseInterface {
+        //Isolated session section
+        dump(++$indexSession->counter);
+
         //This is request active in current IoC scope
         dump($this->request);
 
@@ -58,7 +65,7 @@ class IndexController extends Controller
 
         //This is class which helps you to manipulate with
         //response which is active in current IoC scope
-        return $this->responder->html('Hello world');
+        return $this->response->html('Hello world');
     }
 
     /**
@@ -88,6 +95,6 @@ class IndexController extends Controller
      */
     public function redirectAction(): ResponseInterface
     {
-        return $this->responder->redirect('http://google.com');
+        return $this->response->redirect('http://google.com');
     }
 }

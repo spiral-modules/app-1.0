@@ -80,11 +80,11 @@ return [
         //Manages CSRF tokens
         Middlewares\CsrfMiddleware::class,
 
-        //Provides support for cookie queue and cookie protection
-        Cookies\CookieManager::class,
-
         //Starts and manages user sessions
         Session\Http\SessionStarter::class,
+
+        //Provides support for cookie queue and cookie protection
+        Cookies\CookieManager::class,
 
         /*{{middlewares}}*/
     ],
