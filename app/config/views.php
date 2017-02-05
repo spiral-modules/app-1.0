@@ -72,9 +72,6 @@ return [
         'twig'   => [
             'class'      => Engines\TwigEngine::class,
             'extension'  => 'twig',
-            'options'    => [
-                'auto_reload' => true
-            ],
 
             /*
             * Modifiers applied to imported or extended view source before it's getting parsed by
