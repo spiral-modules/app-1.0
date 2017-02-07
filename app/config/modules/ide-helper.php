@@ -26,11 +26,11 @@ return [
     // writers are responsible for storing data collected by locators
     'writers'  => [
         'phpProperty' => bind(Writers\FilePerClassWriter::class, [
-            'outputDirectory' => directory('application') . 'resources/Virtual/',
+            'outputDirectory' => directory('application') . 'resources/ide-helper/',
             'renderer'        => bind(Renderer\ReactorBasedPropertyRenderer::class),
         ]),
         'phpDoc'      => bind(Writers\FilePerClassWriter::class, [
-            'outputDirectory' => directory('application') . 'resources/Virtual/',
+            'outputDirectory' => directory('application') . 'resources/ide-helper/',
             'renderer'        => bind(Renderer\ReactorBasedDocRenderer::class),
         ]),
         'meta'        => bind(Writers\SingleFileWriter::class, [
@@ -46,7 +46,11 @@ return [
             'writers'  => ['phpProperty'],
         ],
         'entity'    => [
-            'locators' => ['requests', 'records'],
+            'locators' => [
+                'requests',
+                /* 'documents', */
+                'records'
+            ],
             'writers'  => ['phpDoc'],
         ],
         'meta'      => [
