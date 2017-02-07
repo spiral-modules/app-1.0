@@ -1,4 +1,9 @@
 <?php
+/**
+ * IDE-Helper code documentation options.
+ *
+ * @see IdeHelperConfig
+ */
 
 use Spiral\IdeHelper\Locators;
 use Spiral\IdeHelper\Renderer;
@@ -15,17 +20,17 @@ return [
         ]),
         'bindings'   => Locators\BindingsLocator::class,
         'requests'   => Locators\RequestsLocator::class,
-        //'documents'  => Locators\DocumentsLocator::class,
+        /* 'documents'  => Locators\DocumentsLocator::class, */
         'records'    => Locators\RecordsLocator::class,
     ],
     // writers are responsible for storing data collected by locators
     'writers'  => [
         'phpProperty' => bind(Writers\FilePerClassWriter::class, [
-            'outputDirectory' => directory('root') . 'resources/Virtual/',
+            'outputDirectory' => directory('application') . 'resources/Virtual/',
             'renderer'        => bind(Renderer\ReactorBasedPropertyRenderer::class),
         ]),
         'phpDoc'      => bind(Writers\FilePerClassWriter::class, [
-            'outputDirectory' => directory('root') . 'resources/Virtual/',
+            'outputDirectory' => directory('application') . 'resources/Virtual/',
             'renderer'        => bind(Renderer\ReactorBasedDocRenderer::class),
         ]),
         'meta'        => bind(Writers\SingleFileWriter::class, [
@@ -41,11 +46,7 @@ return [
             'writers'  => ['phpProperty'],
         ],
         'entity'    => [
-            'locators' => [
-                //'documents',
-                'requests',
-                'records'
-            ],
+            'locators' => ['requests', 'records'],
             'writers'  => ['phpDoc'],
         ],
         'meta'      => [
