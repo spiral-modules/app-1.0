@@ -19,6 +19,9 @@ return [
         //Needed to allow Translator locate i18n validation messages
         directory('framework') . 'Validation/',
 
+        //Ide helper commands
+        directory('libraries') . 'spiral/ide-helper/source/',
+
         /*{{directories}}*/
     ],
     /*
