@@ -31,6 +31,8 @@ Once application installed you can ensure that it configured properly by executi
 
 Available Modules
 --------
-- [Profiler Panel](https://github.com/spiral-modules/profiler) - Profiler panel/middleware for Spiral Applications
+- [Profiler Panel](https://github.com/spiral-modules/profiler) - Profiler panel/middleware for Spiral Applications (pre-installed)
+- [IDE Helper](https://github.com/spiral-modules/ide-helper) - IDE autocomplete generator: ORM, ODM, RequestFilters, Container  (pre-installed)
 - [Hybrid DB](https://github.com/spiral-modules/hybrid-db) - ORM-to-ODM relation bridge with transaction support
-- [IDE Helper](https://github.com/spiral-modules/ide-helper) - IDE autocomplete generator: ORM, ODM, RequestFilters, Container
+- [Scaffolder](https://github.com/spiral-modules/scaffolder) - Set of commands used to scaffold parts of application
+
