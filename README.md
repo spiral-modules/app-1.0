@@ -8,6 +8,22 @@ The Spiral framework provides a modular Rapid Application Development (RAD) plat
 
 [**Spiral Framework**](https://github.com/spiral/spiral) [**Modules and Packages**](https://github.com/spiral-modules) | [Guide](https://github.com/spiral/guide) | [**Installation Notes**](https://github.com/spiral/guide/blob/master/installation.md)
 
+Server Requiments
+--------
+Make sure that your server is configured with following PHP version and extensions:
+* PHP 7.0+
+* OpenSSL Extension
+* MBString Extension
+* Tokenizer Extension
+* PDO Extension with desired database drivers
+* MongoDB extension (optional)
+
+Installation
+--------
+```
+composer create-project spiral/application
+```
+
 Available Modules
 --------
 - [Profiler Panel](https://github.com/spiral-modules/profiler) - Profiler panel/middleware for Spiral Applications
