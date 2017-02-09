@@ -27,6 +27,7 @@ composer create-project spiral/application
 Once application installed you can ensure that it configured properly by executing:
 ```
 ./spiral configure
+phpunit
 ```
 
 Available Modules
