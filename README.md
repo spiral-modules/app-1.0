@@ -24,6 +24,11 @@ Installation
 composer create-project spiral/application
 ```
 
+Once application installed you can ensure that it configured properly by executing:
+```
+./spiral configure
+```
+
 Available Modules
 --------
 - [Profiler Panel](https://github.com/spiral-modules/profiler) - Profiler panel/middleware for Spiral Applications
