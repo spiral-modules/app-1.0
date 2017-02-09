@@ -12,4 +12,4 @@ Available Modules
 --------
 - [Profiler Panel](https://github.com/spiral-modules/profiler) - Profiler panel/middleware for Spiral Applications
 - [Hybrid DB](https://github.com/spiral-modules/hybrid-db) - ORM-to-ODM relation bridge with transaction support
-- [IDE Helper](https://github.com/spiral-modules/ide-helper) - Virtual documentation generator: ORM, ODM, RequestFilters, Container
+- [IDE Helper](https://github.com/spiral-modules/ide-helper) - IDE autocomplete generator: ORM, ODM, RequestFilters, Container
