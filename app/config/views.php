@@ -38,6 +38,7 @@ return [
          */
         'spiral'   => [
             directory("libraries") . 'spiral/framework/source/views/',
+            directory('libraries') . 'spiral/toolkit/source/views/',
             /*{{namespaces.spiral}}*/
         ],
         /*

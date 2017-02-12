@@ -1,3 +1,5 @@
+<dark:use bundle="spiral:bundle"/>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +10,14 @@
         </script>
         <block:resources/>
         <yield:styles>
-            <link rel="stylesheet" href="@{basePath}resources/styles/spiral.css"/>
+            <toolkit:styles/>
         </yield:styles>
     </block:head>
 </head>
 <body>
 <yield:body/>
-<yield:scrips/>
+<yield:scrips>
+    <toolkit:scripts/>
+</yield:scrips>
 </body>
 </html>

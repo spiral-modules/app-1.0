@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'lock';
+@import 'fonts';
 
 * {
   -webkit-box-sizing: border-box;
@@ -270,18 +271,6 @@ table {
     padding-bottom: 5px;
     font-weight: 100;
   }
-
-  &.has-error {
-    label {
-      color: @spiral-red;
-    }
-
-    .form-control {
-      .placeholder(@spiral-red);
-
-      border-color: @spiral-red;
-    }
-  }
 }
 
 .item-form-checkbox {
@@ -436,18 +425,12 @@ table {
   border: none;
   opacity: 0.2;
   cursor: pointer;
+
   &:hover {
     opacity: 1;
   }
 }
 
-.alert {
-  &.alert-danger {
-    color: @spiral-red;
-    font-size: 12px;
-    font-weight: lighter;
-  }
-}
 
 form {
   position: relative;
@@ -470,8 +453,40 @@ form {
       border-color: @spiral-blue;
       outline: none;
     }
-    &:disabled, &:read-only {
-      background: @spiral-light-grey;
+    //should be separately due to the bug in FF & IE
+    &:disabled, &.read-only  {
+      background-color: @spiral-light-grey;
+    }
+    &:read-only{
+      background-color: @spiral-light-grey;
+    }
+    &:-moz-read-only{
+      background-color: @spiral-light-grey;
+    }
+
+    &.datetime {
+      .size(50%, 30px);
+      display: inline-block;
+    }
+  }
+
+  select{
+    &.datetime{
+      height: 30px;
+      display: inline-block;
+      width: auto;
+    }
+    &.datetime {
+      .size(50%, 30px);
+      display: inline-block;
+    }
+  }
+
+  select{
+    &.datetime{
+      height: 30px;
+      display: inline-block;
+      width: auto;
     }
   }
   textarea {
@@ -488,11 +503,6 @@ form {
       outline: none;
     }
   }
-  .msg {
-    display: block;
-    font-size: 14px;
-    padding-top: 3px;
-  }
 }
 
 .item-label {
@@ -503,36 +513,6 @@ form {
   display: block;
   padding-bottom: 5px;
   font-weight: 100;
-}
-
-.error {
-  color: @spiral-red;
-  .item-label {
-    color: @spiral-red;
-  }
-  input, textarea {
-    border-color: @spiral-red;
-  }
-}
-
-.success {
-  color: @spiral-green;
-  .item-label {
-    color: @spiral-green;
-  }
-  input, textarea {
-    border-color: @spiral-green;
-  }
-}
-
-.warning {
-  color: @spiral-yellow;
-  .item-label {
-    color: @spiral-yellow;
-  }
-  input, textarea {
-    border-color: @spiral-yellow;
-  }
 }
 
 .info {
@@ -547,41 +527,136 @@ form {
 
 .alert {
   font-size: 12px;
-  border-radius: 2px;
-  background: @spiral-dark-grey;
-  padding: 5px 10px;
-  color: @spiral-white;
   position: relative;
   margin-top: 10px;
 
-  &.error {
-    background: @spiral-red;
+  p {
+    margin: 0;
   }
-  &.success {
-    background: @spiral-green;
-  }
-  &.warning {
-    background: @spiral-yellow;
-  }
-  &.info {
-    background: @spiral-blue;
-  }
-  > .btn-close {
+
+  .btn-close {
     position: absolute;
-    top: 2px;
+    right: 10px;
+    top: 0;
+  }
 
-    right: 2px;
-    line-height: 18px;
-    width: 18px;
-    color: @spiral-white;
-    opacity: .5;
 
-    &:hover {
-      opacity: 1;
+  &.form-msg {
+    border-radius: 2px;
+    padding: 5px 10px;
+
+
+    &.error {
+      color: @spiral-red;
+      background: rgba(255,0,0,.1);
+
+      .btn-close {
+        color: @spiral-red;
+      }
     }
 
-    &:focus {
-      outline: none;
+
+    &.success {
+      color: @spiral-green;
+      background: rgba(0,255,0,.1);
+
+      .btn-close {
+        color: @spiral-green;
+      }
+    }
+
+    &.warning {
+      color: @spiral-yellow;
+      background: rgba(244,232,151,.1);
+
+      .btn-close {
+        color: @spiral-yellow;
+      }
+    }
+
+    &.info {
+      color: @spiral-blue;
+      background: rgba(0,0,255,.1);
+
+      .btn-close {
+        color: @spiral-blue;
+      }
+    }
+
+  }
+}
+
+.item-form {
+
+  &.error {
+    .item-label,
+    .item-input,
+    .item-select,
+    textarea {
+      border-color: @spiral-red;
+      color: @spiral-red;
+    }
+  }
+
+  &.success {
+    .item-label,
+    .item-input,
+    .item-select,
+    textarea {
+      border-color: @spiral-green;
+      color: @spiral-green;
+    }
+  }
+
+  &.warning {
+    .item-label,
+    .item-input,
+    .item-select,
+    textarea {
+      border-color: @spiral-yellow;
+      color: @spiral-yellow;
+    }
+  }
+
+
+  &.info {
+    .item-label,
+    .item-input,
+    .item-select,
+    textarea {
+      border-color: @spiral-blue;
+      color: @spiral-blue;
+    }
+  }
+
+  .alert {
+
+    &.form-msg {
+      border-radius: 0px;
+      padding: 5px 0px;
+
+
+      &.error {
+        color: @spiral-red;
+        background: transparent;
+      }
+
+
+      &.success {
+        color: @spiral-green;
+        background: transparent;
+      }
+
+      &.warning {
+        color: @spiral-yellow;
+        background: transparent;
+      }
+
+      &.info {
+        color: @spiral-blue;
+        background: transparent;
+      }
+
     }
   }
 }
@@ -713,6 +788,89 @@ form {
     &.active a{
       pointer-events: none;
       background: #efefef;
+    }
+  }
+}
+
+.file-field.input-field {
+  position: relative;
+  height: 30px;
+  margin-bottom: 20px;
+
+  .btn {
+    background: #015fa3;
+    float: left;
+    margin-right: 20px;
+    height: 35px;
+    line-height: 35px;
+
+    span {
+      float: left;
+      position: relative;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 2px;
+    }
+
+  }
+    input[type=file] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 40px;
+      opacity: 0;
+      z-index: 200;
+    }
+
+  .file-path-wrapper {
+    float: left;
+    width: ~"calc(100% - 135px)";
+    background: transparent;
+
+    .file-path {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      height: 35px;
+      padding: 0 10px;
+    }
+  }
+}
+
+.flash-wrapper {
+  position: fixed;
+  bottom: 40px;
+  width: 288px;
+  right: 10px;
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+  z-index: 10000;
+  bottom: -120%;
+
+  &.show {
+    bottom: 40px;
+  }
+
+  &.flash {
+    color: #fff;
+    position: relative;
+    border-radius: 2px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    opacity: 1;
+
+    &.info {
+      background: #212121;
+    }
+    &.debug {
+      background: #FF9800;
+    }
+    &.danger {
+      background: #DD2C00;
     }
   }
 }
