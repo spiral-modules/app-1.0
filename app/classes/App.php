@@ -79,7 +79,7 @@ if (!function_exists('app')) {
      *
      * @return App
      */
-    function app()
+    function app(): App
     {
         return App::sharedContainer()->get(App::class);
     }
