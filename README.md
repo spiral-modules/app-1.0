@@ -35,4 +35,5 @@ Available Modules
 - [IDE Helper](https://github.com/spiral-modules/ide-helper) - IDE autocomplete generator: ORM, ODM, RequestFilters, Container  (pre-installed)
 - [Hybrid DB](https://github.com/spiral-modules/hybrid-db) - ORM-to-ODM relation bridge with transaction support
 - [Scaffolder](https://github.com/spiral-modules/scaffolder) - Set of commands used to scaffold parts of application
+- [Toolkit](https://github.com/spiral-modules/toolkit) - View widgets (pre-installed)
 
