@@ -43,10 +43,8 @@ class App extends Core
     {
         /*
          * Debug mode automatically enables spiral profiler or any other bootloaders listed
-         * in a following method.
-         *
-         * In addition, it sets different snapshot class which provides ability to render
-         * error information in a nicely form.
+         * in a following method. In addition, it sets different snapshot class which provides 
+         * ability to render error information in a nicely form.
          */
         env('DEBUG') && $this->enableDebugging();
     }
