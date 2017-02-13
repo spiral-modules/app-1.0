@@ -13,7 +13,7 @@ Server Requiments
 Make sure that your server is configured with following PHP version and extensions:
 * PHP 7.0+
 * OpenSSL Extension
-* MBString Extension
+* MbString Extension
 * Tokenizer Extension
 * PDO Extension with desired database drivers
 * MongoDB extension (optional)
