@@ -24,7 +24,7 @@ Installation
 composer create-project spiral/application
 ```
 
-Once application installed you can ensure that it configured properly by executing:
+Once application installed you can ensure that it was configured properly by executing:
 ```
 ./spiral configure && phpunit
 ```
