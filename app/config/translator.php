@@ -42,9 +42,7 @@ return [
             'view-*',
             /*{{domains.views}}*/
         ],
-        'requests'   => [
-            'requests-*'
-        ],
+        'requests'   => ['requests-*'],
         'external'   => ['external'],
         'messages'   => ['*'],
         /*{{domains}}*/
