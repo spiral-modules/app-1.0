@@ -21,11 +21,8 @@ return [
 
     /*
      * This configuration section contain list of domains associated with their bundles (using
-     * patterns).
-     *
-     * All classes which use trait TranslatorTrait automatically get bundle name equals to full class
-     * name (including names). Identical pattern with views, however view bundle includes prefix
-     * defined in translator modifier ("view-").
+     * patterns). Example:
+     * Spiral\Validation\Checkers\AddressChecker => spiral-validation-checkers-...
      */
     'domains'          => [
         'validation' => [
