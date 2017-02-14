@@ -17,7 +17,7 @@ class App extends Core
      * List of classes and bootloaders to be initiated with your application.
      *
      * Attention, bootloader's bindings are compiled and cached, to reload application cache run
-     * command "app:reload".
+     * command "app:reload" (disabled by default in .env).
      *
      * @see \Spiral\Core\Bootloaders\Bootloader
      * @var array
