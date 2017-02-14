@@ -14,7 +14,7 @@ return [
     'lifetime' => 86400,
 
     /*
-     * Cookie name for sessions. Used by SessionStarter middleware. Other cookies options will
+     * Cookie name for sessions. Used by SessionStarter middleware. Other cookie options will
      * be gathered from HttpConfig. You can combine SessionStarter with CookieManager in order
      * to protect your cookies.
      */
