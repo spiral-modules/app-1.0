@@ -74,7 +74,7 @@ return [
 
     /*
      * This is set of "global" middlewares, they will be applied to every request before endpoint
-     * executed.
+     * executed (i.e. routed to controller).
      */
     'middlewares'  => [
         //Converts ClientExceptions into proper error pages
