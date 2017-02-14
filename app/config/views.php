@@ -62,7 +62,7 @@ return [
 
     /*
      * You can connect as many engines as you want, simply declare engine name, class and extension
-     * to be handled. Every engine class resolve using container, you are able to define your own
+     * to be handled. Every engine class resolved using container, you are able to define your own
      * dependencies in your implementation.
      */
     'engines'     => [
