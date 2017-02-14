@@ -70,7 +70,7 @@ return [
      * You can define dumpers to be used in console command "i18n:dump", every id/name must be
      * associated with appropriate symfony dumper class and file extension.
      *
-     * Attention, dumping will be performed into directory, not file. Generated
+     * Attention, dumping will be performed into directory, not file.
      */
     'dumpers'          => [
         'xliff' => Translation\Dumper\XliffFileDumper::class,
