@@ -77,7 +77,7 @@ return [
             * Modifiers applied to imported or extended view source before it's getting parsed by
             * HtmlTemplater, every modifier has to implement ModifierInterface and as result view
             * name, namespace and filename are available for it. Modifiers is the best to connect
-            * custom syntax processors (for example Laravel's Blade).
+            * custom syntax processors.
             */
             'modifiers'  => [
                 //Automatically replaces [[string]] with their translations
