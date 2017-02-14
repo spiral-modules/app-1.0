@@ -21,7 +21,7 @@ abstract class BaseTest extends TestCase
     {
         $root = dirname(__DIR__) . '/';
 
-        $app = $this->app = \App::init([
+        $this->app = \App::init([
             'root'        => $root,
             'libraries'   => $root . 'vendor/',
             'application' => $root . 'app/',
