@@ -35,7 +35,7 @@ return [
      * Session handler. You are able to use bind() function in handler options.
      */
     'handlers' => [
-        //Debug session handler without ability to save anything
+        //Does not do anything
         'null'  => [
             'class' => Handlers\NullHandler::class
         ],
