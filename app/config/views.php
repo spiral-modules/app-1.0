@@ -74,11 +74,9 @@ return [
             'extension'  => 'twig',
 
             /*
-            * Modifiers applied to imported or extended view source before it's getting parsed by
-            * HtmlTemplater, every modifier has to implement ModifierInterface and as result view
-            * name, namespace and filename are available for it. Modifiers is the best to connect
-            * custom syntax processors.
-            */
+             * Process view source before provide it to Twig, modifiers MUST only depend on enviroment
+             * dependencies. 
+             */
             'modifiers'  => [
                 //Automatically replaces [[string]] with their translations
                 Processors\TranslateProcessor::class,
