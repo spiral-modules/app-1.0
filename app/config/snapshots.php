@@ -16,6 +16,8 @@ return [
     /*
      * Automatic snapshot reporting options. You can define your own SnapshotInterface in order
      * to create custom handler OR add Monolog handler to default log channel.
+     * 
+     * Also see spiral-modules/snapshotter to gain more power.
      */
     'reporting' => [
         'enabled'      => true,
