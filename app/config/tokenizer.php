@@ -7,7 +7,7 @@
  */
 return [
     /*
-     * Tokenizer will be performing class and invocation lookup in a following directories. Less
+     * Tokenizer will perform class and invocation lookup in a following directories. Less
      * directories - faster Tokenizer will work.
      */
     'directories' => [
