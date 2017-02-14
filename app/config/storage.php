@@ -38,7 +38,7 @@ return [
             'class'   => Servers\FtpServer::class,
             'options' => [
                 'host'     => '127.0.0.1',
-                'login'    => 'Wolfy-J',
+                'login'    => 'username',
                 'password' => '',
                 'home'     => '/'
             ]
