@@ -22,12 +22,12 @@ return [
 
     /*
      * Default handler is set to 'files'. You can switch this values based on your environments.
-     * SessionStore will be initiated on demand to prevent performance issues. Since spiral provides
-     * set of widgets to with html forms over ajax sessions are mainly used to store authorization
-     * data and not used to flush errors at page.
+     * SessionStore will be initiated on demand to prevent performance issues.
      *
-     * You can set this value to "native" to disable custom session handler and use default php
+     * You can set this value to NULL to disable custom session handler and use default php
      * mechanism.
+     * 
+     * @see http://php.net/manual/en/class.sessionhandlerinterface.php
      */
     'handler'  => env('SESSION_HANDLER', 'files'),
 
