@@ -93,7 +93,7 @@ return [
     ],
 
     /*
-     * ExceptionIsolator middleware can automatically handle ClientExceptions and populate response
+     * ExceptionWrapper middleware can automatically handle ClientExceptions and populate response
      * with corresponding error page. This list must contain array of error codes associated with
      * view files.
      */
