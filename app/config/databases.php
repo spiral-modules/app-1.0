@@ -50,7 +50,7 @@ return [
 
     /*
      * Connection provides you lower access level to your database and database schema. You can link
-     * as many connections to one database as you want.
+     * as many databases to one connection as you want.
      */
     'connections' => [
         'mysql'     => [
