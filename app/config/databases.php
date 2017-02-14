@@ -21,7 +21,8 @@ return [
      * and way faster.
      *
      * However aliases can be useful when you trying to split some functionality into module/bundle.
-     * ORM models still can talk between databases, however joins will become forbidden.
+     * ORM models still can talk between databases, however joins will become forbidden (unless 
+     * databases merged together via alias).
      */
     'aliases'     => [
         'default'  => 'primary',
