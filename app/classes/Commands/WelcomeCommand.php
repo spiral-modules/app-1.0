@@ -17,18 +17,7 @@ use Symfony\Component\Console\Input\InputOption;
  */
 class WelcomeCommand extends Command
 {
-    /**
-     * Command name.
-     *
-     * @var string
-     */
     const NAME = 'welcome';
-
-    /**
-     * Short command description.
-     *
-     * @var string
-     */
     const DESCRIPTION = 'Welcome command';
 
     /**
