@@ -75,9 +75,11 @@ class App extends Core
 
 if (!function_exists('app')) {
     /**
-     * You can change this function to any form or remove it.
+     * You can change this function to any form or remove it. Attention,
+     * can only be executed inside your application.
      *
      * @return App
+     * @throws \Spiral\Core\Exceptions\ScopeException
      */
     function app(): App
     {
