@@ -26,7 +26,7 @@ return [
      * Configuration options for CookieManager middleware.
      */
     'cookies'      => [
-        //You force specific domain or use pattern like ".{host}" to share cookies with sub domains
+        //You can force specific domain or use pattern like ".{host}" to share cookies with sub domains
         'domain'   => null,
 
         //Cookie protection method
