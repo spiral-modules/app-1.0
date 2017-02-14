@@ -6,7 +6,7 @@ Spiral, modular RAD PSR-7 Framework
 
 The Spiral framework provides a modular Rapid Application Development (RAD) platform to develop web applications using an HMVC architecture, PSR~ compatibility, extremely friendly [IoC](https://github.com/container-interop/container-interop), code re-usability, simple syntax and powerful database layer.
 
-[**Spiral Framework**](https://github.com/spiral/spiral) [**Modules and Packages**](https://github.com/spiral-modules) | [Guide](https://github.com/spiral/guide) | [**Installation Notes**](https://github.com/spiral/guide/blob/master/installation.md)
+[**Spiral Framework**](https://github.com/spiral/spiral) | [*Modules and Packages*](https://github.com/spiral-modules) | [Guide](https://github.com/spiral/guide) | [**Installation Notes**](https://github.com/spiral/guide/blob/master/installation.md)
 
 Server Requiments
 --------
