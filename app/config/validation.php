@@ -22,7 +22,7 @@ return [
         "required::withoutAll",
         "file::exists",
         "file::uploaded",
-        "image:valid"
+        "image:valid",
         /*{{empties}}*/
     ],
 
