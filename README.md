@@ -36,4 +36,4 @@ Available Modules
 - [Hybrid DB](https://github.com/spiral-modules/hybrid-db) - ORM-to-ODM relation bridge with transactions support
 - [Scaffolder](https://github.com/spiral-modules/scaffolder) - Help commands for scaffolding parts of your application
 - [Toolkit](https://github.com/spiral-modules/toolkit) - View widgets (pre-installed)
-- [Vault](https://github.com/spiral-modules/vault) - HMVC Core with RBAC security and visual layout
+- [Vault](https://github.com/spiral-modules/vault) - HMVC Core with RBAC and visual layout
