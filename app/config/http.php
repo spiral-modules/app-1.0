@@ -32,7 +32,7 @@ return [
         //Cookie protection method
         'method'   => Http\Configs\HttpConfig::COOKIE_ENCRYPT,
 
-        //Remove this excluded cookies if yuo want to encrypt session id and csrf token values
+        //Remove this excluded cookies if you want to encrypt session id and csrf token values (why?)
         'excluded' => [
             'csrf-token',
             'SID',
