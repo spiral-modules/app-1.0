@@ -19,10 +19,6 @@ class WelcomeCommand extends Command
 {
     const NAME = 'welcome';
     const DESCRIPTION = 'Welcome command';
-
-    /**
-     * @var array
-     */
     const OPTIONS = [
         ['lang', 'l', InputOption::VALUE_OPTIONAL, 'Locale id to be used', 'en']
     ];
