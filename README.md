@@ -16,7 +16,6 @@ Make sure that your server is configured with following PHP version and extensio
 * MbString Extension
 * Tokenizer Extension
 * PDO Extension with desired database drivers
-* MongoDB extension (optional)
 
 Installation
 --------
