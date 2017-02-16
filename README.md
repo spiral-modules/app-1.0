@@ -29,7 +29,12 @@ Once application installed you can ensure that it was configured properly by exe
 ./spiral configure && phpunit
 ```
 
-Available Modules
+Available Components:
+--------
+- [ODM](https://github.com/spiral/odm) - MongoDB ODM with composition support
+- [Storage](https://github.com/spiral/storage) - File storage abstraction layer
+
+Available Modules:
 --------
 - [Profiler Panel](https://github.com/spiral-modules/profiler) - Profiler panel/middleware for Spiral Applications (pre-installed)
 - [IDE Helper](https://github.com/spiral-modules/ide-helper) - IDE autocomplete generator: ORM, ODM, RequestFilters, Container  (pre-installed)
