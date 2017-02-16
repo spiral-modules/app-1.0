@@ -58,7 +58,6 @@ class HttpBootloader extends Bootloader
             function ($request, $response, $next) {
                 return $next($request, $response)->withHeader('My-Header', 'Yay!');
             },
-            //CSRF protection
             CsrfFirewall::class
         ]);
     }
@@ -85,7 +84,6 @@ class HttpBootloader extends Bootloader
             //Default controller to be called on / url
             'controller' => 'index',
         ])->withMiddleware([
-            //CSRF protection
             CsrfFirewall::class
         ]);
     }
