@@ -26,7 +26,7 @@ class App extends Core
         //Can speed up class loading a bit
         \Spiral\Core\Loader::class,
 
-        //Short bindings in spiral services (eg http, db, ...)
+        //Short bindings to spiral services (eg http, db, ...)
         \Spiral\Core\Bootloaders\SpiralBindings::class,
 
         //Application specific bindings and bootloading
