@@ -35,6 +35,7 @@ Available Components:
 
 Available Modules:
 --------
+- [Auth](https://github.com/spiral-modules/auth) - Token based user authentication
 - [Profiler Panel](https://github.com/spiral-modules/profiler) - Profiler panel/middleware for Spiral Applications (pre-installed)
 - [IDE Helper](https://github.com/spiral-modules/ide-helper) - IDE autocomplete generator: ORM, ODM, RequestFilters, Container  (pre-installed)
 - [Hybrid DB](https://github.com/spiral-modules/hybrid-db) - ORM-to-ODM relation bridge with transactions support
