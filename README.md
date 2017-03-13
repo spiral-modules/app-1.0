@@ -30,7 +30,7 @@ Once application installed you can ensure that it was configured properly by exe
 
 Available Components:
 --------
-- [ODM](https://github.com/spiral/odm) - MongoDB Strict schema ODM
+- [ODM](https://github.com/spiral/odm) - MongoDB strict schema ODM
 - [Storage](https://github.com/spiral/storage) - File storage abstraction layer
 
 Available Modules:
