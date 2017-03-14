@@ -27,6 +27,7 @@ chdir($root);
 //Initiating shared container, bindings, directories and etc
 $application = App::init([
     'root'        => $root,
+    'runtime'     => $root . 'runtime/',
     'libraries'   => $root . 'vendor/',
     'application' => $root . 'app/',
     //other directories calculated based on default pattern, @see Core::__constructor()
