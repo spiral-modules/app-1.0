@@ -24,6 +24,7 @@ abstract class BaseTest extends TestCase
         $this->app = \App::init([
             'root'        => $root,
             'libraries'   => $root . 'vendor/',
+            'runtime'     => $root . 'runtime/',
             'application' => $root . 'app/',
         ], null, null, false);
 
