@@ -21,8 +21,8 @@ return [
      * options, header and footer.
      */
     'configureSequence' => [
-        'views:compile'     => ['options' => []],
-        'spiral:ide-helper' => ['options' => [], 'header' => "\nGenerating IDE helper classes..."],
+        'views:compile' => ['options' => []],
+        'ide-helper'    => ['options' => [], 'header' => "\nGenerating IDE helper classes..."],
 
         /*{{sequence.configure}}*/
     ],
