@@ -12,6 +12,7 @@ Server Requiments
 --------
 Make sure that your server is configured with following PHP version and extensions:
 * PHP 7.0+
+* node.js 6.9+ 
 * OpenSSL Extension
 * MbString Extension
 * Tokenizer Extension
@@ -19,6 +20,15 @@ Make sure that your server is configured with following PHP version and extensio
 
 Installation
 --------
+
+```
+composer install
+npm install
+```
+
+Note: npm needs public key configured for fetching from repositories.
+To specify manually, run it like so: `ssh-agent bash -c 'ssh-add path/to/key; npm install'`
+
 ```
 composer create-project spiral/application
 ```
@@ -42,3 +52,19 @@ Available Modules:
 - [Scaffolder](https://github.com/spiral-modules/scaffolder) - Help commands for scaffolding parts of your application
 - [Toolkit](https://github.com/spiral-modules/toolkit) - View widgets (pre-installed)
 - [Vault](https://github.com/spiral-modules/vault) - HMVC Core with RBAC and visual layout
+
+Frontend Modules:
+--------
+
+- [SF](https://github.com/sfjs/sf.js) - Base SpiralScout FrontEnd Framework
+- [sf-module-cropper](https://github.com/sfjs/sf-module-cropper) - SF module for uploading pictures with cropping them
+
+- [redaxtor](https://github.com/redaxtor/redaxtor-spiral-bridge) - Spiral-specific bundle of Redaxtor - overlay inline content editor for websites
+
+Configuring Frontend:
+--------
+
+Configuring Linters:
+--------
+
+By default

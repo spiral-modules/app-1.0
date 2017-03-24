@@ -1,0 +1,83 @@
+{
+  "name": "spiralscout-base-application",
+  "version": "0.0.1",
+  "description": "Front-end depeddencies bundler",
+  "license": "MIT",
+  "engines": {
+    "node": "6"
+  },
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "npm run lint && npm run build:prod",
+    "build:prod": "cross-env NODE_ENV=production webpack -p",
+    "build:dev": "cross-env NODE_ENV=development webpack -p",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
+    "clean": "rimraf webroot/resources/generated",
+    "lint": "npm run lint-js && npm run lint-ts && npm run lint-styles",
+    "lint-styles": "stylelint \"./websource/**/*.css\" \"./websource/**/*.less\" \"./websource/**/*.scss\"",
+    "lint-ts": "tslint \"./websource/**/*.tsx\" \"./websource/**/*.ts\"",
+    "lint-js": "eslint \"./websource/**/*.jsx\" \"./websource/**/*.js\"",
+    "postinstall": "npm run typings && npm run build",
+    "clean-after-deploy": "rimraf typings/ && rimraf node_modules/",
+    "typings": "rimraf typings/ && typings install",
+    "typings-run": "typings",
+    "stylelint": "stylelint --init"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:spiral/application.git"
+  },
+  "bugs": {
+    "url": "https://red.spiralscout.com/projects/spiral-cms/issues"
+  },
+  "dependencies": {
+    "redaxtor-spiral-bridge": "redaxtor/redaxtor-spiral-bridge.git#master",
+    "sf.js": "sfjs/sf.js.git#master"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^1.1.1",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.16.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.18.0",
+    "eslint-config-google": "^0.7.1",
+    "eslint-loader": "^1.7.0",
+    "html-webpack-plugin": "^2.9.0",
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.2",
+    "lesslint": "^1.0.2",
+    "node-sass": "^4.5.1",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-import": "^9.1.0",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.1",
+    "sass-lint": "^1.10.2",
+    "sass-loader": "^6.0.3",
+    "source-map-support": "^0.4.0",
+    "style-loader": "^0.13.0",
+    "stylelint": "^7.9.0",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-webpack-plugin": "^0.7.0",
+    "tslint": "^3.7.4",
+    "tslint-loader": "^2.1.5",
+    "typescript": "^2.2.1",
+    "typings": "^1.0.4",
+    "url-loader": "^0.5.6",
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-hot-middleware": "^2.17.1",
+    "webpack-split-by-path": "0.0.10",
+    "webpack-visualizer-plugin": "^0.1.6"
+  }
+}

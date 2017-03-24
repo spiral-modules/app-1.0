@@ -1,0 +1,19 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "extends": "google",
+  "rules": {
+    "linebreak-style": 0,
+    "max-len": [
+      2,
+      {
+        "code": 160,
+        "tabWidth": 4,
+        "ignoreUrls": true
+      }
+    ],
+    "quotes": 0
+  }
+}

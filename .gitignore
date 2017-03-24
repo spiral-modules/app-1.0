@@ -1,6 +1,9 @@
 app/runtime/*
 .idea/
+node_modules/*
+typings/*
 composer.lock
 composer.phar
 vendor/
 .env
+webroot/resources/generated/
