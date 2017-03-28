@@ -1,10 +1,9 @@
 'use strict';
 
-exports.tslint = {
-  enforce: 'pre',
-  test: /\.tsx?$/,
-  loader: 'tslint-loader',
-  exclude: /node_modules/
+exports.jsmap = {
+  test: /\.js$/,
+  use: ["source-map-loader"],
+  enforce: "pre"
 };
 
 exports.eslint = {
@@ -17,12 +16,6 @@ exports.eslint = {
 exports.stylelint = {
   test: /\.css|less|scss$/,
   loader: 'style-loader!css-loader?-url&sourceMap'
-};
-
-exports.tsx = {
-  test: /\.tsx?$/,
-  loader: 'awesome-typescript-loader',
-  exclude: /node_modules/
 };
 
 exports.html = {

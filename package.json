@@ -13,12 +13,11 @@
     "build:dev": "cross-env NODE_ENV=development webpack -p",
     "hot": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
     "clean": "rimraf webroot/resources/generated",
-    "lint": "npm run lint-js && npm run lint-ts && npm run lint-styles",
+    "lint": "npm run lint-js && npm run lint-styles",
     "lint-styles": "stylelint \"./websource/**/*.css\" \"./websource/**/*.less\" \"./websource/**/*.scss\"",
-    "lint-ts": "tslint \"./websource/**/*.tsx\" \"./websource/**/*.ts\"",
     "lint-js": "eslint \"./websource/**/*.jsx\" \"./websource/**/*.js\"",
-    "postinstall": "npm run typings && npm run build",
-    "clean-after-deploy": "rimraf typings/ && rimraf node_modules/",
+    "postinstall": "npm run build",
+    "clean-after-deploy": "rimraf node_modules/",
     "typings": "rimraf typings/ && typings install",
     "typings-run": "typings",
     "stylelint": "stylelint --init"
@@ -32,11 +31,10 @@
     "url": "https://red.spiralscout.com/projects/spiral-cms/issues"
   },
   "dependencies": {
-    "redaxtor-spiral-bridge": "redaxtor/redaxtor-spiral-bridge.git#master",
-    "sf.js": "sfjs/sf.js.git#master"
+    "sf-toolkit": "spiral/toolkit#feature/node-package",
+    "spiral-vault": "spiral-modules/vault#feature/node-package"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^1.1.1",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-class-properties": "^6.19.0",
@@ -64,15 +62,12 @@
     "rimraf": "^2.6.1",
     "sass-lint": "^1.10.2",
     "sass-loader": "^6.0.3",
+    "source-map-loader": "^0.2.0",
     "source-map-support": "^0.4.0",
     "style-loader": "^0.13.0",
     "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-webpack-plugin": "^0.7.0",
-    "tslint": "^3.7.4",
-    "tslint-loader": "^2.1.5",
-    "typescript": "^2.2.1",
-    "typings": "^1.0.4",
     "url-loader": "^0.5.6",
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2",

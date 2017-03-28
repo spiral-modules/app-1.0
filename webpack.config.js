@@ -33,8 +33,6 @@ module.exports = {
       '.json',
       '.webpack.js',
       '.web.js',
-      '.tsx',
-      '.ts',
       '.scss',
       '.less',
       '.css'
@@ -49,11 +47,10 @@ module.exports = {
 
   module: {
     rules: [
-      loaders.tslint,
+      loaders.jsmap,
       loaders.eslint,
 
       loaders.js,
-      loaders.tsx,
       loaders.html,
       loaders.css,
       loaders.less,

@@ -3,7 +3,7 @@
  *
  * Instructions: List all global dependencies that are used in client part here
  */
-// require('sf.js');
+require('sf-toolkit');
 /**
  * END: Enable global dependencies
  */
@@ -24,10 +24,8 @@ require('./styles/sample-scss.scss');
  * BEGIN: Attach local scripts
  */
 
-require('./src/custom-ts');
 require('./src/custom-js');
 
 /**
  * END: Attach local scripts
  */
-

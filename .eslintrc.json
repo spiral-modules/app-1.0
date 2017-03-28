@@ -6,6 +6,7 @@
   "extends": "google",
   "rules": {
     "linebreak-style": 0,
+    "space-before-function-paren": 0,
     "max-len": [
       2,
       {

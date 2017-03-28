@@ -5,7 +5,7 @@ require('./client');
  *
  * Instructions: List all global dependencies that are used ONLY IN ADMIN part here
  */
-require('redaxtor-spiral-bridge');
+require('spiral-vault');
 /**
  * END: Enable global dependencies
  */
@@ -19,4 +19,3 @@ require('redaxtor-spiral-bridge');
 /**
  * END: Attach local scripts
  */
-
