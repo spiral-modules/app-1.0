@@ -61,8 +61,30 @@ Frontend Modules:
 
 - [redaxtor](https://github.com/redaxtor/redaxtor-spiral-bridge) - Spiral-specific bundle of Redaxtor - overlay inline content editor for websites
 
-Configuring Frontend:
+
+Building Frontend:
 --------
+
+By default front-end is built into a minified production ready bundles:
+
+To build front end execute `npm install` if that is first installation. Build will happen automatically.
+
+To update npm dependencies or code run `npm update` and `npm run build`. This will update bundles code.
+
+
+Developing With Frontend:
+--------
+
+During development building production every change code is slow. Unfortunately HMR has no good support for PHP yet (without a need to run many servers)
+ 
+However watcher is possible
+
+Run `npm run build:dev` and then run `npm run watch` - that will produce a "development" package with non-minified code and inline sourcemaps. `watch` will watch for changes in files and rebuild bundles immediately. 
+
+If you also want page to be reloaded automatically, prepend `<script src="http://localhost:35729/livereload.js"></script>` to page scripts
+
+
+
 
 Configuring Linters:
 --------

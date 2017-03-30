@@ -1,55 +1,56 @@
 'use strict';
 
 exports.jsmap = {
-  test: /\.js$/,
-  use: ["source-map-loader"],
-  enforce: "pre"
+    test: /\.js$/,
+    use: ["source-map-loader"],
+    enforce: "pre"
 };
 
 exports.eslint = {
-  enforce: 'pre',
-  test: /\.js$/,
-  loader: 'eslint-loader',
-  exclude: /node_modules/
+    enforce: 'pre',
+    test: /\.js$/,
+    loader: 'eslint-loader',
+    exclude: /node_modules/
 };
 
 exports.stylelint = {
-  test: /\.css|less|scss$/,
-  loader: 'style-loader!css-loader?-url&sourceMap'
+    enforce: "pre",
+    test: /\.css|less|scss$/,
+    loader: 'style-loader!css-loader?-url&sourceMap'
 };
 
 exports.html = {
-  test: /\.html$/,
-  loader: 'raw',
-  exclude: /node_modules/
+    test: /\.html$/,
+    loader: 'raw',
+    exclude: /node_modules/
 };
 
 exports.css = {
-  test: /\.css$/,
-  loader: 'style-loader!css-loader?-url&sourceMap'
+    test: /\.css$/,
+    loader: 'style-loader!css-loader?-url&sourceMap'
 };
 
 exports.less = {
-  test: /\.less$/,
-  exclude: /(node_modules)/,
-  loader: 'style-loader!css-loader?-url&sourceMap!less-loader?sourceMap'
+    test: /\.less$/,
+    exclude: /(node_modules)/,
+    loader: 'style-loader!css-loader?-url&sourceMap!less-loader?sourceMap'
 };
 
 exports.sass = {
-  test: /\.scss$/,
-  exclude: /(node_modules)/,
-  loader: 'style-loader!css-loader?-url&sourceMap!sass-loader?sourceMap'
+    test: /\.scss$/,
+    exclude: /(node_modules)/,
+    loader: 'style-loader!css-loader?-url&sourceMap!sass-loader?sourceMap'
 };
 
 exports.json = {
-  test: /\.json$/,
-  loader: 'json'
+    test: /\.json$/,
+    loader: 'json'
 };
 
 exports.js = {
-  test: /\.js$/,
-  exclude: /node_modules/,
-  loader: 'babel-loader'
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: 'babel-loader'
 };
 
 exports.svg = makeUrlLoader(/\.svg$/);
@@ -59,9 +60,9 @@ exports.woff2 = makeUrlLoader(/\.woff2$/);
 exports.ttf = makeUrlLoader(/\.ttf$/);
 
 function makeUrlLoader(pattern) {
-  return {
-    test: pattern,
-    loader: 'url',
-    exclude: /node_modules/
-  };
+    return {
+        test: pattern,
+        loader: 'url',
+        exclude: /node_modules/
+    };
 }

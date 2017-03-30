@@ -11,8 +11,8 @@ const applicationEntries = process.env.NODE_ENV === 'development'
 module.exports = {
 
   entry: {
-      client: [ './websource/client.js'].concat(applicationEntries),
-      admin: ['./websource/admin.js'].concat(applicationEntries)
+      client: [ './webroot/sources/client.js'].concat(applicationEntries),
+      admin: ['./webroot/sources/admin.js'].concat(applicationEntries)
   },
 
   output: {

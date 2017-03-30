@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
 const postcss = require('./postcss');
+var LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const sourceMap = process.env.TEST || process.env.NODE_ENV !== 'production'
     ? [new webpack.SourceMapDevToolPlugin({filename: null, test: /\.tsx?$/})]
@@ -29,9 +30,12 @@ const basePlugins = [
 ].concat(sourceMap);
 
 const devPlugins = [
+    new LiveReloadPlugin({
+        port: 35729
+    }),
     new StyleLintPlugin({
         configFile: './.stylelintrc.json',
-        files: ['websource/**/*.css'],
+        files: ['webroot/sources/**/*.css', 'webroot/sources/**/*.less', 'webroot/sources/**/*.scss'],
         failOnError: false
     }),
     new Visualizer({
@@ -42,7 +46,7 @@ const devPlugins = [
 const prodPlugins = [
     new StyleLintPlugin({
         configFile: './.stylelintrc.json',
-        files: ['websource/**/*.css'],
+        files: ['webroot/sources/**/*.css', 'webroot/sources/**/*.less', 'webroot/sources/**/*.scss'],
         failOnError: false
     }),
     new webpack.optimize.UglifyJsPlugin({

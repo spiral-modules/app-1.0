@@ -4,6 +4,7 @@
  * Instructions: List all global dependencies that are used in client part here
  */
 require('sf-toolkit');
+
 /**
  * END: Enable global dependencies
  */

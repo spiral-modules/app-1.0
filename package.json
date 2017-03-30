@@ -11,16 +11,14 @@
     "build": "npm run lint && npm run build:prod",
     "build:prod": "cross-env NODE_ENV=production webpack -p",
     "build:dev": "cross-env NODE_ENV=development webpack -p",
+    "watch": "cross-env NODE_ENV=development webpack --watch",
     "hot": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
     "clean": "rimraf webroot/resources/generated",
     "lint": "npm run lint-js && npm run lint-styles",
-    "lint-styles": "stylelint \"./websource/**/*.css\" \"./websource/**/*.less\" \"./websource/**/*.scss\"",
-    "lint-js": "eslint \"./websource/**/*.jsx\" \"./websource/**/*.js\"",
+    "lint-styles": "stylelint \"./webroot/sources/**/*.css\" \"./webroot/sources/**/*.less\" \"./webroot/sources/**/*.scss\"",
+    "lint-js": "eslint \"./webroot/sources/**/*.jsx\" \"./webroot/sources/**/*.js\"",
     "postinstall": "npm run build",
-    "clean-after-deploy": "rimraf node_modules/",
-    "typings": "rimraf typings/ && typings install",
-    "typings-run": "typings",
-    "stylelint": "stylelint --init"
+    "clean-after-deploy": "rimraf node_modules/"
   },
   "keywords": [],
   "repository": {
@@ -62,7 +60,7 @@
     "rimraf": "^2.6.1",
     "sass-lint": "^1.10.2",
     "sass-loader": "^6.0.3",
-    "source-map-loader": "^0.2.0",
+    "source-map-loader": "sfjs/source-map-loader",
     "source-map-support": "^0.4.0",
     "style-loader": "^0.13.0",
     "stylelint": "^7.9.0",
@@ -72,6 +70,7 @@
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2",
     "webpack-hot-middleware": "^2.17.1",
+    "webpack-livereload-plugin": "^0.10.0",
     "webpack-split-by-path": "0.0.10",
     "webpack-visualizer-plugin": "^0.1.6"
   }
