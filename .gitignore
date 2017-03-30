@@ -8,6 +8,5 @@ vendor/
 .env
 webroot/resources/generated/
 npm-debug.log
-resources/Virtual/Spiral/Commands/Modules/RegisterCommand.php
 .phpstorm.meta.php/
 resources/Virtual/
