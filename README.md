@@ -39,6 +39,8 @@ Once application installed you can ensure that it was configured properly by exe
 ./spiral configure && phpunit
 ```
 
+Copy `.env.sample` to `.env` and edit it to your settings
+
 Available Components:
 --------
 - [ODM](https://github.com/spiral/odm) - MongoDB strict schema ODM
