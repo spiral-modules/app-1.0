@@ -16,14 +16,9 @@ use Spiral\Http\Routing\Route;
 
 class HttpBootloader extends Bootloader
 {
-    /**
-     * Requested to be bootloaded.
-     */
     const BOOT = true;
 
     /**
-     * Spiral will automatically populate requested method injections for boot method.
-     *
      * @param HttpDispatcher $http
      */
     public function boot(HttpDispatcher $http)
