@@ -49,7 +49,6 @@ class HttpBootloader extends Bootloader
 
         //Middlewares can be registered as closure, class name or anything callable
         return $route->withMiddleware([
-            //Custom middleware
             function ($request, $response, $next) {
                 return $next($request, $response)->withHeader('My-Header', 'Yay!');
             },
