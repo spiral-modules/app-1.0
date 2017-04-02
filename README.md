@@ -26,7 +26,7 @@ composer create-project spiral/application
 
 Once application installed you can ensure that it was configured properly by executing:
 ```
-./spiral configure && phpunit
+./spiral configure -k && phpunit
 ```
 
 Available Components:
