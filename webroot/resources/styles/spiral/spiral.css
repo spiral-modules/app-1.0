@@ -80,6 +80,65 @@
   bottom: 0;
   left: 0;
 }
+@font-face {
+  font-family: 'toolkit-spiral';
+  src: url('../../fonts/spiral.eot?81420695');
+  src: url('../../fonts/spiral.eot?81420695#iefix') format('embedded-opentype'), url('../../fonts/spiral.woff2?81420695') format('woff2'), url('../../fonts/spiral.woff?81420695') format('woff'), url('../../fonts/spiral.ttf?81420695') format('truetype'), url('../../fonts/spiral.svg?81420695#spiral') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="toolkit-icon-"]:before,
+[class*=" toolkit-icon-"]:before {
+  font-family: "toolkit-spiral";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.toolkit-icon-sort-up:before {
+  content: '\e800';
+}
+/* '' */
+.toolkit-icon-sort-down:before {
+  content: '\e801';
+}
+/* '' */
+.toolkit-icon-down:before {
+  content: '\e802';
+}
+/* '' */
+.toolkit-icon-search:before {
+  content: '\e803';
+}
+/* '' */
+.toolkit-icon-left:before {
+  content: '\e804';
+}
+/* '' */
+.toolkit-icon-right:before {
+  content: '\e805';
+}
+/* '' */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -238,7 +297,6 @@ table thead td {
   padding: 5px 10px;
   text-align: left;
   font-weight: bold;
-  color: red;
 }
 table tbody td {
   border: 1px solid #e5e5e5;
@@ -307,21 +365,6 @@ table td.left-align {
   display: block;
   padding-bottom: 5px;
   font-weight: 100;
-}
-.form-group.has-error label {
-  color: #fc6c6c;
-}
-.form-group.has-error .form-control {
-  border-color: #fc6c6c;
-}
-.form-group.has-error .form-control:-moz-placeholder {
-  color: #fc6c6c;
-}
-.form-group.has-error .form-control:-ms-input-placeholder {
-  color: #fc6c6c;
-}
-.form-group.has-error .form-control::-webkit-input-placeholder {
-  color: #fc6c6c;
 }
 .item-form-checkbox {
   position: relative;
@@ -455,11 +498,6 @@ table td.left-align {
 .btn-close:hover {
   opacity: 1;
 }
-.alert.alert-danger {
-  color: #fc6c6c;
-  font-size: 12px;
-  font-weight: lighter;
-}
 form {
   position: relative;
 }
@@ -489,8 +527,34 @@ form {
   outline: none;
 }
 .item-form input:disabled,
+.item-form input.read-only {
+  background-color: #e5e5e5;
+}
 .item-form input:read-only {
-  background: #e5e5e5;
+  background-color: #e5e5e5;
+}
+.item-form input:-moz-read-only {
+  background-color: #e5e5e5;
+}
+.item-form input.datetime {
+  width: 50%;
+  height: 30px;
+  display: inline-block;
+}
+.item-form select.datetime {
+  height: 30px;
+  display: inline-block;
+  width: auto;
+}
+.item-form select.datetime {
+  width: 50%;
+  height: 30px;
+  display: inline-block;
+}
+.item-form select.datetime {
+  height: 30px;
+  display: inline-block;
+  width: auto;
 }
 .item-form textarea {
   width: 100%;
@@ -512,11 +576,6 @@ form {
   border-color: #33a3fe;
   outline: none;
 }
-.item-form .msg {
-  display: block;
-  font-size: 14px;
-  padding-top: 3px;
-}
 .item-label {
   font-size: 14px;
   font-size: 0.875rem;
@@ -526,36 +585,6 @@ form {
   display: block;
   padding-bottom: 5px;
   font-weight: 100;
-}
-.error {
-  color: #fc6c6c;
-}
-.error .item-label {
-  color: #fc6c6c;
-}
-.error input,
-.error textarea {
-  border-color: #fc6c6c;
-}
-.success {
-  color: #2c9f42;
-}
-.success .item-label {
-  color: #2c9f42;
-}
-.success input,
-.success textarea {
-  border-color: #2c9f42;
-}
-.warning {
-  color: #ffc800;
-}
-.warning .item-label {
-  color: #ffc800;
-}
-.warning input,
-.warning textarea {
-  border-color: #ffc800;
 }
 .info {
   color: #33a3fe;
@@ -569,39 +598,96 @@ form {
 }
 .alert {
   font-size: 12px;
-  border-radius: 2px;
-  background: #666666;
-  padding: 5px 10px;
-  color: #ffffff;
   position: relative;
   margin-top: 10px;
 }
-.alert.error {
-  background: #fc6c6c;
+.alert p {
+  margin: 0;
 }
-.alert.success {
-  background: #2c9f42;
-}
-.alert.warning {
-  background: #ffc800;
-}
-.alert.info {
-  background: #33a3fe;
-}
-.alert > .btn-close {
+.alert .btn-close {
   position: absolute;
-  top: 2px;
-  right: 2px;
-  line-height: 18px;
-  width: 18px;
-  color: #ffffff;
-  opacity: .5;
+  right: 10px;
+  top: 0;
 }
-.alert > .btn-close:hover {
-  opacity: 1;
+.alert.form-msg {
+  border-radius: 2px;
+  padding: 5px 10px;
 }
-.alert > .btn-close:focus {
-  outline: none;
+.alert.form-msg.error {
+  color: #fc6c6c;
+  background: rgba(255, 0, 0, 0.1);
+}
+.alert.form-msg.error .btn-close {
+  color: #fc6c6c;
+}
+.alert.form-msg.success {
+  color: #2c9f42;
+  background: rgba(0, 255, 0, 0.1);
+}
+.alert.form-msg.success .btn-close {
+  color: #2c9f42;
+}
+.alert.form-msg.warning {
+  color: #ffc800;
+  background: rgba(244, 232, 151, 0.1);
+}
+.alert.form-msg.warning .btn-close {
+  color: #ffc800;
+}
+.alert.form-msg.info {
+  color: #33a3fe;
+  background: rgba(0, 0, 255, 0.1);
+}
+.alert.form-msg.info .btn-close {
+  color: #33a3fe;
+}
+.item-form.error .item-label,
+.item-form.error .item-input,
+.item-form.error .item-select,
+.item-form.error textarea {
+  border-color: #fc6c6c;
+  color: #fc6c6c;
+}
+.item-form.success .item-label,
+.item-form.success .item-input,
+.item-form.success .item-select,
+.item-form.success textarea {
+  border-color: #2c9f42;
+  color: #2c9f42;
+}
+.item-form.warning .item-label,
+.item-form.warning .item-input,
+.item-form.warning .item-select,
+.item-form.warning textarea {
+  border-color: #ffc800;
+  color: #ffc800;
+}
+.item-form.info .item-label,
+.item-form.info .item-input,
+.item-form.info .item-select,
+.item-form.info textarea {
+  border-color: #33a3fe;
+  color: #33a3fe;
+}
+.item-form .alert.form-msg {
+  border-radius: 0px;
+  padding: 5px 0px;
+}
+.item-form .alert.form-msg.error {
+  color: #fc6c6c;
+  background: transparent;
+}
+.item-form .alert.form-msg.success {
+  color: #2c9f42;
+  background: transparent;
+}
+.item-form .alert.form-msg.warning {
+  color: #ffc800;
+  background: transparent;
+}
+.item-form .alert.form-msg.info {
+  color: #33a3fe;
+  background: transparent;
 }
 .item-form-switch {
   position: relative;
@@ -723,4 +809,77 @@ form {
 .pagination li.active a {
   pointer-events: none;
   background: #efefef;
+}
+.file-field.input-field {
+  position: relative;
+  height: 30px;
+  margin-bottom: 20px;
+}
+.file-field.input-field .btn {
+  background: #015fa3;
+  float: left;
+  margin-right: 20px;
+  height: 35px;
+  line-height: 35px;
+}
+.file-field.input-field .btn span {
+  float: left;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+.file-field.input-field input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  opacity: 0;
+  z-index: 200;
+}
+.file-field.input-field .file-path-wrapper {
+  float: left;
+  width: calc(100% - 135px);
+  background: transparent;
+}
+.file-field.input-field .file-path-wrapper .file-path {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  height: 35px;
+  padding: 0 10px;
+}
+.flash-wrapper {
+  position: fixed;
+  bottom: 40px;
+  width: 288px;
+  right: 10px;
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+  z-index: 10000;
+  bottom: -120%;
+}
+.flash-wrapper.show {
+  bottom: 40px;
+}
+.flash-wrapper.flash {
+  color: #fff;
+  position: relative;
+  border-radius: 2px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+.flash-wrapper.flash.info {
+  background: #212121;
+}
+.flash-wrapper.flash.debug {
+  background: #FF9800;
+}
+.flash-wrapper.flash.danger {
+  background: #DD2C00;
 }

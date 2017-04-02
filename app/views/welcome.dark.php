@@ -4,7 +4,7 @@
 
 <define:styles>
     <yield:styles/>
-    <link rel="stylesheet" href="@{basePath}resources/styles/welcome.css"/>
+    <asset:style src="/resources/styles/welcome.css"/>
 </define:styles>
 
 <define:body>
