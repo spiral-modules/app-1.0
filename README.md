@@ -39,6 +39,6 @@ Available Modules:
 - [Profiler Panel](https://github.com/spiral-modules/profiler) - Profiler panel/middleware for Spiral Applications (pre-installed)
 - [IDE Helper](https://github.com/spiral-modules/ide-helper) - IDE autocomplete generator: ORM, ODM, RequestFilters, Container  (pre-installed)
 - [Hybrid DB](https://github.com/spiral-modules/hybrid-db) - ORM-to-ODM relation bridge with transactions support
-- [Scaffolder](https://github.com/spiral-modules/scaffolder) - Help commands for scaffolding parts of your application
+- [Scaffolder](https://github.com/spiral-modules/scaffolder) - Help commands for scaffolding parts of your application (pre-installed)
 - [Toolkit](https://github.com/spiral-modules/toolkit) - View widgets (pre-installed)
 - [Vault](https://github.com/spiral-modules/vault) - HMVC Core with RBAC and visual layout
