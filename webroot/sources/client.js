@@ -4,6 +4,7 @@
  * Instructions: List all global dependencies that are used in client part here
  */
 require('sf-toolkit');
+require('sf-autocomplete'); // Add autocomplete feature
 
 /**
  * END: Enable global dependencies

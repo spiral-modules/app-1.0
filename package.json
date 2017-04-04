@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "sf-toolkit": "spiral/toolkit#feature/node-package",
+    "sf-autocomplete": "sfjs/sf-module-autocomplete.git#feature/node-package",
     "spiral-vault": "spiral-modules/vault#feature/node-package"
   },
   "devDependencies": {
