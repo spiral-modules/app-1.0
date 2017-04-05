@@ -75,7 +75,6 @@ class IndexController extends Controller
      */
     public function twigAction(): string
     {
-        //dump($this->twig->getFunctions());
         return $this->views->render('default:hello.twig');
     }
 

@@ -16,14 +16,9 @@ use Spiral\Http\Routing\Route;
 
 class HttpBootloader extends Bootloader
 {
-    /**
-     * Requested to be bootloaded.
-     */
     const BOOT = true;
 
     /**
-     * Spiral will automatically populate requested method injections for boot method.
-     *
      * @param HttpDispatcher $http
      */
     public function boot(HttpDispatcher $http)
@@ -54,7 +49,6 @@ class HttpBootloader extends Bootloader
 
         //Middlewares can be registered as closure, class name or anything callable
         return $route->withMiddleware([
-            //Custom middleware
             function ($request, $response, $next) {
                 return $next($request, $response)->withHeader('My-Header', 'Yay!');
             },
@@ -64,7 +58,7 @@ class HttpBootloader extends Bootloader
 
     /**
      * Default (fallback) application route, this route can handle
-     * many controller and action pairs, so you don't need to create
+     * many controller and action pairs so you don't need to create
      * custom route for every new controller (unless you want to define
      * custom path, middleware or pattern).
      *

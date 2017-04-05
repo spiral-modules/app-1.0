@@ -22,6 +22,8 @@ return [
         //Ide helper commands
         directory('libraries') . 'spiral/ide-helper/source/',
 
+        directory('libraries') . 'spiral/scaffolder/source/',
+
         /*{{directories}}*/
     ],
     /*
