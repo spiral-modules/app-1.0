@@ -4,7 +4,7 @@ Spiral, PSR7/PHP7 Framework
 
 <img src="https://raw.githubusercontent.com/spiral/guide/master/resources/logo.png" height="170px" alt="Spiral Framework" align="left"/>
 
-The Spiral framework provides open and modular Rapid Application Development (RAD) environment, database tools, code re-usability, extremely friendly [IoC](https://github.com/container-interop/container-interop), PSR-7, simple syntax and customizable scaffolding mechanisms
+The Spiral framework provides open and modular Rapid Application Development (RAD) environment, database tools, code re-usability, extremely friendly [IoC](https://github.com/container-interop/container-interop), IDE integration, PSR-7, simple syntax and customizable scaffolding mechanisms
 
 [**Spiral Framework**](https://github.com/spiral/spiral) | [*Modules and Packages*](https://github.com/spiral-modules) | [Guide](https://github.com/spiral/guide) | [**Installation Notes**](https://github.com/spiral/guide/blob/09branch/installation.md) | [Forum](https://groups.google.com/forum/#!forum/spiral-framework)
 <br/><br/><br/>
