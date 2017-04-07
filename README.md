@@ -43,3 +43,4 @@ Available Modules:
 - [Scaffolder](https://github.com/spiral-modules/scaffolder) - Help commands for scaffolding parts of your application (pre-installed)
 - [Toolkit](https://github.com/spiral-modules/toolkit) - View widgets (pre-installed)
 - [Vault](https://github.com/spiral-modules/vault) - HMVC Core with RBAC and visual layout
+- [PHPFastCache](https://github.com/spiral-modules/phpfastcache) - PSR6 and PSR16 cache adapters
