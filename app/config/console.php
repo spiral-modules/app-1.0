@@ -21,9 +21,7 @@ return [
      * options, header and footer.
      */
     'configureSequence' => [
-        'views:compile' => ['options' => []],
-        'ide-helper'    => ['options' => [], 'header' => "\nGenerating IDE helper classes..."],
-
+        'views:compile' => ['options' => []],   
         /*{{sequence.configure}}*/
     ],
 
@@ -31,8 +29,13 @@ return [
      * Set of commands executed inside "update" command.
      */
     'updateSequence'    => [
-        //'odm:schema' => ['options' => []],
-        'orm:schema' => ['options' => []],
+        //With ODM: 'odm:schema' => ['options' => []],
+        'orm:schema'    => ['options' => ['--migrate' => true, '-vv' => true]],
+        
+        //Make sure your migrations are inited! 'migrate:init'  => ['options' => []]
+        'migrate'       => ['options' => ['-vv' => true]],
+
+        'ide-helper'    => ['options' => [], 'header' => "\nGenerating IDE helper classes..."],
         /*{{sequence.update}}*/
     ]
 ];
