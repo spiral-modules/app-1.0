@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
+    "php": ">=7.1",
     "spiral/framework": "^1.0",
     "spiral/profiler": "^0.9",
     "spiral/ide-helper": "^0.9",
