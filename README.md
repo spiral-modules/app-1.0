@@ -12,7 +12,7 @@ The Spiral framework provides open and modular Rapid Application Development (RA
 Server Requiments
 --------
 Make sure that your server is configured with following PHP version and extensions:
-* PHP 7.0+
+* PHP 7.1+
 * OpenSSL Extension
 * MbString Extension
 * Tokenizer Extension
