@@ -61,6 +61,7 @@ return [
                 'database' => 'default'
             ]
         ],
+        /*{{servers}}*/
     ],
 
     /*
@@ -115,5 +116,6 @@ return [
                 'collection' => 'files'
             ]
         ],
+        /*{{buckets}}*/
     ]
 ];
