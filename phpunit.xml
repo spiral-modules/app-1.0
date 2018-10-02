@@ -10,7 +10,8 @@
          processIsolation="false"
          stopOnFailure="false"
          stopOnError="false"
-         syntaxCheck="true">
+         syntaxCheck="true"
+         stderr="true">
     <testsuites>
         <testsuite name="Application Tests">
             <directory>./tests/</directory>
