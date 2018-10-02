@@ -12,4 +12,4 @@ script:
   - php -r "copy('.env.sample', '.env');"
   - php webroot/index.php configure -vv -k
   - php webroot/index.php update -vv
-  - phpunit
+  - vendor/bin/phpunit
